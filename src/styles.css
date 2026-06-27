@@ -1,0 +1,46 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-rule: var(--rule);
+}
+
+:root {
+  --paper: oklch(0.975 0.005 90);
+  --background: oklch(0.975 0.005 90);
+  --ink: oklch(0.18 0.01 80);
+  --foreground: oklch(0.18 0.01 80);
+  --muted: oklch(0.94 0.006 85);
+  --muted-foreground: oklch(0.42 0.01 80);
+  --accent: oklch(0.55 0.18 28);
+  --accent-foreground: oklch(0.98 0.005 90);
+  --border: oklch(0.86 0.008 85);
+  --rule: oklch(0.18 0.01 80 / 0.12);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+}
