@@ -44,3 +44,105 @@
   }
   ::selection { background: var(--ink); color: var(--paper); }
 }
+
+@layer components {
+  /* Red dot motif */
+  .accent-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* Editorial divider: ——●—— */
+  .editorial-divider {
+    display: flex;
+    align-items: center;
+    color: var(--rule);
+  }
+  .editorial-divider::before,
+  .editorial-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+  }
+  .editorial-divider .accent-dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 0.875rem;
+  }
+
+  /* Navigation accent */
+  .nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    color: var(--foreground);
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* CTA & link accents */
+  .btn-accent-outline {
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-accent-outline:hover {
+    border-color: color-mix(in oklch, var(--accent) 50%, var(--border));
+  }
+  .btn-accent-outline:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .link-accent-underline {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+  }
+  .link-accent-underline:hover,
+  .link-accent-underline:focus-visible {
+    text-decoration-color: var(--accent);
+  }
+
+  /* Card hover accent */
+  .card-accent-hover {
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-accent-hover:hover {
+    box-shadow: inset 3px 0 0 var(--accent);
+  }
+
+  /* Speaking format marker */
+  .format-marker {
+    color: var(--accent);
+    font-size: 0.5rem;
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  /* Category tag accent */
+  .tag-accent {
+    color: var(--accent);
+    border-color: color-mix(in oklch, var(--accent) 25%, var(--border));
+  }
+}
