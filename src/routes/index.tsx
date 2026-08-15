@@ -1,5 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
+import { AboutSection } from "@/components/AboutSection";
+import { AdvisorySection } from "@/components/AdvisorySection";
+import { CurrentFocus } from "@/components/CurrentFocus";
+import { InsightsSection } from "@/components/InsightsSection";
+import { SignatureFramework } from "@/components/SignatureFramework";
+import { SpeakingSection } from "@/components/SpeakingSection";
+import { ThreadThroughItAll } from "@/components/ThreadThroughItAll";
+import { WhyWorkWithMe } from "@/components/WhyWorkWithMe";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -8,15 +16,31 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Aly Metwaly designs and operationalizes enterprise AI operating models. Transformation Manager at Nokia. 45% adoption growth, 31 engineer-years unlocked, 74,000-employee programs.",
+          "Aly Metwaly designs enterprise AI operating models, governance, and adoption programs that scale. Transformation Manager at Nokia. AI transformation advisor, speaker, and author of the Enterprise AI Transformation Framework.",
       },
+      {
+        name: "keywords",
+        content:
+          "enterprise AI transformation, AI operating model, AI adoption, AI governance, AI transformation leader, AI change management, enterprise AI strategy, AI transformation advisor",
+      },
+      { name: "author", content: "Aly Metwaly" },
+      { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Aly Metwaly — Enterprise AI Transformation Leader" },
       {
         property: "og:description",
         content:
-          "Designing AI operating models that scale across complex enterprises. Transformation Manager at Nokia.",
+          "Enterprise AI operating models, governance, and adoption at scale. Frameworks and execution from the field — Transformation Manager at Nokia.",
       },
+      { property: "og:type", content: "profile" },
+      { property: "og:locale", content: "en_US" },
       { property: "og:image", content: portraitAsset.url },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Aly Metwaly — Enterprise AI Transformation Leader" },
+      {
+        name: "twitter:description",
+        content:
+          "Designing AI operating models that turn enterprise AI strategy into measurable adoption and business performance.",
+      },
     ],
   }),
   component: Home,
@@ -116,330 +140,325 @@ const insights = [
   },
 ];
 
+const navLinks = [
+  { href: "#impact", label: "Impact" },
+  { href: "#framework", label: "Framework" },
+  { href: "#work", label: "Work" },
+  { href: "#insights", label: "Insights" },
+  { href: "#speaking", label: "Speaking" },
+  { href: "#about", label: "About" },
+];
+
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
-      {/* NAV */}
       <header className="sticky top-0 z-40 backdrop-blur bg-background/80 border-b border-border">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12 h-16 flex items-center justify-between">
           <a href="#top" className="font-display text-2xl leading-none tracking-tight">
             Aly Metwaly
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#impact" className="hover:text-foreground transition-colors">Impact</a>
-            <a href="#capabilities" className="hover:text-foreground transition-colors">Capabilities</a>
-            <a href="#work" className="hover:text-foreground transition-colors">Selected Work</a>
-            <a href="#thinking" className="hover:text-foreground transition-colors">Thinking</a>
-            <a href="#about" className="hover:text-foreground transition-colors">About</a>
+          <nav className="hidden lg:flex items-center gap-7 text-sm text-muted-foreground" aria-label="Primary">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="hover:text-foreground transition-colors">
+                {link.label}
+              </a>
+            ))}
           </nav>
           <a
             href="#contact"
-            className="text-sm font-medium px-4 py-2 rounded-full bg-ink text-paper hover:bg-foreground/85 transition-colors"
+            className="text-sm font-medium px-4 py-2 rounded-full transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
             style={{ background: "var(--ink)", color: "var(--paper)" }}
           >
-            Connect
+            Book a conversation
           </a>
         </div>
       </header>
 
-      {/* HERO */}
-      <section id="top" className="border-b border-border">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-12 gap-12 items-end">
-          <div className="lg:col-span-8">
-            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground mb-8">
-              <span className="inline-block w-2 h-2 rounded-full" style={{ background: "var(--accent)" }} />
-              Transformation Manager · Nokia · Espoo
-            </div>
-            <h1 className="font-display text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.95] tracking-[-0.02em]">
-              Enterprise AI,<br />
-              <em className="italic text-muted-foreground/90">operationalized</em> at scale.
-            </h1>
-            <p className="mt-8 max-w-2xl text-lg lg:text-xl text-muted-foreground leading-relaxed">
-              I design the operating models — people, governance, tooling, measurement — that move large enterprises from AI experimentation to repeatable execution and measurable business impact.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a href="#work" className="px-5 py-3 rounded-full text-sm font-medium" style={{ background: "var(--ink)", color: "var(--paper)" }}>
-                View selected work
-              </a>
-              <a href="#contact" className="px-5 py-3 rounded-full text-sm font-medium border border-border hover:bg-muted transition-colors">
-                Start a conversation
-              </a>
-            </div>
-          </div>
-          <div className="lg:col-span-4">
-            <div className="relative">
-              <img
-                src={portraitAsset}
-                alt="Portrait of Aly Metwaly"
-                className="w-full aspect-[4/5] object-cover grayscale"
-                style={{ background: "var(--muted)" }}
-              />
-              <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono uppercase tracking-wider text-muted-foreground">
-                <div>Based</div><div className="text-foreground">Espoo, FI</div>
-                <div>Focus</div><div className="text-foreground">AI Operating Models</div>
-                <div>Scale</div><div className="text-foreground">74k+ employees</div>
+      <main>
+        {/* HERO */}
+        <section id="top" className="border-b border-border" aria-labelledby="hero-heading">
+          <div className="mx-auto max-w-[1280px] px-6 lg:px-12 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-12 gap-12 items-end">
+            <div className="lg:col-span-8">
+              <div className="mb-8 space-y-1">
+                <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                  Enterprise AI Transformation Leader
+                </div>
+                <p className="text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                  Advisor • Speaker • Builder of AI Operating Models
+                </p>
               </div>
-            </div>
-          </div>
-        </div>
-        {/* Marquee strip */}
-        <div className="border-t border-border bg-muted/40">
-          <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-5 flex flex-wrap items-center gap-x-10 gap-y-2 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            <span>Nokia</span><span>·</span>
-            <span>5G / 6G Silicon</span><span>·</span>
-            <span>Microsoft 365 Copilot</span><span>·</span>
-            <span>GitHub Copilot</span><span>·</span>
-            <span>Cursor</span><span>·</span>
-            <span>Glean</span><span>·</span>
-            <span>FiBAN Angel Investor</span>
-          </div>
-        </div>
-      </section>
-
-      {/* IMPACT METRICS */}
-      <section id="impact" className="border-b border-border">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-12 gap-12 mb-16">
-            <div className="lg:col-span-4">
-              <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">01 — Proof</div>
-              <h2 className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
-                Outcomes, not opinions.
-              </h2>
-            </div>
-            <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
-              Every number below is measured against a baseline and reported to senior leadership. No vanity metrics, no projections.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-rule">
-            {metrics.map((m, i) => (
-              <div
-                key={i}
-                className="border-b border-r border-rule px-2 py-10 lg:py-14 last:border-r-0 [&:nth-child(3n)]:lg:border-r-0 [&:nth-child(2n)]:sm:border-r-0 lg:[&:nth-child(2n)]:border-r"
+              <h1
+                id="hero-heading"
+                className="font-display text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.95] tracking-[-0.02em]"
               >
-                <div className="font-display text-6xl lg:text-7xl leading-none tracking-tight">
-                  {m.value}
-                </div>
-                <div className="mt-4 text-sm text-muted-foreground max-w-[26ch] leading-relaxed">
-                  {m.label}
+                Enterprise AI,<br />
+                <em className="italic text-muted-foreground/90">operationalized</em> at scale.
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                I design enterprise AI operating models — governance, adoption, measurement, change
+                management — that move large organizations from AI experimentation to repeatable execution
+                and measurable business impact.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <a
+                  href="#contact"
+                  className="px-5 py-3 rounded-full text-sm font-medium"
+                  style={{ background: "var(--ink)", color: "var(--paper)" }}
+                >
+                  Discuss AI transformation
+                </a>
+                <a
+                  href="#framework"
+                  className="px-5 py-3 rounded-full text-sm font-medium border border-border hover:bg-muted"
+                >
+                  Explore the framework
+                </a>
+              </div>
+            </div>
+            <div className="lg:col-span-4">
+              <div className="relative">
+                <img
+                  src={portraitAsset}
+                  alt="Aly Metwaly, Enterprise AI Transformation Leader at Nokia"
+                  className="w-full aspect-[4/5] object-cover grayscale"
+                  style={{ background: "var(--muted)" }}
+                />
+                <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                  <div>Based</div><div className="text-foreground">Espoo, FI</div>
+                  <div>Focus</div><div className="text-foreground">AI Operating Models</div>
+                  <div>Scale</div><div className="text-foreground">74k+ employees</div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* VALUE PROP / CAPABILITIES */}
-      <section id="capabilities" className="border-b border-border">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-12 gap-12 mb-16">
-            <div className="lg:col-span-4">
-              <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">02 — What I do</div>
-              <h2 className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
-                From AI ambition to enterprise execution.
-              </h2>
             </div>
-            <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
-              I work alongside senior executives to translate AI strategy into the operating systems, governance, and measurement that make adoption stick — and convert it into engineering capacity and ROI.
-            </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-px bg-rule">
-            {capabilities.map((c) => (
-              <div key={c.k} className="bg-background p-8 lg:p-10">
-                <div className="flex items-baseline justify-between mb-6">
-                  <div className="font-mono text-xs tracking-[0.2em] text-muted-foreground">{c.k}</div>
-                  <div className="h-px flex-1 mx-4 bg-rule" />
-                </div>
-                <h3 className="font-display text-2xl lg:text-3xl tracking-tight mb-3">{c.h}</h3>
-                <p className="text-muted-foreground leading-relaxed">{c.p}</p>
+          <div className="border-t border-border bg-muted/40">
+            <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-5 flex flex-wrap items-center gap-x-10 gap-y-2 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+              <span>Nokia</span><span>·</span>
+              <span>5G / 6G Silicon</span><span>·</span>
+              <span>Microsoft 365 Copilot</span><span>·</span>
+              <span>GitHub Copilot</span><span>·</span>
+              <span>Cursor</span><span>·</span>
+              <span>Glean</span><span>·</span>
+              <span>FiBAN Angel Investor</span>
+            </div>
+          </div>
+        </section>
+
+        {/* IMPACT METRICS */}
+        <section id="impact" className="border-b border-border" aria-labelledby="impact-heading">
+          <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
+            <div className="grid lg:grid-cols-12 gap-12 mb-16">
+              <div className="lg:col-span-4">
+                <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">01 — Proof</div>
+                <h2 id="impact-heading" className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
+                  Outcomes, not opinions.
+                </h2>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DIFFERENTIATION */}
-      <section className="border-b border-border" style={{ background: "var(--ink)", color: "var(--paper)" }}>
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
-          <div className="text-xs font-mono uppercase tracking-[0.2em] opacity-60 mb-6">03 — Why me</div>
-          <h2 className="font-display text-4xl lg:text-6xl leading-[1.02] tracking-tight max-w-4xl">
-            Most AI leaders sell strategy. I ship the operating model that makes it work.
-          </h2>
-          <div className="mt-16 grid md:grid-cols-3 gap-10 lg:gap-16">
-            <div>
-              <div className="font-display text-5xl mb-4 opacity-90">Engineer-built</div>
-              <p className="opacity-70 leading-relaxed">
-                Nearly a decade in custom semiconductor and 5G/6G R&amp;D. I translate technical complexity into operational clarity — and earn the room with engineering leaders.
+              <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
+                Every number below is measured against a baseline and reported to senior leadership. No vanity metrics, no projections.
               </p>
             </div>
-            <div>
-              <div className="font-display text-5xl mb-4 opacity-90">Execution-biased</div>
-              <p className="opacity-70 leading-relaxed">
-                Programs run on instrumented governance, not intent. 100% of annual objectives delivered across a 74,000-employee rollout with 255 roadmap items.
-              </p>
-            </div>
-            <div>
-              <div className="font-display text-5xl mb-4 opacity-90">Outcome-measured</div>
-              <p className="opacity-70 leading-relaxed">
-                Every program reports adoption, maturity, and impact to leadership in real time. ~100:1 return on execution effort on the SoC AI rollout.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SELECTED WORK */}
-      <section id="work" className="border-b border-border">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-12 gap-12 mb-16">
-            <div className="lg:col-span-4">
-              <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">04 — Selected work</div>
-              <h2 className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
-                Programs that moved the number.
-              </h2>
-            </div>
-            <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
-              Four representative initiatives. Each one is the same shape: a measurable problem, a structured intervention, an outcome leadership can steer on.
-            </p>
-          </div>
-          <div className="divide-y divide-rule border-t border-b border-rule">
-            {work.map((w, i) => (
-              <article key={i} className="grid lg:grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-14 group">
-                <div className="lg:col-span-3">
-                  <div className="font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                    {w.year}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-rule">
+              {metrics.map((m, i) => (
+                <div
+                  key={i}
+                  className="border-b border-r border-rule px-2 py-10 lg:py-14 last:border-r-0 [&:nth-child(3n)]:lg:border-r-0 [&:nth-child(2n)]:sm:border-r-0 lg:[&:nth-child(2n)]:border-r"
+                >
+                  <div className="font-display text-6xl lg:text-7xl leading-none tracking-tight">
+                    {m.value}
                   </div>
-                  <div className="mt-2 text-sm font-medium">{w.org}</div>
+                  <div className="mt-4 text-sm text-muted-foreground max-w-[26ch] leading-relaxed">
+                    {m.label}
+                  </div>
                 </div>
-                <div className="lg:col-span-9">
-                  <h3 className="font-display text-3xl lg:text-4xl tracking-tight leading-[1.05] mb-6">
-                    {w.title}
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <SignatureFramework />
+        <WhyWorkWithMe />
+
+        {/* CAPABILITIES */}
+        <section id="capabilities" className="border-b border-border" aria-labelledby="capabilities-heading">
+          <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
+            <div className="grid lg:grid-cols-12 gap-12 mb-16">
+              <div className="lg:col-span-4">
+                <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">04 — What I do</div>
+                <h2 id="capabilities-heading" className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
+                  From AI ambition to enterprise execution.
+                </h2>
+              </div>
+              <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
+                I work alongside senior executives to translate AI strategy into the operating systems, governance, and measurement that make adoption stick — and convert it into engineering capacity and ROI.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-px bg-rule">
+              {capabilities.map((c) => (
+                <article key={c.k} className="bg-background p-8 lg:p-10">
+                  <div className="flex items-baseline justify-between mb-6">
+                    <div className="font-mono text-xs tracking-[0.2em] text-muted-foreground">{c.k}</div>
+                    <div className="h-px flex-1 mx-4 bg-rule" />
+                  </div>
+                  <h3 className="font-display text-2xl lg:text-3xl tracking-tight mb-3">{c.h}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{c.p}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SELECTED WORK */}
+        <section id="work" className="border-b border-border" aria-labelledby="work-heading">
+          <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
+            <div className="grid lg:grid-cols-12 gap-12 mb-16">
+              <div className="lg:col-span-4">
+                <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">05 — Selected work</div>
+                <h2 id="work-heading" className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
+                  Programs that moved the number.
+                </h2>
+              </div>
+              <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
+                Four representative initiatives. Each one is the same shape: a measurable problem, a structured intervention, an outcome leadership can steer on.
+              </p>
+            </div>
+            <div className="divide-y divide-rule border-t border-b border-rule">
+              {work.map((w, i) => (
+                <article key={i} className="grid lg:grid-cols-12 gap-6 lg:gap-10 py-10 lg:py-14 group">
+                  <div className="lg:col-span-3">
+                    <div className="font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground">
+                      {w.year}
+                    </div>
+                    <div className="mt-2 text-sm font-medium">{w.org}</div>
+                  </div>
+                  <div className="lg:col-span-9">
+                    <h3 className="font-display text-3xl lg:text-4xl tracking-tight leading-[1.05] mb-6">
+                      {w.title}
+                    </h3>
+                    <dl className="grid md:grid-cols-3 gap-6 lg:gap-10 text-sm leading-relaxed">
+                      <div>
+                        <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Problem</dt>
+                        <dd className="text-foreground/85">{w.problem}</dd>
+                      </div>
+                      <div>
+                        <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Action</dt>
+                        <dd className="text-foreground/85">{w.action}</dd>
+                      </div>
+                      <div>
+                        <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Outcome</dt>
+                        <dd className="text-foreground font-medium">{w.outcome}</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <CurrentFocus />
+
+        {/* THINKING */}
+        <section id="thinking" className="border-b border-border" aria-labelledby="thinking-heading">
+          <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
+            <div className="grid lg:grid-cols-12 gap-12 mb-16">
+              <div className="lg:col-span-4">
+                <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">07 — Thinking</div>
+                <h2 id="thinking-heading" className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
+                  Frameworks from the field.
+                </h2>
+              </div>
+              <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
+                Short, opinionated takes on what actually works inside complex enterprises — the principles behind the Enterprise AI Transformation Framework.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-px bg-rule">
+              {insights.map((n, i) => (
+                <article key={i} className="bg-background p-8 lg:p-10">
+                  <div className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4">
+                    N°{String(i + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="font-display text-2xl lg:text-3xl leading-tight tracking-tight mb-3">
+                    {i === 0 ? (
+                      <>
+                        Operating model first, tools second
+                      </>
+                    ) : i === 2 ? (
+                      <>
+                        Measure capacity, not activity
+                      </>
+                    ) : (
+                      n.t
+                    )}
                   </h3>
-                  <dl className="grid md:grid-cols-3 gap-6 lg:gap-10 text-sm leading-relaxed">
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Problem</dt>
-                      <dd className="text-foreground/85">{w.problem}</dd>
-                    </div>
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Action</dt>
-                      <dd className="text-foreground/85">{w.action}</dd>
-                    </div>
-                    <div>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Outcome</dt>
-                      <dd className="text-foreground font-medium">{w.outcome}</dd>
-                    </div>
-                  </dl>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* THINKING */}
-      <section id="thinking" className="border-b border-border">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-12 gap-12 mb-16">
-            <div className="lg:col-span-4">
-              <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">05 — Thinking</div>
-              <h2 className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
-                Frameworks from the field.
-              </h2>
+                  <p className="text-muted-foreground leading-relaxed">{n.d}</p>
+                </article>
+              ))}
             </div>
-            <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
-              Short, opinionated takes on what actually works inside complex enterprises.
-            </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-px bg-rule">
-            {insights.map((n, i) => (
-              <div key={i} className="bg-background p-8 lg:p-10">
-                <div className="font-mono text-xs tracking-[0.2em] text-muted-foreground mb-4">
-                  N° {String(i + 1).padStart(2, "0")}
-                </div>
-                <h3 className="font-display text-2xl lg:text-3xl leading-tight tracking-tight mb-3">
-                  {n.t}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">{n.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ABOUT */}
-      <section id="about" className="border-b border-border">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-4">
-            <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">06 — About</div>
-            <h2 className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
-              Strategy meets silicon.
+        <InsightsSection />
+        <ThreadThroughItAll />
+        <SpeakingSection />
+        <AdvisorySection />
+        <AboutSection />
+
+        {/* CTA */}
+        <section id="contact" aria-labelledby="contact-heading">
+          <hr className="border-0 border-t border-rule mx-auto max-w-[1280px] px-6 lg:px-12" />
+          <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-24 lg:py-36 text-center">
+            <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-6">13 — Next</div>
+            <h2 id="contact-heading" className="font-display text-5xl lg:text-7xl leading-[0.98] tracking-tight max-w-4xl mx-auto">
+              Scaling AI inside a complex enterprise?<br />
+              <em className="italic text-muted-foreground">Let&rsquo;s talk.</em>
             </h2>
-          </div>
-          <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-lg leading-relaxed text-foreground/85">
-            <p>
-              I lead enterprise AI transformation at Nokia, designing and operationalizing the systems that turn AI strategy into measurable outcomes across decentralized business segments.
+            <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Executive collaboration on AI operating models, governance, adoption, and transformation
+              leadership — advisory, speaking, and strategic partnership.
             </p>
-            <p className="text-muted-foreground">
-              My trajectory is engineering-led: 5G/6G silicon program leadership, CI/CD and automation, embedded AI research — followed by R&amp;D transformation, a CPO rotation orchestrating a 74,000-employee performance program, and now company-wide AI enablement.
-            </p>
-            <p className="text-muted-foreground">
-              MBA in Leading Transformational Change (Laurea, 5/5). EIT Digital double-degree MSc in Embedded Systems (KTH × University of Turku). Angel investor and advisor with FiBAN, supporting technical founders translating roadmaps into scalable operating models.
-            </p>
-            <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-rule text-sm">
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">Based</div>
-                <div>Espoo, Finland</div>
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">Tenure</div>
-                <div>Nokia · 6+ years</div>
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">Languages</div>
-                <div>EN · AR · FI</div>
-              </div>
-              <div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1">Advisor</div>
-                <div>FiBAN Angel</div>
-              </div>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="mailto:aly.metwaly@outlook.com?subject=AI%20Transformation%20Discussion"
+                className="px-6 py-3 rounded-full text-sm font-medium"
+                style={{ background: "var(--ink)", color: "var(--paper)" }}
+              >
+                Discuss AI transformation
+              </a>
+              <a
+                href="mailto:aly.metwaly@outlook.com?subject=Book%20a%20Conversation"
+                className="px-6 py-3 rounded-full text-sm font-medium border border-border hover:bg-muted"
+              >
+                Book a conversation
+              </a>
+              <a
+                href="mailto:aly.metwaly@outlook.com?subject=Explore%20Collaboration"
+                className="px-6 py-3 rounded-full text-sm font-medium border border-border hover:bg-muted"
+              >
+                Explore collaboration
+              </a>
+              <a
+                href="mailto:aly.metwaly@outlook.com?subject=Speaking%20Inquiry"
+                className="px-6 py-3 rounded-full text-sm font-medium border border-border hover:bg-muted"
+              >
+                Invite me to speak
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aly-metwaly"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="px-6 py-3 rounded-full text-sm font-medium border border-border hover:bg-muted"
+              >
+                Connect on LinkedIn ↗
+              </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section id="contact">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-24 lg:py-36 text-center">
-          <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-6">07 — Next</div>
-          <h2 className="font-display text-5xl lg:text-7xl leading-[0.98] tracking-tight max-w-4xl mx-auto">
-            Scaling AI inside a complex enterprise?<br />
-            <em className="italic text-muted-foreground">Let&rsquo;s talk.</em>
-          </h2>
-          <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto">
-            Executive collaboration, advisory, and speaking on AI operating models, governance, and adoption at scale.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="mailto:aly.metwaly@outlook.com"
-              className="px-6 py-3 rounded-full text-sm font-medium"
-              style={{ background: "var(--ink)", color: "var(--paper)" }}
-            >
-              aly.metwaly@outlook.com
-            </a>
-            <a
-              href="https://www.linkedin.com/in/aly-metwaly"
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3 rounded-full text-sm font-medium border border-border hover:bg-muted transition-colors"
-            >
-              LinkedIn ↗
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <footer className="border-t border-border">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-8 flex flex-wrap items-center justify-between gap-4 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
-          <div>© {new Date().getFullYear()} Aly Metwaly</div>
+          <div>© {new Date().getFullYear()} Aly Metwaly · Enterprise AI Transformation Leader</div>
           <div>Espoo · Finland</div>
         </div>
       </footer>
