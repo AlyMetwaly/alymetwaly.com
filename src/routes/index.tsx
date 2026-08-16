@@ -181,9 +181,10 @@ function Home() {
             <div className="lg:col-span-8">
               <div className="mb-8 space-y-1">
                 <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                  <span className="accent-dot" aria-hidden="true" />
                   Enterprise AI Transformation Leader
                 </div>
-                <p className="text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                <p className="pl-5 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
                   Advisor • Speaker • Builder of AI Operating Models
                 </p>
               </div>

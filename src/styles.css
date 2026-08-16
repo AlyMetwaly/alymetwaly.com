@@ -44,3 +44,15 @@
   }
   ::selection { background: var(--ink); color: var(--paper); }
 }
+
+@layer components {
+  .accent-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+}
+
