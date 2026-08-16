@@ -63,13 +63,13 @@ function FrameworkDiagram() {
           cy={cy}
           r={radius}
           fill="none"
-          stroke="var(--foreground)"
+          stroke="var(--accent)"
           strokeWidth="1"
           strokeOpacity="0.2"
           strokeDasharray="4 6"
         />
-        <circle cx={cx} cy={cy} r={52} fill="var(--muted)" stroke="var(--foreground)" strokeWidth="1" strokeOpacity="0.35" />
-        <circle cx={cx} cy={cy} r="4" fill="var(--foreground)" />
+        <circle cx={cx} cy={cy} r={52} fill="var(--muted)" stroke="var(--accent)" strokeWidth="1" strokeOpacity="0.35" />
+        <circle cx={cx} cy={cy} r="4" fill="var(--accent)" />
         <text
           x={cx}
           y={cy - 6}
@@ -104,12 +104,12 @@ function FrameworkDiagram() {
                 y1={innerY}
                 x2={x}
                 y2={y}
-                stroke="var(--foreground)"
+                stroke="var(--accent)"
                 strokeWidth="1"
                 strokeOpacity="0.35"
               />
-              <circle cx={x} cy={y} r="6" fill="var(--foreground)" />
-              <circle cx={x} cy={y} r="10" fill="none" stroke="var(--foreground)" strokeWidth="1" strokeOpacity="0.25" />
+              <circle cx={x} cy={y} r="6" fill="var(--accent)" />
+              <circle cx={x} cy={y} r="10" fill="none" stroke="var(--accent)" strokeWidth="1" strokeOpacity="0.25" />
               <text
                 x={labelX}
                 y={labelY}
