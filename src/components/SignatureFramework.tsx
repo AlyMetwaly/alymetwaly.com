@@ -1,48 +1,40 @@
-import { AccentText } from "@/components/AccentText";
 import { SectionDivider } from "@/components/SectionDivider";
 
 const pillars = [
   {
     id: "leadership",
     label: "Leadership",
-    summary: "Executive alignment on intent, investment, and accountability.",
-    detail:
-      "Leaders set the pace of adoption. Without explicit sponsorship, shared language, and visible commitment, AI stays a side initiative.",
+    description: "Executive alignment on intent, investment, ownership, and accountability.",
   },
   {
     id: "governance",
     label: "Governance",
-    summary: "Lightweight guardrails that protect without paralyzing.",
-    detail:
-      "The smallest policy set that lets the most people move safely. Inventories, risk tiers, and decision rights, not committees.",
+    description:
+      "Decision boundaries that protect the organization without unnecessarily slowing responsible experimentation and adoption.",
   },
   {
     id: "enablement",
     label: "Enablement",
-    summary: "Champion networks, training, and embedded workflows.",
-    detail:
-      "Adoption is a function of friction, not enthusiasm. Teams need practical paths from access to daily use.",
+    description:
+      "Capability building through learning, practitioner networks, support structures, and integration into everyday work.",
   },
   {
     id: "measurement",
     label: "Measurement",
-    summary: "Dashboards leadership can steer on in real time.",
-    detail:
-      "Capacity returned, maturity curves, and portfolio health, not seats sold or prompts run.",
+    description:
+      "Visible indicators that connect adoption, organizational capability, portfolio progress, and business outcomes.",
   },
   {
     id: "tooling",
     label: "Tooling",
-    summary: "Curated stack aligned to workflows and data boundaries.",
-    detail:
-      "Tools are the easy part. The hard part is selecting, integrating, and retiring them within an operating rhythm.",
+    description:
+      "A curated technology environment aligned with workflows, data boundaries, integration needs, and user experience.",
   },
   {
     id: "change",
     label: "Change Management",
-    summary: "Behavior change at scale across decentralized segments.",
-    detail:
-      "Communication, role clarity, and feedback loops that turn experimentation into sustained practice.",
+    description:
+      "Structured communication, engagement, reinforcement, and feedback that convert experimentation into sustained ways of working.",
   },
 ];
 
@@ -79,9 +71,9 @@ function FrameworkDiagram() {
           y={cy - 6}
           textAnchor="middle"
           className="fill-foreground"
-          style={{ fontFamily: "var(--font-display)", fontSize: "13px" }}
+          style={{ fontFamily: "var(--font-display)", fontSize: "11px" }}
         >
-          Execution
+          TRANSFORMATION
         </text>
         <text
           x={cx}
@@ -148,40 +140,74 @@ export function SignatureFramework() {
       aria-labelledby="framework-heading"
     >
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-        <div className="mb-12 grid gap-8 sm:mb-16 lg:mb-20 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-5">
-            <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              02 · Signature framework
-            </div>
-            <h2
-              id="framework-heading"
-              className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-            >
-              Enterprise AI Transformation Framework
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
-              A field-tested system for turning AI ambition into repeatable execution. Six
-              interlocking disciplines, none optional, that determine whether enterprise AI becomes
-              measurable business performance or permanent experimentation.
-            </p>
+        <div className="mb-12 sm:mb-16 lg:mb-20 max-w-3xl">
+          <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            02 · MY TRANSFORMATION FRAMEWORK
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 flex items-end">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Technology rarely fails in enterprise AI.{" "}
-              <AccentText>Operating models do.</AccentText> This framework is how I design the
-              connective tissue between strategy and outcomes. The same architecture applied across
-              Nokia&rsquo;s R&amp;D units and company-wide enablement programs.
-            </p>
-          </div>
+          <h2
+            id="framework-heading"
+            className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
+          >
+            Enterprise AI Transformation Framework
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+            Enterprise AI transformation is not primarily a technology challenge. It is a
+            system-level change involving leadership, governance, enablement, measurement, tooling,
+            and change management.
+          </p>
+          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+            I use this framework to connect those elements and examine whether an organization can
+            move from AI ambition and isolated experimentation to repeatable execution and
+            measurable outcomes.
+          </p>
         </div>
+
+        <aside
+          className="mb-12 sm:mb-16 lg:mb-20 border-t border-l-2 border-l-accent/40 border-rule pt-12 lg:pt-16 pl-6 lg:pl-10"
+          aria-label="Personal perspective on enterprise AI transformation"
+        >
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            MY PERSPECTIVE
+          </div>
+          <h3 className="font-display text-2xl lg:text-3xl tracking-tight leading-tight max-w-3xl mb-8">
+            Technology rarely fails alone. The operating system around it does.
+          </h3>
+          <div className="grid md:grid-cols-12 gap-10 lg:gap-12">
+            <div className="md:col-span-7 space-y-4 text-muted-foreground leading-relaxed text-lg">
+              <p>
+                My thinking starts with a simple observation: organizations often focus on selecting
+                AI tools while underestimating the system required to make those tools useful at
+                scale.
+              </p>
+              <p>
+                Leadership creates direction and accountability. Governance establishes safe
+                decision boundaries. Enablement builds organizational capability. Measurement
+                connects activity to outcomes. Tooling supports real workflows. Change management
+                turns experimentation into sustained behavior.
+              </p>
+              <p>
+                These elements are interdependent. A weakness in one can limit the effectiveness of
+                all the others.
+              </p>
+            </div>
+            <div className="md:col-span-4 md:col-start-9 flex flex-col justify-end">
+              {/* TODO: Replace text signature with Aly's transparent PNG or SVG signature asset when available. */}
+              <div className="pt-6 border-t border-rule">
+                <p className="font-display text-xl tracking-tight text-foreground">Aly Metwaly</p>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                  AI Transformation Leader · Strategic Advisor · Keynote Speaker
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start border-t border-rule pt-16 lg:pt-20">
           <div className="lg:col-span-5 lg:sticky lg:top-24">
             <FrameworkDiagram />
             <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Each element feeds the others. Weak measurement undermines governance. Poor enablement
-              wastes tooling investment. Leadership without change management produces mandates, not
-              adoption.
+              Each element affects the others. Sustainable transformation depends on the strength of
+              the system, not the isolated maturity of a single component.
             </p>
           </div>
 
@@ -195,11 +221,10 @@ export function SignatureFramework() {
                     </span>
                     <div className="h-px flex-1 bg-rule" />
                   </div>
-                  <h3 className="font-display text-2xl lg:text-3xl tracking-tight mb-2">
+                  <h3 className="font-display text-2xl lg:text-3xl tracking-tight mb-3">
                     {pillar.label}
                   </h3>
-                  <p className="text-foreground/90 font-medium mb-3">{pillar.summary}</p>
-                  <p className="text-muted-foreground leading-relaxed">{pillar.detail}</p>
+                  <p className="text-muted-foreground leading-relaxed">{pillar.description}</p>
                 </article>
               ))}
             </div>
@@ -212,19 +237,24 @@ export function SignatureFramework() {
           <div className="grid md:grid-cols-12 gap-8">
             <div className="md:col-span-4">
               <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                Why it matters
+                THE CORE IDEA
               </div>
               <p className="font-display text-2xl lg:text-3xl tracking-tight leading-tight">
-                Strategy without an operating model is a slide deck.
+                Enterprise AI becomes repeatable when strategy, technology, operating structures,
+                and human behavior reinforce one another.
               </p>
             </div>
-            <p className="md:col-span-7 md:col-start-6 text-muted-foreground leading-relaxed text-lg">
-              Most enterprises invest in AI tools and strategy separately, then wonder why adoption
-              stalls at pilot stage. The framework gives transformation offices, CIOs, and business
-              leaders a shared language for designing the system that makes AI stick: who decides,
-              how teams adopt, what gets measured, and how change propagates across decentralized
-              segments.
-            </p>
+            <div className="md:col-span-7 md:col-start-6 space-y-6">
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                The framework is how I organize that complexity and focus attention on the
+                conditions required for execution.
+              </p>
+              <p>
+                <a href="#advisory" className="text-foreground link-accent-underline text-sm">
+                  Discuss the Framework
+                </a>
+              </p>
+            </div>
           </div>
         </aside>
       </div>
