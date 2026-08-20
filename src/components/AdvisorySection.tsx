@@ -24,8 +24,6 @@ const engagements = [
 const ADVISORY_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLScoWwy5ZyLSM6ntFTSrWJe3hVbbKofS3B1aLo969tW88F2OKQ/viewform?usp=publish-editor";
 
-import { SectionDivider } from "@/components/SectionDivider";
-
 export function AdvisorySection() {
   return (
     <section
@@ -43,7 +41,7 @@ export function AdvisorySection() {
               id="advisory-heading"
               className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
             >
-              Executive AI Advisory
+              AI Transformation Advisory
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
@@ -83,21 +81,9 @@ export function AdvisorySection() {
             className="inline-flex shrink-0 min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium"
             style={{ background: "var(--ink)", color: "var(--paper)" }}
           >
-            Apply for an Advisory Session
+            Request a discovery advisory session
           </a>
         </div>
-
-        <SectionDivider className="mt-12" />
-
-        <aside className="mt-12 flex flex-wrap items-center gap-4 text-sm">
-          <span className="text-muted-foreground">Also:</span>
-          <span className="px-3 py-1.5 border border-rule font-mono text-[10px] uppercase tracking-[0.16em]">
-            FiBAN Angel Investor
-          </span>
-          <span className="text-muted-foreground">
-            Supporting technical founders on operating model design and scalable execution.
-          </span>
-        </aside>
       </div>
     </section>
   );

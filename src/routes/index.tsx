@@ -520,7 +520,7 @@ function Home() {
                 rel="noreferrer"
                 className="min-h-11 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline sm:px-6"
               >
-                Apply for an Advisory Session
+                Request a discovery advisory session
               </a>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
