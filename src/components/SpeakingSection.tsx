@@ -43,13 +43,13 @@ const formats = [
   { label: "Leadership offsites", detail: "Working sessions on operating model design" },
 ];
 
-const topics = [
-  "Operationalizing Enterprise AI",
-  "Building AI Operating Models",
+const themes = [
+  "Enterprise AI Transformation",
   "AI Adoption at Scale",
-  "Governance That Accelerates Innovation",
-  "Measuring AI Transformation",
-  "Human + AI Ways of Working",
+  "AI Operating Models",
+  "Leadership in the AI Era",
+  "Future of Work",
+  "Innovation & Organizational Change",
 ];
 
 export function SpeakingSection() {
@@ -157,18 +157,27 @@ export function SpeakingSection() {
 
           <div className="lg:col-span-6 lg:col-start-7">
             <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-6">
-              Signature topics
+              Speaking themes
             </div>
-            <ul className="grid sm:grid-cols-2 gap-3">
-              {topics.map((topic) => (
-                <li
-                  key={topic}
-                  className="px-4 py-3 border border-rule bg-background text-sm leading-snug transition-colors hover:border-accent/40 focus-within:border-accent/40"
-                >
-                  {topic}
+            <ul className="space-y-4">
+              {themes.map((theme) => (
+                <li key={theme} className="flex items-start gap-3 text-sm leading-snug">
+                  <span className="format-marker mt-1.5" aria-hidden="true">
+                    •
+                  </span>
+                  <span className="text-foreground">{theme}</span>
                 </li>
               ))}
             </ul>
+            <aside className="mt-8 pt-6 border-t border-rule">
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground mb-2">
+                Need something different?
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Sessions can be customized based on your audience, industry, and desired business
+                outcomes.
+              </p>
+            </aside>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
               target="_blank"
