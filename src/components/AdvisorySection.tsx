@@ -1,3 +1,5 @@
+import { AITransformationValueChain } from "@/components/AITransformationValueChain";
+
 const engagements = [
   {
     audience: "Enterprise leadership",
@@ -56,6 +58,8 @@ export function AdvisorySection() {
             </p>
           </div>
         </div>
+
+        <AITransformationValueChain />
 
         <div className="grid md:grid-cols-2 gap-px bg-rule border-t border-rule">
           {engagements.map((item) => (

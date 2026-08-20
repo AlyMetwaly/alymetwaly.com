@@ -163,10 +163,10 @@ export function SignatureFramework() {
         </div>
 
         <aside
-          className="mb-12 sm:mb-16 lg:mb-20 border-t border-l-2 border-l-accent/40 border-rule pt-12 lg:pt-16 pl-6 lg:pl-10"
+          className="mb-14 sm:mb-16 lg:mb-24 rounded-sm border border-rule border-l-[3px] border-l-accent bg-muted/25 pt-10 lg:pt-14 pl-6 lg:pl-10 pr-6 lg:pr-10 pb-10 lg:pb-14"
           aria-label="Personal perspective on enterprise AI transformation"
         >
-          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-4">
             MY PERSPECTIVE
           </div>
           <h3 className="font-display text-2xl lg:text-3xl tracking-tight leading-tight max-w-3xl mb-8">
