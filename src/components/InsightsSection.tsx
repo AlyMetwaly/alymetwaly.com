@@ -17,7 +17,7 @@ const articles = [
     category: "Essay",
     title: "Governance That Accelerates Instead of Blocking",
     excerpt:
-      "How the smallest policy set can unlock the most adoption — and why heavy centralized control collapses velocity.",
+      "How the smallest policy set can unlock the most adoption, and why heavy centralized control collapses velocity.",
     status: "Coming soon",
   },
   {
@@ -31,7 +31,7 @@ const articles = [
     category: "POV",
     title: "Building AI Champion Networks That Actually Scale",
     excerpt:
-      "Champion programs that move adoption curves — and the design patterns that make them fail.",
+      "Champion programs that move adoption curves, and the design patterns that make them fail.",
     status: "Coming soon",
   },
   {
@@ -65,7 +65,7 @@ const articles = [
     category: "Framework",
     title: "The Transformation Office AI Needs (But Rarely Gets)",
     excerpt:
-      "What a mature AI transformation function looks like — and why most organizations underinvest in it.",
+      "What a mature AI transformation function looks like, and why most organizations underinvest in it.",
     status: "Coming soon",
   },
 ];
@@ -81,7 +81,7 @@ export function InsightsSection() {
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              08 — Insights
+              08 · Insights
             </div>
             <h2
               id="insights-heading"
@@ -91,7 +91,7 @@ export function InsightsSection() {
             </h2>
           </div>
           <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
-            Frameworks, points of view, and essays on enterprise AI transformation — written for
+            Frameworks, points of view, and essays on enterprise AI transformation, written for
             executives, transformation leaders, and practitioners who need more than hype.
           </p>
         </div>

@@ -12,7 +12,7 @@ import { useActiveSection, scrollToSection } from "@/hooks/use-active-section";
 import { SITE_SECTIONS } from "@/lib/sections";
 import { cn } from "@/lib/utils";
 
-const sectionIds = SITE_SECTIONS.map((s) => s.id);
+const sectionIds = ["top", ...SITE_SECTIONS.map((s) => s.id)];
 
 function SectionNavLink({
   id,
@@ -34,7 +34,7 @@ function SectionNavLink({
       type="button"
       onClick={() => onNavigate(id)}
       className={cn(
-        "group flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-left font-mono text-[10px] uppercase tracking-[0.14em] transition-colors",
+        "group flex w-full items-center gap-1.5 rounded-sm px-1 py-1 text-left font-mono text-[9px] uppercase leading-tight tracking-[0.1em] transition-colors",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
         isActive ? "text-accent" : "text-muted-foreground hover:text-foreground",
         className,
@@ -89,19 +89,19 @@ export function SectionNav() {
 
   return (
     <>
-      {/* Desktop — editorial table of contents */}
+      {/* Desktop: editorial table of contents */}
       <nav
-        className="pointer-events-none fixed right-4 top-1/2 z-30 hidden -translate-y-1/2 lg:block 2xl:right-8"
+        className="pointer-events-none fixed right-1 top-1/2 z-30 hidden -translate-y-1/2 lg:block xl:right-2 2xl:right-3"
         aria-label="On this page"
       >
-        <div className="pointer-events-auto max-h-[min(80vh,36rem)] w-[9.5rem] overflow-y-auto border-l border-border/60 bg-background/80 py-4 pl-4 pr-2 backdrop-blur-sm">
+        <div className="pointer-events-auto max-h-[min(80vh,36rem)] w-[6.5rem] overflow-y-auto border-l border-border/60 bg-background/80 py-3 pl-2 pr-1 backdrop-blur-sm">
           <button
             type="button"
             onClick={() => handleNavigate("top")}
-            className="mb-3 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="mb-2.5 flex items-center gap-1 font-mono text-[9px] uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
-            <ArrowUp className="h-3 w-3" aria-hidden="true" />
-            Top
+            <ArrowUp className="h-2.5 w-2.5 shrink-0" aria-hidden="true" />
+            Back to top
           </button>
           <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground/70">
             On this page
@@ -110,7 +110,7 @@ export function SectionNav() {
         </div>
       </nav>
 
-      {/* Mobile — floating index button + bottom sheet */}
+      {/* Mobile: floating index button + bottom sheet */}
       <div className="lg:hidden">
         <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
           <DrawerTrigger asChild>

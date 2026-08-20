@@ -33,7 +33,7 @@ function AccentYear({ year }: { year: string }) {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aly Metwaly — Enterprise AI Transformation Leader" },
+      { title: "Aly Metwaly · Enterprise AI Transformation Leader" },
       {
         name: "description",
         content:
@@ -46,17 +46,17 @@ export const Route = createFileRoute("/")({
       },
       { name: "author", content: "Aly Metwaly" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Aly Metwaly — Enterprise AI Transformation Leader" },
+      { property: "og:title", content: "Aly Metwaly · Enterprise AI Transformation Leader" },
       {
         property: "og:description",
         content:
-          "Enterprise AI operating models, governance, and adoption at scale. Frameworks and execution from the field — Transformation Manager at Nokia.",
+          "Enterprise AI operating models, governance, and adoption at scale. Frameworks and execution from the field. Transformation Manager at Nokia.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:locale", content: "en_US" },
       { property: "og:image", content: portraitAsset.url },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Aly Metwaly — Enterprise AI Transformation Leader" },
+      { name: "twitter:title", content: "Aly Metwaly · Enterprise AI Transformation Leader" },
       {
         name: "twitter:description",
         content:
@@ -85,7 +85,7 @@ const capabilities = [
   {
     k: "02",
     h: "Enablement & Adoption at Scale",
-    p: "Structured rollout of Microsoft 365 Copilot, GitHub Copilot, Cursor, and Glean — training, champion networks, and leadership framing that move usage curves, not slides.",
+    p: "Structured rollout of Microsoft 365 Copilot, GitHub Copilot, Cursor, and Glean: training, champion networks, and leadership framing that move usage curves, not slides.",
   },
   {
     k: "03",
@@ -95,14 +95,14 @@ const capabilities = [
   {
     k: "04",
     h: "Execution Discipline",
-    p: "Program structures that hold 100% of annual objectives in high-complexity, multi-stakeholder environments — without slowing down the teams doing the work.",
+    p: "Program structures that hold 100% of annual objectives in high-complexity, multi-stakeholder environments, without slowing down the teams doing the work.",
   },
 ];
 
 const work = [
   {
     org: "Nokia · Enterprise AI Transformation (Keystone)",
-    year: "2026 — Present",
+    year: "2026 · Present",
     title: "Company-wide AI enablement playbook",
     problem:
       "AI adoption was fragmented across decentralized business segments with no shared operating model.",
@@ -113,19 +113,19 @@ const work = [
   },
   {
     org: "Nokia · System-on-Chip R&D",
-    year: "2020 — Present",
+    year: "2020 · Present",
     title: "Adoption-first AI execution across engineering",
     problem:
       "AI tools existed in pockets, with no mechanism to convert access into engineering throughput.",
     action:
-      "Built a structured enablement model — metrics, training, champion networks, lightweight governance — and rolled out Copilot (M365 + Premium), GitHub Copilot, and Cursor across the SoC unit.",
+      "Built a structured enablement model with metrics, training, champion networks, and lightweight governance, and rolled out Copilot (M365 + Premium), GitHub Copilot, and Cursor across the SoC unit.",
     outcome:
       "+45% active usage. 5× scale-up of a requirements-assistant use case in 8 weeks. ~31 engineer-years of annual capacity unlocked at ~100:1 return on execution effort.",
   },
   {
     org: "Nokia · Chief People Office (Rotation)",
     year: "2025",
-    title: "Perform to Win — global performance transformation",
+    title: "Perform to Win: global performance transformation",
     problem:
       "Performance management was a periodic process, disconnected from real-time execution at 74,000-person scale.",
     action:
@@ -135,7 +135,7 @@ const work = [
   },
   {
     org: "Nokia · 5G/6G Silicon R&D",
-    year: "2022 — 2025",
+    year: "2022 · 2025",
     title: "Deep-tech program leadership",
     problem: "Multi-million-euro semiconductor roadmaps with high technical and delivery risk.",
     action:
@@ -207,13 +207,16 @@ function Home() {
         >
           <div className="mx-auto grid max-w-[1280px] items-end gap-8 px-4 pb-16 pt-12 sm:gap-10 sm:px-6 sm:pb-20 sm:pt-16 lg:grid-cols-12 lg:gap-12 lg:px-12 lg:pb-28 lg:pt-24">
             <div className="lg:col-span-8">
-              <div className="mb-8 space-y-1">
+              <div className="mb-8 space-y-1.5">
                 <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
                   <span className="accent-dot" aria-hidden="true" />
                   Enterprise AI Transformation Leader
                 </div>
                 <p className="pl-5 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                  Advisor • Speaker • Builder of AI Operating Models
+                  Builder of AI Operating Models
+                </p>
+                <p className="pl-5 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                  · Advisor/Consultant · Speaker
                 </p>
               </div>
               <h1
@@ -225,9 +228,9 @@ function Home() {
                 <em className="italic text-muted-foreground/90">operationalized</em> at scale.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg lg:text-xl">
-                I design enterprise AI operating models — governance, adoption, measurement, change
-                management — that move large organizations from AI experimentation to repeatable
-                execution and measurable business impact.
+                I design enterprise AI operating models: governance, adoption, measurement, and
+                change management that move large organizations from AI experimentation to
+                repeatable execution and measurable business impact.
               </p>
               <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
                 <a
@@ -264,25 +267,6 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="border-t border-border bg-muted/40">
-            <div className="mx-auto max-w-[1280px] overflow-x-auto px-4 py-4 sm:px-6 lg:px-12 lg:py-5">
-              <div className="flex min-w-max items-center gap-x-6 gap-y-2 text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground sm:min-w-0 sm:flex-wrap sm:gap-x-10 sm:text-xs sm:tracking-[0.2em]">
-                <span>Nokia</span>
-                <span>·</span>
-                <span>5G / 6G Silicon</span>
-                <span>·</span>
-                <span>Microsoft 365 Copilot</span>
-                <span>·</span>
-                <span>GitHub Copilot</span>
-                <span>·</span>
-                <span>Cursor</span>
-                <span>·</span>
-                <span>Glean</span>
-                <span>·</span>
-                <span>FiBAN Angel Investor</span>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* IMPACT METRICS */}
@@ -295,7 +279,7 @@ function Home() {
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                  01 — Proof
+                  01 · Proof
                 </div>
                 <h2
                   id="impact-heading"
@@ -340,7 +324,7 @@ function Home() {
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                  04 — What I do
+                  04 · What I do
                 </div>
                 <h2
                   id="capabilities-heading"
@@ -351,7 +335,7 @@ function Home() {
               </div>
               <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-7 lg:col-start-6 lg:self-end">
                 I work alongside senior executives to translate AI strategy into the operating
-                systems, governance, and measurement that make adoption stick — and convert it into
+                systems, governance, and measurement that make adoption stick and convert it into
                 engineering capacity and ROI.
               </p>
             </div>
@@ -382,7 +366,7 @@ function Home() {
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                  05 — Selected work
+                  05 · Selected work
                 </div>
                 <h2
                   id="work-heading"
@@ -451,7 +435,7 @@ function Home() {
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                  07 — Thinking
+                  07 · Thinking
                 </div>
                 <h2
                   id="thinking-heading"
@@ -461,7 +445,7 @@ function Home() {
                 </h2>
               </div>
               <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-7 lg:col-start-6 lg:self-end">
-                Short, opinionated takes on what actually works inside complex enterprises — the
+                Short, opinionated takes on what actually works inside complex enterprises: the
                 principles behind the Enterprise AI Transformation Framework.
               </p>
             </div>
@@ -502,7 +486,7 @@ function Home() {
           <SectionDivider className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12" />
           <div className="mx-auto max-w-[1280px] px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-12 lg:py-36">
             <div className="mb-6 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-              13 — Next
+              13 · Next
             </div>
             <h2
               id="contact-heading"
@@ -514,7 +498,7 @@ function Home() {
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
               Executive collaboration on AI operating models, governance, adoption, and
-              transformation leadership — advisory, speaking, and strategic partnership.
+              transformation leadership: advisory, speaking, and strategic partnership.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10">
               <a

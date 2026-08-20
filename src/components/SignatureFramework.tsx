@@ -14,7 +14,7 @@ const pillars = [
     label: "Governance",
     summary: "Lightweight guardrails that protect without paralyzing.",
     detail:
-      "The smallest policy set that lets the most people move safely. Inventories, risk tiers, and decision rights — not committees.",
+      "The smallest policy set that lets the most people move safely. Inventories, risk tiers, and decision rights, not committees.",
   },
   {
     id: "enablement",
@@ -28,7 +28,7 @@ const pillars = [
     label: "Measurement",
     summary: "Dashboards leadership can steer on in real time.",
     detail:
-      "Capacity returned, maturity curves, and portfolio health — not seats sold or prompts run.",
+      "Capacity returned, maturity curves, and portfolio health, not seats sold or prompts run.",
   },
   {
     id: "tooling",
@@ -74,7 +74,6 @@ function FrameworkDiagram() {
           strokeWidth="1"
           strokeOpacity="0.35"
         />
-        <circle cx={cx} cy={cy} r="4" fill="var(--accent)" />
         <text
           x={cx}
           y={cy - 6}
@@ -152,7 +151,7 @@ export function SignatureFramework() {
         <div className="mb-12 grid gap-8 sm:mb-16 lg:mb-20 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              02 — Signature framework
+              02 · Signature framework
             </div>
             <h2
               id="framework-heading"
@@ -162,15 +161,15 @@ export function SignatureFramework() {
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
               A field-tested system for turning AI ambition into repeatable execution. Six
-              interlocking disciplines — none optional — that determine whether enterprise AI
-              becomes measurable business performance or permanent experimentation.
+              interlocking disciplines, none optional, that determine whether enterprise AI becomes
+              measurable business performance or permanent experimentation.
             </p>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 flex items-end">
             <p className="text-lg text-muted-foreground leading-relaxed">
               Technology rarely fails in enterprise AI.{" "}
               <AccentText>Operating models do.</AccentText> This framework is how I design the
-              connective tissue between strategy and outcomes — the same architecture applied across
+              connective tissue between strategy and outcomes. The same architecture applied across
               Nokia&rsquo;s R&amp;D units and company-wide enablement programs.
             </p>
           </div>
@@ -220,7 +219,7 @@ export function SignatureFramework() {
               </p>
             </div>
             <p className="md:col-span-7 md:col-start-6 text-muted-foreground leading-relaxed text-lg">
-              Most enterprises invest in AI tools and strategy separately — then wonder why adoption
+              Most enterprises invest in AI tools and strategy separately, then wonder why adoption
               stalls at pilot stage. The framework gives transformation offices, CIOs, and business
               leaders a shared language for designing the system that makes AI stick: who decides,
               how teams adopt, what gets measured, and how change propagates across decentralized

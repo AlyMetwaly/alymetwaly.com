@@ -1,7 +1,7 @@
 const themes = [
   {
     title: "Curiosity as the constant",
-    body: "I have always been drawn to how complex systems work — the technologies, the organizations, the teams behind them. That curiosity carried me from engineering and semiconductors through startup advisory and enterprise leadership, never along a conventional path, always toward the next question worth answering.",
+    body: "I have always been drawn to how complex systems work: the technologies, the organizations, the teams behind them. That curiosity carried me from engineering and semiconductors through startup advisory and enterprise leadership, never along a conventional path, always toward the next question worth answering.",
   },
   {
     title: "People transform organizations",
@@ -9,7 +9,7 @@ const themes = [
   },
   {
     title: "Innovation is an environment",
-    body: "Lasting innovation pairs technical excellence with trust, collaboration, and thoughtful decision-making. It is not a project with an end date — it is the conditions you create so teams can do their best work and connect what is possible with what matters to the business.",
+    body: "Lasting innovation pairs technical excellence with trust, collaboration, and thoughtful decision-making. It is not a project with an end date. It is the conditions you create so teams can do their best work and connect what is possible with what matters to the business.",
   },
 ];
 
@@ -22,7 +22,7 @@ export function ThreadThroughItAll() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-32">
         <div className="max-w-[70ch]">
           <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-6">
-            09 — The thread
+            09 · The thread
           </div>
           <h2 className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl">
             The thread through it all.
@@ -31,8 +31,8 @@ export function ThreadThroughItAll() {
 
         <p className="mt-12 lg:mt-16 max-w-[70ch] font-display text-2xl lg:text-[1.75rem] leading-[1.35] tracking-tight text-foreground/90">
           I have never followed a conventional career path. What has held constant is{" "}
-          <AccentText>curiosity</AccentText> — about how complex systems work, and how to design
-          them for meaningful impact. Today I work at the intersection of technology, strategy, and
+          <AccentText>curiosity</AccentText>, about how complex systems work, and how to design them
+          for meaningful impact. Today I work at the intersection of technology, strategy, and
           transformation, connecting innovation with business value and the teams that make it real.
         </p>
 
@@ -54,8 +54,8 @@ export function ThreadThroughItAll() {
 
         <p className="mt-20 lg:mt-28 max-w-[70ch] font-display text-xl lg:text-2xl leading-[1.4] tracking-tight text-foreground/80 italic">
           Growth, I have learned, comes from{" "}
-          <AccentText className="not-italic">curiosity</AccentText> — embracing change and having
-          the courage to keep learning when the path is not yet clear.
+          <AccentText className="not-italic">curiosity</AccentText>, embracing change and having the
+          courage to keep learning when the path is not yet clear.
         </p>
 
         <SectionDivider className="mt-20 lg:mt-28" />

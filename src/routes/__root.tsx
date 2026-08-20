@@ -77,11 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aly Metwaly — Enterprise AI Transformation Leader" },
-      { name: "description", content: "Aly Metwaly designs and operationalizes enterprise AI operating models. Transformation Manager at Nokia. 45% adoption growth, 31 engineer-years unlocked, 74,000-employee programs." },
+      { title: "Aly Metwaly · Enterprise AI Transformation Leader" },
+      {
+        name: "description",
+        content:
+          "Aly Metwaly designs and operationalizes enterprise AI operating models. Transformation Manager at Nokia. 45% adoption growth, 31 engineer-years unlocked, 74,000-employee programs.",
+      },
       { name: "author", content: "Aly Metwaly" },
-      { property: "og:title", content: "Aly Metwaly — Enterprise AI Transformation Leader" },
-      { property: "og:description", content: "Designing AI operating models that scale across complex enterprises. Transformation Manager at Nokia." },
+      { property: "og:title", content: "Aly Metwaly · Enterprise AI Transformation Leader" },
+      {
+        property: "og:description",
+        content:
+          "Designing AI operating models that scale across complex enterprises. Transformation Manager at Nokia.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -89,7 +97,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
     ],
   }),
 

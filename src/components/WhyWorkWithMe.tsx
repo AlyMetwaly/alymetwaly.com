@@ -3,7 +3,7 @@ import { AccentText } from "@/components/AccentText";
 const differentiators = [
   {
     title: "Deep engineering roots",
-    body: "Nearly a decade in custom semiconductor and 5G/6G R&D. I speak the language of technical leaders — and translate complexity into operational clarity.",
+    body: "Nearly a decade in custom semiconductor and 5G/6G R&D. I speak the language of technical leaders and translate complexity into operational clarity.",
   },
   {
     title: "Transformation at scale",
@@ -11,7 +11,7 @@ const differentiators = [
   },
   {
     title: "AI enablement in practice",
-    body: "Rolled out Copilot, GitHub Copilot, Cursor, and Glean with measurable adoption curves — not license counts.",
+    body: "Rolled out Copilot, GitHub Copilot, Cursor, and Glean with measurable adoption curves, not license counts.",
   },
   {
     title: "Governance that accelerates",
@@ -19,11 +19,11 @@ const differentiators = [
   },
   {
     title: "Measurement systems",
-    body: "Real-time dashboards on adoption, maturity, and capacity returned — the metrics executives should steer on.",
+    body: "Real-time dashboards on adoption, maturity, and capacity returned: the metrics executives should steer on.",
   },
   {
     title: "Change management discipline",
-    body: "Champion networks, embedded workflows, and leadership framing that change behavior — not town halls.",
+    body: "Champion networks, embedded workflows, and leadership framing that change behavior, not town halls.",
   },
 ];
 
@@ -37,7 +37,7 @@ export function WhyWorkWithMe() {
     >
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-6 text-xs font-mono uppercase tracking-[0.2em] opacity-60">
-          03 — Why me
+          03 · Why me
         </div>
         <h2
           id="why-me-heading"
@@ -47,7 +47,7 @@ export function WhyWorkWithMe() {
         </h2>
         <p className="mt-8 max-w-3xl text-lg opacity-75 leading-relaxed">
           Most AI transformation programs focus on technology selection and strategy decks. I focus
-          on execution — because technology rarely fails.{" "}
+          on execution, because technology rarely fails.{" "}
           <AccentText className="opacity-100">Operating models do.</AccentText>
         </p>
         <p className="mt-6 max-w-3xl text-lg opacity-75 leading-relaxed">

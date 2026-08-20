@@ -34,7 +34,7 @@ export function AdvisorySection() {
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              11 — Advisory
+              11 · Advisory
             </div>
             <h2
               id="advisory-heading"
@@ -46,11 +46,11 @@ export function AdvisorySection() {
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
             <p>
               I advise enterprise leaders, transformation offices, and AI adoption programs at the
-              intersection of strategy and execution — where most initiatives fail.
+              intersection of strategy and execution, where most initiatives fail.
             </p>
             <p>
               Engagements are selective: organizations ready to invest in operating models,
-              governance, and measurement — not another proof of concept.
+              governance, and measurement, not another proof of concept.
             </p>
           </div>
         </div>

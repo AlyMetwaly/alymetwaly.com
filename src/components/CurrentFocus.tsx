@@ -41,7 +41,7 @@ export function CurrentFocus() {
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              06 — Current focus
+              06 · Current focus
             </div>
             <h2
               id="focus-heading"
@@ -51,7 +51,7 @@ export function CurrentFocus() {
             </h2>
           </div>
           <p className="lg:col-span-7 lg:col-start-6 text-lg text-muted-foreground leading-relaxed self-end">
-            Active work and research at Nokia and beyond — the problems I am solving and the
+            Active work and research at Nokia and beyond: the problems I am solving and the
             frameworks I am refining in the field.
           </p>
         </div>

@@ -65,7 +65,7 @@
     flex-shrink: 0;
   }
 
-  /* Editorial divider: ——●—— */
+  /* Editorial divider: line · dot · line */
   .editorial-divider {
     display: flex;
     align-items: center;

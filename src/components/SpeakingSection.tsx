@@ -26,7 +26,7 @@ export function SpeakingSection() {
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              10 — Speaking
+              10 · Speaking
             </div>
             <h2
               id="speaking-heading"
@@ -38,8 +38,8 @@ export function SpeakingSection() {
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
             <p>
               Available for keynotes, panels, roundtables, executive retreats, and leadership
-              offsites. I speak to leaders who need clarity on what actually works — not what
-              vendors promise.
+              offsites. I speak to leaders who need clarity on what actually works, not what vendors
+              promise.
             </p>
             <p>
               Talks are grounded in field experience: measurable adoption programs, governance
