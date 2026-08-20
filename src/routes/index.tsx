@@ -521,10 +521,12 @@ function Home() {
                 Explore collaboration
               </a>
               <a
-                href="mailto:aly.metwaly@outlook.com?subject=Speaking%20Inquiry"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
+                target="_blank"
+                rel="noreferrer"
                 className="min-h-11 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline sm:px-6"
               >
-                Invite me to speak
+                Request a Speaking Engagement
               </a>
               <a
                 href="https://www.linkedin.com/in/aly-metwaly"

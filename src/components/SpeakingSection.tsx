@@ -170,10 +170,12 @@ export function SpeakingSection() {
               ))}
             </ul>
             <a
-              href="mailto:aly.metwaly@outlook.com?subject=Speaking%20Inquiry"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex mt-10 px-5 py-3 rounded-full text-sm font-medium border border-border hover:bg-background btn-accent-outline"
             >
-              Invite me to speak
+              Request a Speaking Engagement
             </a>
           </div>
         </div>
