@@ -1,3 +1,40 @@
+import vergeEpicenterPhoto from "@/assets/speaking-verge-epicenter.png";
+import dashPhoto from "@/assets/speaking-dash.png";
+import menaPanelPhoto from "@/assets/speaking-mena-panel.png";
+
+const engagements = [
+  {
+    year: "2026",
+    event: "Verge at Epicenter",
+    format: "Opening keynote",
+    title: "From Co-Pilots to Colleagues: Leading the Agentic Workforce",
+    description:
+      "Opening keynote on what it takes to lead an agentic workforce, grounded in operating models and field-tested adoption programs.",
+    image: vergeEpicenterPhoto,
+    alt: "Aly Metwaly delivering the opening keynote at Verge at Epicenter, on stage with green lighting and a headset microphone",
+  },
+  {
+    year: "2025",
+    event: "DASH",
+    format: "Keynote & workshop",
+    title: "From Failure to Success: Design Thinking + AI in Innovation and Transformation",
+    description:
+      "Keynote and executive workshop on design thinking and AI for innovation and transformation, with technology students and entrepreneurs.",
+    image: dashPhoto,
+    alt: "Aly Metwaly speaking on stage at DASH with purple stage lighting and a handheld microphone",
+  },
+  {
+    year: "2025",
+    event: "Sustainability MENA Hackathon",
+    format: "Panel",
+    title: "AI in Sustainability and the Future of Work",
+    description:
+      "Panel discussion on AI's role in sustainability and the future of work, alongside regional innovators and industry leaders.",
+    image: menaPanelPhoto,
+    alt: "Aly Metwaly on a panel at the Sustainability MENA Hackathon, seated with a microphone in a gray suit",
+  },
+];
+
 const formats = [
   { label: "Keynotes", detail: "Executive audiences on AI transformation at scale" },
   { label: "Panels", detail: "Industry and leadership forums on enterprise AI" },
@@ -49,7 +86,55 @@ export function SpeakingSection() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 border-t border-rule pt-16">
+        <div className="border-t border-rule pt-12 sm:pt-16">
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
+            Recent engagements
+          </div>
+          <ul className="space-y-px bg-rule border border-rule">
+            {engagements.map((engagement) => (
+              <li
+                key={`${engagement.event}-${engagement.year}`}
+                className="grid bg-background md:grid-cols-12 card-accent-hover"
+              >
+                <div className="relative md:col-span-5 lg:col-span-4 overflow-hidden border-b md:border-b-0 md:border-r border-rule">
+                  <div className="aspect-[16/10] md:aspect-auto md:h-full md:min-h-[220px]">
+                    <img
+                      src={engagement.image}
+                      alt={engagement.alt}
+                      className="h-full w-full object-cover object-center"
+                      loading="lazy"
+                    />
+                    <div
+                      className="pointer-events-none absolute inset-0 bg-ink/[0.06]"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+                <div className="md:col-span-7 lg:col-span-8 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-4">
+                    <span className="font-mono text-xs tracking-[0.2em] text-accent">
+                      {engagement.year}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.18em] px-2 py-1 border rounded-full tag-accent">
+                      {engagement.format}
+                    </span>
+                  </div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground mb-2">
+                    {engagement.event}
+                  </p>
+                  <h3 className="font-display text-xl sm:text-2xl leading-tight tracking-tight mb-3">
+                    <span className="italic">{engagement.title}</span>
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base max-w-2xl">
+                    {engagement.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 border-t border-rule pt-16 mt-16">
           <div className="lg:col-span-5">
             <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-6">
               Formats
