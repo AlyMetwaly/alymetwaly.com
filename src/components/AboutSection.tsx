@@ -24,9 +24,9 @@ export function AboutSection() {
     >
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-8 lg:mb-12">
-          <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-            07 · About
-          </div>
+            <div className="mb-4 section-eyebrow">
+              07 · About
+            </div>
           <h2
             id="about-heading"
             className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"

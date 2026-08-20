@@ -34,7 +34,7 @@ function SectionNavLink({
       type="button"
       onClick={() => onNavigate(id)}
       className={cn(
-        "group flex w-full items-center gap-1.5 rounded-sm px-1 py-1 text-left font-mono text-[9px] uppercase leading-tight tracking-[0.1em] transition-colors",
+        "section-nav-text group flex w-full items-center gap-2 rounded-sm px-1.5 py-1.5 text-left transition-colors",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
         isActive ? "text-accent" : "text-muted-foreground hover:text-foreground",
         className,
@@ -94,16 +94,16 @@ export function SectionNav() {
         className="pointer-events-none fixed right-1 top-1/2 z-30 hidden -translate-y-1/2 lg:block xl:right-2 2xl:right-3"
         aria-label="On this page"
       >
-        <div className="pointer-events-auto max-h-[min(80vh,36rem)] w-[6.5rem] overflow-y-auto border-l border-border/60 bg-background/80 py-3 pl-2 pr-1 backdrop-blur-sm">
+        <div className="pointer-events-auto max-h-[min(80vh,36rem)] w-[clamp(7.75rem,8.5vw,10.75rem)] overflow-y-auto border-l border-border/60 bg-background/80 py-4 pl-3 pr-2 backdrop-blur-sm">
           <button
             type="button"
             onClick={() => handleNavigate("top")}
-            className="mb-2.5 flex items-center gap-1 font-mono text-[9px] uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="section-nav-text mb-3 flex items-center gap-1.5 tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
-            <ArrowUp className="h-2.5 w-2.5 shrink-0" aria-hidden="true" />
+            <ArrowUp className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
             Back to top
           </button>
-          <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground/70">
+          <p className="section-nav-text mb-2.5 tracking-[0.2em] text-muted-foreground/70">
             On this page
           </p>
           <SectionNavList activeId={activeId} onNavigate={handleNavigate} />
@@ -125,7 +125,7 @@ export function SectionNav() {
           </DrawerTrigger>
           <DrawerContent className="max-h-[85vh] rounded-t-2xl border-border">
             <DrawerHeader className="border-b border-border pb-4 text-left">
-              <DrawerTitle className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <DrawerTitle className="section-nav-text tracking-[0.2em] text-muted-foreground">
                 On this page
               </DrawerTitle>
             </DrawerHeader>
@@ -133,7 +133,7 @@ export function SectionNav() {
               <button
                 type="button"
                 onClick={() => handleNavigate("top")}
-                className="mb-4 flex w-full items-center gap-2 rounded-sm border border-border px-3 py-2.5 font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="section-nav-text mb-4 flex w-full items-center gap-2 rounded-sm border border-border px-3 py-2.5 tracking-[0.14em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <ArrowUp className="h-3.5 w-3.5" aria-hidden="true" />
                 Back to top

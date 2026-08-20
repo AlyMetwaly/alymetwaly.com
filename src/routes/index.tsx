@@ -231,7 +231,7 @@ function Home() {
           <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
-                <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                <div className="section-eyebrow mb-4">
                   01 · Proof
                 </div>
                 <h2
@@ -276,7 +276,7 @@ function Home() {
           <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
-                <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                <div className="section-eyebrow mb-4">
                   04 · Selected work
                 </div>
                 <h2
@@ -344,7 +344,7 @@ function Home() {
           <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-5">
-                <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                <div className="section-eyebrow mb-4">
                   08 · Let&rsquo;s Talk
                 </div>
                 <h2

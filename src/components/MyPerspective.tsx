@@ -43,7 +43,7 @@ export function MyPerspective() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+            <div className="section-eyebrow mb-4">
               02 · Perspective
             </div>
             <h2

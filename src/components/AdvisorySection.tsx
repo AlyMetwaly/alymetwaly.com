@@ -34,7 +34,7 @@ export function AdvisorySection() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
-            <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            <div className="section-eyebrow mb-4">
               06 · Advisory
             </div>
             <h2

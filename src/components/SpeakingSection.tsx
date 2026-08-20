@@ -12,6 +12,7 @@ const engagements = [
       "Opening keynote on what it takes to lead an agentic workforce, grounded in operating models and field-tested adoption programs.",
     image: vergeEpicenterPhoto,
     alt: "Aly Metwaly delivering the opening keynote at Verge at Epicenter, on stage with green lighting and a headset microphone",
+    objectPosition: "50% 42%",
   },
   {
     year: "2025",
@@ -22,6 +23,7 @@ const engagements = [
       "Keynote and executive workshop on design thinking and AI for innovation and transformation, with technology students and entrepreneurs.",
     image: dashPhoto,
     alt: "Aly Metwaly speaking on stage at DASH with purple stage lighting and a handheld microphone",
+    objectPosition: "42% 18%",
   },
   {
     year: "2025",
@@ -32,6 +34,7 @@ const engagements = [
       "Panel discussion on AI's role in sustainability and the future of work, alongside regional innovators and industry leaders.",
     image: menaPanelPhoto,
     alt: "Aly Metwaly on a panel at the Sustainability MENA Hackathon, seated with a microphone in a gray suit",
+    objectPosition: "58% 28%",
   },
 ];
 
@@ -62,7 +65,7 @@ export function SpeakingSection() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
-            <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            <div className="section-eyebrow mb-4">
               05 · Speaking
             </div>
             <h2
@@ -97,11 +100,12 @@ export function SpeakingSection() {
                 className="grid bg-background md:grid-cols-12 card-accent-hover"
               >
                 <div className="relative md:col-span-5 lg:col-span-4 overflow-hidden border-b md:border-b-0 md:border-r border-rule">
-                  <div className="aspect-[16/10] md:aspect-auto md:h-full md:min-h-[220px]">
+                  <div className="aspect-[16/10] w-full">
                     <img
                       src={engagement.image}
                       alt={engagement.alt}
-                      className="h-full w-full object-cover object-center"
+                      className="h-full w-full object-cover"
+                      style={{ objectPosition: engagement.objectPosition }}
                       loading="lazy"
                     />
                     <div

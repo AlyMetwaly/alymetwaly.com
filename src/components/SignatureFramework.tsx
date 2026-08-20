@@ -10,7 +10,7 @@ export function SignatureFramework() {
     >
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-12 sm:mb-16 lg:mb-20 max-w-3xl">
-          <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
+          <div className="section-eyebrow mb-4">
             03 · Framework
           </div>
           <h2
