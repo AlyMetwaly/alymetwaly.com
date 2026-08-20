@@ -34,15 +34,24 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { -webkit-font-smoothing: antialiased; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
   }
-  ::selection { background: var(--ink); color: var(--paper); }
+  ::selection {
+    background: var(--ink);
+    color: var(--paper);
+  }
 }
 
 @layer components {
@@ -103,7 +112,9 @@
 
   /* CTA & link accents */
   .btn-accent-outline {
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
   }
   .btn-accent-outline:hover {
     border-color: color-mix(in oklch, var(--accent) 50%, var(--border));
@@ -117,7 +128,9 @@
     text-decoration: underline;
     text-decoration-color: transparent;
     text-underline-offset: 4px;
-    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+    transition:
+      text-decoration-color 0.2s ease,
+      color 0.2s ease;
   }
   .link-accent-underline:hover,
   .link-accent-underline:focus-visible {
@@ -126,7 +139,9 @@
 
   /* Card hover accent */
   .card-accent-hover {
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
   .card-accent-hover:hover {
     box-shadow: inset 3px 0 0 var(--accent);
@@ -144,5 +159,10 @@
   .tag-accent {
     color: var(--accent);
     border-color: color-mix(in oklch, var(--accent) 25%, var(--border));
+  }
+
+  /* Section anchor offset for sticky header */
+  .section-anchor {
+    scroll-margin-top: 4.5rem;
   }
 }

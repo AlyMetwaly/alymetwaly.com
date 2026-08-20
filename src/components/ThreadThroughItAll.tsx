@@ -18,23 +18,22 @@ import { SectionDivider } from "@/components/SectionDivider";
 
 export function ThreadThroughItAll() {
   return (
-    <section id="thread" className="border-b border-border">
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-32">
+    <section id="thread" className="section-anchor border-b border-border">
+      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-32">
         <div className="max-w-[70ch]">
           <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-6">
             09 — The thread
           </div>
-          <h2 className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
+          <h2 className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl">
             The thread through it all.
           </h2>
         </div>
 
         <p className="mt-12 lg:mt-16 max-w-[70ch] font-display text-2xl lg:text-[1.75rem] leading-[1.35] tracking-tight text-foreground/90">
           I have never followed a conventional career path. What has held constant is{" "}
-          <AccentText>curiosity</AccentText> — about how
-          complex systems work, and how to design them for meaningful impact. Today I work at the intersection
-          of technology, strategy, and transformation, connecting innovation with business value and the
-          teams that make it real.
+          <AccentText>curiosity</AccentText> — about how complex systems work, and how to design
+          them for meaningful impact. Today I work at the intersection of technology, strategy, and
+          transformation, connecting innovation with business value and the teams that make it real.
         </p>
 
         <div className="mt-20 lg:mt-28 space-y-16 lg:space-y-24">
@@ -54,8 +53,9 @@ export function ThreadThroughItAll() {
         </div>
 
         <p className="mt-20 lg:mt-28 max-w-[70ch] font-display text-xl lg:text-2xl leading-[1.4] tracking-tight text-foreground/80 italic">
-          Growth, I have learned, comes from <AccentText className="not-italic">curiosity</AccentText> — embracing change and having the courage to keep
-          learning when the path is not yet clear.
+          Growth, I have learned, comes from{" "}
+          <AccentText className="not-italic">curiosity</AccentText> — embracing change and having
+          the courage to keep learning when the path is not yet clear.
         </p>
 
         <SectionDivider className="mt-20 lg:mt-28" />

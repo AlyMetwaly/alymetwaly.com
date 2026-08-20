@@ -1,19 +1,23 @@
 const engagements = [
   {
     audience: "Enterprise leadership",
-    scope: "Board-level and C-suite advisory on AI transformation strategy, investment prioritization, and organizational readiness.",
+    scope:
+      "Board-level and C-suite advisory on AI transformation strategy, investment prioritization, and organizational readiness.",
   },
   {
     audience: "Transformation offices",
-    scope: "Operating model design, program structure, and execution discipline for company-wide AI enablement.",
+    scope:
+      "Operating model design, program structure, and execution discipline for company-wide AI enablement.",
   },
   {
     audience: "AI adoption programs",
-    scope: "Governance frameworks, champion networks, tooling strategy, and adoption measurement at scale.",
+    scope:
+      "Governance frameworks, champion networks, tooling strategy, and adoption measurement at scale.",
   },
   {
     audience: "Scaling organizations",
-    scope: "Guidance for high-growth and complex enterprises moving from AI experimentation to repeatable execution.",
+    scope:
+      "Guidance for high-growth and complex enterprises moving from AI experimentation to repeatable execution.",
   },
 ];
 
@@ -21,14 +25,21 @@ import { SectionDivider } from "@/components/SectionDivider";
 
 export function AdvisorySection() {
   return (
-    <section id="advisory" className="border-b border-border" aria-labelledby="advisory-heading">
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-12 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-12 gap-12 mb-16">
+    <section
+      id="advisory"
+      className="section-anchor border-b border-border"
+      aria-labelledby="advisory-heading"
+    >
+      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
+        <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
               11 — Advisory
             </div>
-            <h2 id="advisory-heading" className="font-display text-4xl lg:text-5xl leading-[1.02] tracking-tight">
+            <h2
+              id="advisory-heading"
+              className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
+            >
               Advisory for leaders building what lasts.
             </h2>
           </div>
@@ -38,8 +49,8 @@ export function AdvisorySection() {
               intersection of strategy and execution — where most initiatives fail.
             </p>
             <p>
-              Engagements are selective: organizations ready to invest in operating models, governance,
-              and measurement — not another proof of concept.
+              Engagements are selective: organizations ready to invest in operating models,
+              governance, and measurement — not another proof of concept.
             </p>
           </div>
         </div>
@@ -47,7 +58,9 @@ export function AdvisorySection() {
         <div className="grid md:grid-cols-2 gap-px bg-rule border-t border-rule">
           {engagements.map((item) => (
             <article key={item.audience} className="bg-background p-8 lg:p-10 card-accent-hover">
-              <h3 className="font-display text-2xl lg:text-3xl tracking-tight mb-4">{item.audience}</h3>
+              <h3 className="font-display text-2xl lg:text-3xl tracking-tight mb-4">
+                {item.audience}
+              </h3>
               <p className="text-muted-foreground leading-relaxed">{item.scope}</p>
             </article>
           ))}
