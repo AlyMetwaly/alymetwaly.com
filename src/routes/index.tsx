@@ -515,10 +515,12 @@ function Home() {
                 Book a conversation
               </a>
               <a
-                href="mailto:aly.metwaly@outlook.com?subject=Explore%20Collaboration"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScoWwy5ZyLSM6ntFTSrWJe3hVbbKofS3B1aLo969tW88F2OKQ/viewform?usp=publish-editor"
+                target="_blank"
+                rel="noreferrer"
                 className="min-h-11 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline sm:px-6"
               >
-                Explore collaboration
+                Apply for an Advisory Session
               </a>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"

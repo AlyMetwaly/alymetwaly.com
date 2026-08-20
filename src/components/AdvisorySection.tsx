@@ -2,7 +2,7 @@ const engagements = [
   {
     audience: "Enterprise leadership",
     scope:
-      "Board-level and C-suite advisory on AI transformation strategy, investment prioritization, and organizational readiness.",
+      "Board-level and C-suite decision support on AI transformation strategy, investment prioritization, and organizational readiness.",
   },
   {
     audience: "Transformation offices",
@@ -17,9 +17,12 @@ const engagements = [
   {
     audience: "Scaling organizations",
     scope:
-      "Guidance for high-growth and complex enterprises moving from AI experimentation to repeatable execution.",
+      "Strategic guidance for high-growth and complex enterprises moving from AI experimentation to repeatable execution.",
   },
 ];
+
+const ADVISORY_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScoWwy5ZyLSM6ntFTSrWJe3hVbbKofS3B1aLo969tW88F2OKQ/viewform?usp=publish-editor";
 
 import { SectionDivider } from "@/components/SectionDivider";
 
@@ -40,17 +43,18 @@ export function AdvisorySection() {
               id="advisory-heading"
               className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
             >
-              Advisory for leaders building what lasts.
+              Executive AI Advisory
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
             <p>
-              I advise enterprise leaders, transformation offices, and AI adoption programs at the
-              intersection of strategy and execution, where most initiatives fail.
+              Strategic guidance for executives, founders, and transformation leaders navigating AI
+              adoption, operating models, governance, organizational change, and execution at scale.
             </p>
             <p>
-              Engagements are selective: organizations ready to invest in operating models,
-              governance, and measurement, not another proof of concept.
+              Drawing on hands-on experience leading enterprise AI transformation initiatives, I
+              help leaders navigate complex decisions, accelerate adoption, and turn AI ambition
+              into measurable business outcomes.
             </p>
           </div>
         </div>
@@ -64,6 +68,23 @@ export function AdvisorySection() {
               <p className="text-muted-foreground leading-relaxed">{item.scope}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-12 flex flex-col gap-8 sm:mt-16 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+          <p className="max-w-2xl text-muted-foreground leading-relaxed">
+            Submit your challenge and the outcome you are seeking. I review every request personally
+            and will contact you if there is a potential fit to discuss availability, next steps,
+            and engagement options.
+          </p>
+          <a
+            href={ADVISORY_FORM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium"
+            style={{ background: "var(--ink)", color: "var(--paper)" }}
+          >
+            Apply for an Advisory Session
+          </a>
         </div>
 
         <SectionDivider className="mt-12" />
