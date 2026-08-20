@@ -1,5 +1,3 @@
-import { AITransformationValueChain } from "@/components/AITransformationValueChain";
-
 const engagements = [
   {
     audience: "Enterprise leadership",
@@ -37,7 +35,7 @@ export function AdvisorySection() {
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              11 · Advisory
+              06 · Advisory
             </div>
             <h2
               id="advisory-heading"
@@ -52,14 +50,20 @@ export function AdvisorySection() {
               adoption, operating models, governance, organizational change, and execution at scale.
             </p>
             <p>
-              Drawing on hands-on experience leading enterprise AI transformation initiatives, I
-              help leaders navigate complex decisions, accelerate adoption, and turn AI ambition
-              into measurable business outcomes.
+              Drawing on hands-on experience leading enterprise AI transformation initiatives, I help
+              leaders navigate complex decisions, accelerate adoption, and turn AI ambition into
+              measurable business outcomes.
+            </p>
+            <p>
+              My advisory work applies the{" "}
+              <a href="#framework" className="text-foreground link-accent-underline">
+                AI Transformation Value Chain&trade;
+              </a>{" "}
+              to help leaders connect strategic ambition with the operating structures, governance,
+              adoption mechanisms, and measurement systems required to deliver business value.
             </p>
           </div>
         </div>
-
-        <AITransformationValueChain />
 
         <div className="grid md:grid-cols-2 gap-px bg-rule border-t border-rule">
           {engagements.map((item) => (
@@ -73,11 +77,18 @@ export function AdvisorySection() {
         </div>
 
         <div className="mt-12 flex flex-col gap-8 sm:mt-16 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
-          <p className="max-w-2xl text-muted-foreground leading-relaxed">
-            Submit your challenge and the outcome you are seeking. I review every request personally
-            and will contact you if there is a potential fit to discuss availability, next steps,
-            and engagement options.
-          </p>
+          <div className="max-w-2xl space-y-4 text-muted-foreground leading-relaxed">
+            <p>Start with a paid Advisory Discovery Session (€250, 60 minutes).</p>
+            <p>
+              Submit your challenge and the outcome you are seeking. I review every request personally
+              and will contact you regarding potential fit, availability, payment method, and next
+              steps.
+            </p>
+            <p>
+              The session provides strategic guidance, practical recommendations, and relevant
+              frameworks, playbooks, or resources where applicable.
+            </p>
+          </div>
           <a
             href={ADVISORY_FORM_URL}
             target="_blank"
@@ -85,7 +96,7 @@ export function AdvisorySection() {
             className="inline-flex shrink-0 min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium"
             style={{ background: "var(--ink)", color: "var(--paper)" }}
           >
-            Request a discovery advisory session
+            Request an Advisory Session
           </a>
         </div>
       </div>

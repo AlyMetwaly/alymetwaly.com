@@ -1,16 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { AboutSection } from "@/components/AboutSection";
-import { AccentText } from "@/components/AccentText";
 import { AdvisorySection } from "@/components/AdvisorySection";
-import { CurrentFocus } from "@/components/CurrentFocus";
-import { InsightsSection } from "@/components/InsightsSection";
 import { SectionDivider } from "@/components/SectionDivider";
 import { SignatureFramework } from "@/components/SignatureFramework";
 import { SpeakingSection } from "@/components/SpeakingSection";
 import { SectionNav } from "@/components/SectionNav";
-import { ThreadThroughItAll } from "@/components/ThreadThroughItAll";
-import { WhyWorkWithMe } from "@/components/WhyWorkWithMe";
+import { MyPerspective } from "@/components/MyPerspective";
 import { HEADER_NAV_SECTIONS } from "@/lib/sections";
 
 function AccentYear({ year }: { year: string }) {
@@ -37,7 +33,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Aly Metwaly designs enterprise AI operating models, governance, and adoption programs that scale. Transformation Manager at Nokia. AI transformation advisor, speaker, and author of the Enterprise AI Transformation Framework.",
+          "Aly Metwaly designs enterprise AI operating models, governance, and adoption programs that scale. Transformation Manager at Nokia. AI transformation advisor, speaker, and author of the AI Transformation Value Chain.",
       },
       {
         name: "keywords",
@@ -74,29 +70,6 @@ const metrics = [
   { value: "100:1", label: "Return on execution effort vs. non-BAU hours invested" },
   { value: "74k", label: "Employees in the performance program rolled out globally" },
   { value: "255", label: "Roadmap items governed across 20 cross-functional workstreams" },
-];
-
-const capabilities = [
-  {
-    k: "01",
-    h: "AI Operating Models",
-    p: "Integrated systems of people, process, governance, and tooling that turn AI strategy into repeatable execution across decentralized business segments.",
-  },
-  {
-    k: "02",
-    h: "Enablement & Adoption at Scale",
-    p: "Structured rollout of Microsoft 365 Copilot, GitHub Copilot, Cursor, and Glean: training, champion networks, and leadership framing that move usage curves, not slides.",
-  },
-  {
-    k: "03",
-    h: "Governance & Measurement",
-    p: "Lightweight guardrails, inventories, and adoption/impact dashboards that give executives fact-based steering of AI portfolios in real time.",
-  },
-  {
-    k: "04",
-    h: "Execution Discipline",
-    p: "Program structures that hold 100% of annual objectives in high-complexity, multi-stakeholder environments, without slowing down the teams doing the work.",
-  },
 ];
 
 const work = [
@@ -145,25 +118,6 @@ const work = [
   },
 ];
 
-const insights = [
-  {
-    t: "Operating model first, tools second",
-    d: "Most enterprise AI programs stall because they ship licenses instead of changing how the org decides, governs, and measures. The tool is the easy part.",
-  },
-  {
-    t: "Adoption is a function of friction, not enthusiasm",
-    d: "Champion networks, embedded workflows, and leadership framing move the curve. Town halls and mandates don't.",
-  },
-  {
-    t: "Measure capacity, not activity",
-    d: "Seats sold and prompts run are vanity. Engineer-hours returned to the business is the only metric leadership should steer on.",
-  },
-  {
-    t: "Governance as enablement",
-    d: "Lightweight guardrails accelerate adoption. Heavy centralized control collapses it. Pick the smallest policy that lets the most people move.",
-  },
-];
-
 function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground font-sans">
@@ -186,12 +140,11 @@ function Home() {
             ))}
           </nav>
           <a
-            href="#contact"
+            href="#lets-talk"
             className="shrink-0 rounded-full px-3 py-2 text-xs font-medium transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-4 sm:text-sm"
             style={{ background: "var(--ink)", color: "var(--paper)" }}
           >
-            <span className="hidden sm:inline">Book a conversation</span>
-            <span className="sm:hidden">Contact</span>
+            Let&rsquo;s Talk
           </a>
         </div>
       </header>
@@ -216,7 +169,7 @@ function Home() {
                   Builder of AI Operating Models
                 </p>
                 <p className="pl-5 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                  · Advisor/Consultant · Speaker
+                  · Advisor · Speaker
                 </p>
               </div>
               <h1
@@ -234,7 +187,7 @@ function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
                 <a
-                  href="#contact"
+                  href="#lets-talk"
                   className="min-h-11 rounded-full px-5 py-3 text-sm font-medium"
                   style={{ background: "var(--ink)", color: "var(--paper)" }}
                 >
@@ -311,50 +264,8 @@ function Home() {
           </div>
         </section>
 
+        <MyPerspective />
         <SignatureFramework />
-        <WhyWorkWithMe />
-
-        {/* CAPABILITIES */}
-        <section
-          id="capabilities"
-          className="section-anchor border-b border-border"
-          aria-labelledby="capabilities-heading"
-        >
-          <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-            <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
-              <div className="lg:col-span-4">
-                <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                  04 · What I do
-                </div>
-                <h2
-                  id="capabilities-heading"
-                  className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-                >
-                  From AI ambition to enterprise execution.
-                </h2>
-              </div>
-              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-7 lg:col-start-6 lg:self-end">
-                I work alongside senior executives to translate AI strategy into the operating
-                systems, governance, and measurement that make adoption stick and convert it into
-                engineering capacity and ROI.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-px bg-rule">
-              {capabilities.map((c) => (
-                <article key={c.k} className="bg-background p-6 sm:p-8 lg:p-10">
-                  <div className="flex items-baseline justify-between mb-6">
-                    <div className="font-mono text-xs tracking-[0.2em] text-accent">{c.k}</div>
-                    <div className="h-px flex-1 mx-4 bg-rule" />
-                  </div>
-                  <h3 className="mb-3 font-display text-xl tracking-tight sm:text-2xl lg:text-3xl">
-                    {c.h}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">{c.p}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* SELECTED WORK */}
         <section
@@ -366,7 +277,7 @@ function Home() {
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                  05 · Selected work
+                  04 · Selected work
                 </div>
                 <h2
                   id="work-heading"
@@ -423,121 +334,117 @@ function Home() {
           </div>
         </section>
 
-        <CurrentFocus />
-
-        {/* THINKING */}
-        <section
-          id="thinking"
-          className="section-anchor border-b border-border"
-          aria-labelledby="thinking-heading"
-        >
-          <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-            <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
-              <div className="lg:col-span-4">
-                <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                  07 · Thinking
-                </div>
-                <h2
-                  id="thinking-heading"
-                  className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-                >
-                  Frameworks from the field.
-                </h2>
-              </div>
-              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-7 lg:col-start-6 lg:self-end">
-                Short, opinionated takes on what actually works inside complex enterprises: the
-                principles behind the Enterprise AI Transformation Framework.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-px bg-rule">
-              {insights.map((n, i) => (
-                <article key={i} className="bg-background p-6 sm:p-8 lg:p-10">
-                  <div className="font-mono text-xs tracking-[0.2em] text-accent mb-4">
-                    N°{String(i + 1).padStart(2, "0")}
-                  </div>
-                  <h3 className="mb-3 font-display text-xl leading-tight tracking-tight sm:text-2xl lg:text-3xl">
-                    {i === 0 ? (
-                      <>
-                        <AccentText>Operating model</AccentText> first, tools second
-                      </>
-                    ) : i === 2 ? (
-                      <>
-                        <AccentText>Measure capacity</AccentText>, not activity
-                      </>
-                    ) : (
-                      n.t
-                    )}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">{n.d}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <InsightsSection />
-        <ThreadThroughItAll />
         <SpeakingSection />
         <AdvisorySection />
         <AboutSection />
 
-        {/* CTA */}
-        <section id="contact" className="section-anchor" aria-labelledby="contact-heading">
+        {/* LET'S TALK */}
+        <section id="lets-talk" className="section-anchor" aria-labelledby="lets-talk-heading">
           <SectionDivider className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12" />
-          <div className="mx-auto max-w-[1280px] px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-12 lg:py-36">
-            <div className="mb-6 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
-              13 · Next
+          <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
+            <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
+              <div className="lg:col-span-5">
+                <div className="mb-4 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                  08 · Let&rsquo;s Talk
+                </div>
+                <h2
+                  id="lets-talk-heading"
+                  className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
+                >
+                  Building AI transformation that lasts?
+                </h2>
+              </div>
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-6 lg:col-start-7 lg:self-end">
+                I work with leaders, transformation teams, founders, investors, and event organizers
+                navigating AI adoption, operating models, governance, and organizational change.
+              </p>
             </div>
-            <h2
-              id="contact-heading"
-              className="mx-auto max-w-4xl font-display text-4xl leading-[0.98] tracking-tight sm:text-5xl lg:text-7xl"
-            >
-              Scaling AI inside a complex enterprise?
-              <br />
-              <em className="italic text-muted-foreground">Let&rsquo;s talk.</em>
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:mt-8 sm:text-lg">
-              Executive collaboration on AI operating models, governance, adoption, and
-              transformation leadership: advisory, speaking, and strategic partnership.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10">
-              <a
-                href="mailto:aly.metwaly@outlook.com?subject=AI%20Transformation%20Discussion"
-                className="min-h-11 rounded-full px-5 py-3 text-sm font-medium sm:px-6"
-                style={{ background: "var(--ink)", color: "var(--paper)" }}
-              >
-                Discuss AI transformation
-              </a>
-              <a
-                href="mailto:aly.metwaly@outlook.com?subject=Book%20a%20Conversation"
-                className="min-h-11 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline sm:px-6"
-              >
-                Book a conversation
-              </a>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLScoWwy5ZyLSM6ntFTSrWJe3hVbbKofS3B1aLo969tW88F2OKQ/viewform?usp=publish-editor"
-                target="_blank"
-                rel="noreferrer"
-                className="min-h-11 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline sm:px-6"
-              >
-                Request a discovery advisory session
-              </a>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
-                target="_blank"
-                rel="noreferrer"
-                className="min-h-11 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline sm:px-6"
-              >
-                Request a Speaking Engagement
-              </a>
-              <a
-                href="https://www.linkedin.com/in/aly-metwaly"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="min-h-11 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline sm:px-6"
-              >
-                Connect on LinkedIn ↗
-              </a>
+            <div className="divide-y divide-rule border-t border-b border-rule">
+              <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
+                <div className="lg:col-span-4">
+                  <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Speaking</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed lg:col-span-5">
+                  Keynotes, workshops, executive briefings, panels, and leadership events.
+                </p>
+                <div className="lg:col-span-3 lg:text-right">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
+                  >
+                    Request a Speaking Engagement
+                  </a>
+                </div>
+              </article>
+              <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
+                <div className="lg:col-span-4">
+                  <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Advisory</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed lg:col-span-5">
+                  Strategic guidance on AI transformation, operating models, governance, adoption,
+                  and measurement.
+                </p>
+                <div className="lg:col-span-3 lg:text-right">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScoWwy5ZyLSM6ntFTSrWJe3hVbbKofS3B1aLo969tW88F2OKQ/viewform?usp=publish-editor"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
+                  >
+                    Request an Advisory Session
+                  </a>
+                </div>
+              </article>
+              <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
+                <div className="lg:col-span-4">
+                  <h3 className="font-display text-2xl tracking-tight sm:text-3xl">
+                    Media, Podcasts &amp; Interviews
+                  </h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed lg:col-span-5">
+                  Podcast hosts, journalists, event moderators, and media producers seeking
+                  interviews on AI transformation, leadership, innovation, and the future of work.
+                </p>
+                <div className="lg:col-span-3 lg:text-right">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfPLF8nWsxVaS_xOfFL8iOAMXM-lD-BLcYVbgNHyZH8WB3aig/viewform?usp=publish-editor"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
+                  >
+                    Request a Media Appearance
+                  </a>
+                </div>
+              </article>
+              <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
+                <div className="lg:col-span-4">
+                  <h3 className="font-display text-2xl tracking-tight sm:text-3xl">
+                    Everything Else
+                  </h3>
+                </div>
+                <div className="text-muted-foreground leading-relaxed lg:col-span-5">
+                  <p>
+                    Partnerships, recruiting opportunities, startup discussions, investor conversations,
+                    community initiatives, collaborations, and general inquiries.
+                  </p>
+                  <p>
+                    Not sure where your request belongs? Submit it here and I will make sure it reaches
+                    the appropriate path.
+                  </p>
+                </div>
+                <div className="lg:col-span-3 lg:text-right">
+                  <a
+                    href="https://forms.gle/j4zVmnUnTxAUxh4UA"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
+                  >
+                    Get in Touch
+                  </a>
+                </div>
+              </article>
             </div>
           </div>
         </section>

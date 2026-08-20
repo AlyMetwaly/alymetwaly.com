@@ -63,7 +63,7 @@ export function SpeakingSection() {
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <div className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              10 · Speaking
+              05 · Speaking
             </div>
             <h2
               id="speaking-heading"
