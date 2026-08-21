@@ -232,7 +232,7 @@ function Home() {
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="section-eyebrow mb-4">
-                  01 · Proof
+                  01 · PROOF
                 </div>
                 <h2
                   id="impact-heading"
@@ -277,7 +277,7 @@ function Home() {
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="section-eyebrow mb-4">
-                  04 · Selected work
+                  04 · WORK
                 </div>
                 <h2
                   id="work-heading"
@@ -334,8 +334,8 @@ function Home() {
           </div>
         </section>
 
-        <SpeakingSection />
         <AdvisorySection />
+        <SpeakingSection />
         <AboutSection />
 
         {/* LET'S TALK */}
@@ -345,7 +345,7 @@ function Home() {
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-5">
                 <div className="section-eyebrow mb-4">
-                  08 · Let&rsquo;s Talk
+                  08 · LET&rsquo;S TALK
                 </div>
                 <h2
                   id="lets-talk-heading"
@@ -450,7 +450,7 @@ function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-border pb-24 lg:pb-8">
+      <footer className="border-t border-border pb-24 min-[1660px]:pb-8">
         <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-4 px-4 py-8 text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground sm:px-6 sm:text-xs lg:px-12">
           <div>© {new Date().getFullYear()} Aly Metwaly · Enterprise AI Transformation Leader</div>
           <div>Espoo · Finland</div>

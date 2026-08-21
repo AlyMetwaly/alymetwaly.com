@@ -183,4 +183,13 @@
     letter-spacing: 0.1em;
     line-height: 1.3;
   }
+
+  /*
+   * Anchor the desktop TOC to the right edge of the 1280px content column
+   * instead of the viewport edge, so it never overlaps main content.
+   */
+  .section-nav-desktop {
+    left: calc((100vw + min(1280px, 100vw)) / 2 + 1rem);
+    right: auto;
+  }
 }

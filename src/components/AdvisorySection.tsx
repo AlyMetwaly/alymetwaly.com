@@ -35,13 +35,13 @@ export function AdvisorySection() {
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <div className="section-eyebrow mb-4">
-              06 · Advisory
+              05 · ADVISORY
             </div>
             <h2
               id="advisory-heading"
               className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
             >
-              AI Transformation Advisory
+              From ambition to action.
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
@@ -57,7 +57,7 @@ export function AdvisorySection() {
             <p>
               My advisory work applies the{" "}
               <a href="#framework" className="text-foreground link-accent-underline">
-                AI Transformation Value Chain&trade;
+                AI Transformation Value Chain
               </a>{" "}
               to help leaders connect strategic ambition with the operating structures, governance,
               adoption mechanisms, and measurement systems required to deliver business value.

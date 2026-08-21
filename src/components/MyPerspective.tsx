@@ -44,13 +44,13 @@ export function MyPerspective() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="section-eyebrow mb-4">
-              02 · Perspective
+              02 · PERSPECTIVE
             </div>
             <h2
               id="perspective-heading"
               className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
             >
-              My Perspective
+              How I Think
             </h2>
             <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
               <p>Most AI transformations don&rsquo;t fail because of technology.</p>

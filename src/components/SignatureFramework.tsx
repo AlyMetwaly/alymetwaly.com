@@ -11,14 +11,17 @@ export function SignatureFramework() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-12 sm:mb-16 lg:mb-20 max-w-3xl">
           <div className="section-eyebrow mb-4">
-            03 · Framework
+            03 · FRAMEWORK
           </div>
           <h2
             id="framework-heading"
             className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
           >
-            The AI Transformation Value Chain&trade;
+            From Strategy to Business Value
           </h2>
+          <p className="mt-3 font-display text-2xl leading-[1.05] tracking-tight text-muted-foreground sm:text-3xl lg:text-4xl">
+            AI Transformation Value Chain
+          </p>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
             Most AI initiatives struggle because they focus on individual components rather than the
             system that connects them.
@@ -54,7 +57,7 @@ export function SignatureFramework() {
           <div className="grid md:grid-cols-12 gap-8 lg:gap-12">
             <div className="md:col-span-7 space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                The AI Transformation Value Chain&trade; connects strategy, operating models,
+                The AI Transformation Value Chain connects strategy, operating models,
                 governance, adoption, and measurement into a coherent transformation system designed
                 to deliver measurable and lasting business value.
               </p>

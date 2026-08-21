@@ -1,12 +1,12 @@
 export const SITE_SECTIONS = [
-  { id: "impact", label: "Impact" },
-  { id: "perspective", label: "Perspective" },
-  { id: "framework", label: "Framework" },
-  { id: "work", label: "Selected Work" },
-  { id: "speaking", label: "Speaking" },
-  { id: "advisory", label: "Advisory" },
-  { id: "about", label: "About" },
-  { id: "lets-talk", label: "Let's Talk" },
+  { id: "impact", number: "01", label: "Proof" },
+  { id: "perspective", number: "02", label: "Perspective" },
+  { id: "framework", number: "03", label: "Framework" },
+  { id: "work", number: "04", label: "Work" },
+  { id: "advisory", number: "05", label: "Advisory" },
+  { id: "speaking", number: "06", label: "Speaking" },
+  { id: "about", number: "07", label: "About" },
+  { id: "lets-talk", number: "08", label: "Let's Talk" },
 ] as const;
 
 /** Subset for the sticky header: quick jumps to major sections */

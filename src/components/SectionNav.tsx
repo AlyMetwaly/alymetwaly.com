@@ -68,7 +68,7 @@ function SectionNavList({
         <li key={section.id}>
           <SectionNavLink
             id={section.id}
-            label={section.label}
+            label={`${section.number} ${section.label}`}
             activeId={activeId}
             onNavigate={onNavigate}
           />
@@ -89,9 +89,9 @@ export function SectionNav() {
 
   return (
     <>
-      {/* Desktop: editorial table of contents */}
+      {/* Desktop: editorial table of contents (only when it fits beside content) */}
       <nav
-        className="pointer-events-none fixed right-1 top-1/2 z-30 hidden -translate-y-1/2 lg:block xl:right-2 2xl:right-3"
+        className="section-nav-desktop pointer-events-none fixed top-1/2 z-30 hidden -translate-y-1/2 min-[1660px]:block"
         aria-label="On this page"
       >
         <div className="pointer-events-auto max-h-[min(80vh,36rem)] w-[clamp(7.75rem,8.5vw,10.75rem)] overflow-y-auto border-l border-border/60 bg-background/80 py-4 pl-3 pr-2 backdrop-blur-sm">
@@ -110,8 +110,8 @@ export function SectionNav() {
         </div>
       </nav>
 
-      {/* Mobile: floating index button + bottom sheet */}
-      <div className="lg:hidden">
+      {/* Mobile & tablet: floating index button + bottom sheet */}
+      <div className="min-[1660px]:hidden">
         <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
           <DrawerTrigger asChild>
             <button

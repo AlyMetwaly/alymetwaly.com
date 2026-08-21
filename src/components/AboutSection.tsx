@@ -25,13 +25,13 @@ export function AboutSection() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-8 lg:mb-12">
             <div className="mb-4 section-eyebrow">
-              07 · About
+              07 · ABOUT
             </div>
           <h2
             id="about-heading"
             className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
           >
-            About
+            From silicon to operating models.
           </h2>
         </div>
 
@@ -39,9 +39,9 @@ export function AboutSection() {
           <div className="lg:col-span-5">
             <img
               src={aboutPhoto}
-              alt="Aly Metwaly during an outdoor athletic training session."
+              alt="Aly Metwaly in a formal suit, smiling on a wooden dock beside the water."
               loading="lazy"
-              className="w-full h-auto max-w-full"
+              className="w-full max-w-full aspect-[3/4] object-cover object-center"
             />
           </div>
 
