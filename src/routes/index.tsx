@@ -185,21 +185,6 @@ function Home() {
                 change management that move large organizations from AI experimentation to
                 repeatable execution and measurable business impact.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
-                <a
-                  href="#lets-talk"
-                  className="min-h-11 rounded-full px-5 py-3 text-sm font-medium"
-                  style={{ background: "var(--ink)", color: "var(--paper)" }}
-                >
-                  Discuss AI transformation
-                </a>
-                <a
-                  href="#framework"
-                  className="min-h-11 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
-                >
-                  Explore the framework
-                </a>
-              </div>
             </div>
             <div className="lg:col-span-4">
               <div className="relative">
@@ -252,7 +237,7 @@ function Home() {
                   key={i}
                   className="border-b border-r border-rule px-2 py-10 lg:py-14 last:border-r-0 [&:nth-child(3n)]:lg:border-r-0 [&:nth-child(2n)]:sm:border-r-0 lg:[&:nth-child(2n)]:border-r"
                 >
-                  <div className="font-display text-5xl leading-none tracking-tight text-accent sm:text-6xl lg:text-7xl">
+                  <div className="font-display text-5xl leading-none tracking-tight text-foreground sm:text-6xl lg:text-7xl">
                     {m.value}
                   </div>
                   <div className="mt-4 text-sm text-muted-foreground max-w-[26ch] leading-relaxed">
@@ -362,24 +347,6 @@ function Home() {
             <div className="divide-y divide-rule border-t border-b border-rule">
               <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
                 <div className="lg:col-span-4">
-                  <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Speaking</h3>
-                </div>
-                <p className="text-muted-foreground leading-relaxed lg:col-span-5">
-                  Keynotes, workshops, executive briefings, panels, and leadership events.
-                </p>
-                <div className="lg:col-span-3 lg:text-right">
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
-                  >
-                    Request a Speaking Engagement
-                  </a>
-                </div>
-              </article>
-              <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
-                <div className="lg:col-span-4">
                   <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Advisory</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed lg:col-span-5">
@@ -394,6 +361,24 @@ function Home() {
                     className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
                   >
                     Request an Advisory Session
+                  </a>
+                </div>
+              </article>
+              <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
+                <div className="lg:col-span-4">
+                  <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Speaking</h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed lg:col-span-5">
+                  Keynotes, workshops, executive briefings, panels, and leadership events.
+                </p>
+                <div className="lg:col-span-3 lg:text-right">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
+                  >
+                    Request a Speaking Engagement
                   </a>
                 </div>
               </article>
