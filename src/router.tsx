@@ -8,7 +8,7 @@ export const getRouter = () => {
   const router = createRouter({
     routeTree,
     context: { queryClient },
-    basepath: "/executive-ai-edge-lovable",
+    basepath: "/",
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
   });

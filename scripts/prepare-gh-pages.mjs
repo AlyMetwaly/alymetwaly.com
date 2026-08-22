@@ -3,7 +3,8 @@ import { copyFileSync, cpSync, existsSync, rmSync, writeFileSync } from "node:fs
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 
-const BASE = "/executive-ai-edge-lovable";
+const BASE = "/";
+const CUSTOM_DOMAIN = "alymetwaly.com";
 const DIST = "dist";
 const CLIENT = join(DIST, "client");
 const CLIENT_ASSETS = join(CLIENT, "assets");
@@ -92,7 +93,8 @@ cpSync(CLIENT_ASSETS, ASSETS, { recursive: true });
 const { server, port } = await startSsrServer();
 
 try {
-  const url = `http://127.0.0.1:${port}${BASE}/`;
+  const previewPath = BASE === "/" ? "/" : `${BASE}/`;
+  const url = `http://127.0.0.1:${port}${previewPath}`;
   const response = await waitForPage(url);
   const html = await response.text();
   writeFileSync(join(DIST, "index.html"), html);
@@ -107,3 +109,5 @@ for (const dir of ["client", "server"]) {
     rmSync(path, { recursive: true, force: true });
   }
 }
+
+writeFileSync(join(DIST, "CNAME"), `${CUSTOM_DOMAIN}\n`);

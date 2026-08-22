@@ -9,7 +9,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   nitro: false,
   vite: {
-    base: "/executive-ai-edge-lovable/",
+    base: "/",
     build: {
       outDir: "dist",
     },
