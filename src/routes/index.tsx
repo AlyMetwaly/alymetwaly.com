@@ -1,4 +1,6 @@
+import { useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { ChevronDown } from "lucide-react";
 import portraitAsset from "@/assets/portrait.JPG";
 import { AboutSection } from "@/components/AboutSection";
 import { AdvisorySection } from "@/components/AdvisorySection";
@@ -74,19 +76,19 @@ const metrics = [
 
 const work = [
   {
-    org: "Nokia · Enterprise AI Transformation (Keystone)",
-    year: "2026 · Present",
-    title: "Company-wide AI enablement playbook",
+    org: "Nokia · Enterprise AI Transformation",
+    year: "2026 – Present",
+    title: "Company-wide AI enablement",
     problem:
-      "AI adoption was fragmented across decentralized business segments with no shared operating model.",
+      "AI adoption was accelerating across the organization, but success depended on more than deploying tools. Without a shared approach to leadership, behavior change, enablement, governance, and measurement, adoption risked becoming fragmented and difficult to scale.",
     action:
-      "Designed a holistic enablement playbook spanning leadership, governance, tooling, and team-level adoption. Operationalized lightweight controls, rapid pilots, and continuous feedback loops.",
+      "Led the development of a company-wide AI Enablement Playbook together with a cross-functional transformation team. Owned the design and operationalization of a holistic Change Management model for enterprise AI transformation, integrating leadership enablement, adoption journeys, champions networks, governance, continuous learning, measurement, and operating cadence into a repeatable system for scaling AI adoption.",
     outcome:
-      "Enterprise rollout of Cursor, Glean, and Microsoft 365 Copilot with measurable adoption across business segments.",
+      "Established the operating model for enterprise AI transformation, reducing fragmentation across business segments and enabling a consistent, measurable, and repeatable approach to AI adoption at scale.",
   },
   {
-    org: "Nokia · System-on-Chip R&D",
-    year: "2020 · Present",
+    org: "Nokia · RAN R&D Unit",
+    year: "2025 – Present",
     title: "Adoption-first AI execution across engineering",
     problem:
       "AI tools existed in pockets, with no mechanism to convert access into engineering throughput.",
@@ -96,7 +98,7 @@ const work = [
       "+65% active usage. 5× scale-up of a requirements-assistant use case in 8 weeks. ~31 engineer-years of annual capacity unlocked at ~100:1 return on execution effort.",
   },
   {
-    org: "Nokia · Chief People Office (Rotation)",
+    org: "Nokia · Chief People Office",
     year: "2025",
     title: "Perform to Win: global performance transformation",
     problem:
@@ -104,21 +106,25 @@ const work = [
     action:
       "Orchestrated the global rollout, aligning executive intent with execution across 20 cross-functional workstreams and 255 roadmap items.",
     outcome:
-      "Embedded performance management as a living operating system. Delivered 100% of annual objectives.",
+      "Successfully delivered the global transformation program on schedule, achieving 100% of annual objectives across 20 workstreams and 255 roadmap items.",
   },
   {
     org: "Nokia · 5G/6G Silicon R&D",
-    year: "2022 · 2025",
-    title: "Deep-tech program leadership",
-    problem: "Multi-million-euro semiconductor roadmaps with high technical and delivery risk.",
+    year: "2022 – 2024",
+    title: "Nokia SoC Projects",
+    problem:
+      "A high-complexity 5G/6G silicon program was under significant schedule pressure, with cross-functional dependencies and increasing delivery risk.",
     action:
-      "Directed feasibility-to-delivery for 5G/6G hardware programs, instrumenting execution realism and cross-functional coordination.",
+      "Established execution discipline across architecture, software, implementation, verification, and platform teams, driving transparency, alignment, risk management, and delivery focus.",
     outcome:
-      "On-plan delivery of high-complexity silicon programs; foundation for the execution discipline now applied to enterprise AI.",
+      "On-plan delivery of high-complexity silicon projects; foundation for the execution discipline now applied to enterprise AI.",
   },
 ];
 
 function Home() {
+  const workPanelId = useId();
+  const [workExpanded, setWorkExpanded] = useState(false);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground font-sans">
       <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur">
@@ -140,7 +146,7 @@ function Home() {
             ))}
           </nav>
           <a
-            href="#lets-talk"
+            href="#contact"
             className="shrink-0 rounded-full px-3 py-2 text-xs font-medium transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-4 sm:text-sm"
             style={{ background: "var(--ink)", color: "var(--paper)" }}
           >
@@ -209,9 +215,9 @@ function Home() {
 
         {/* IMPACT METRICS */}
         <section
-          id="impact"
+          id="proof"
           className="section-anchor border-b border-border"
-          aria-labelledby="impact-heading"
+          aria-labelledby="proof-heading"
         >
           <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
@@ -220,7 +226,7 @@ function Home() {
                   01 · PROOF
                 </div>
                 <h2
-                  id="impact-heading"
+                  id="proof-heading"
                   className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
                 >
                   Outcomes, not opinions.
@@ -252,69 +258,95 @@ function Home() {
         <MyPerspective />
         <SignatureFramework />
 
-        {/* SELECTED WORK */}
+        {/* EXPERIENCE */}
         <section
-          id="work"
+          id="experience"
           className="section-anchor border-b border-border"
-          aria-labelledby="work-heading"
+          aria-labelledby="experience-heading"
         >
           <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-            <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
+            <div className="mb-8 grid gap-8 sm:mb-10 lg:grid-cols-12 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="section-eyebrow mb-4">
-                  04 · WORK
+                  04 · EXPERIENCE
                 </div>
                 <h2
-                  id="work-heading"
+                  id="experience-heading"
                   className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
                 >
-                  Programs that moved the number.
+                  Programs that moved the needle
                 </h2>
               </div>
               <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-7 lg:col-start-6 lg:self-end">
-                Four representative initiatives. Each one is the same shape: a measurable problem, a
-                structured intervention, an outcome leadership can steer on.
+                Throughout my career, I have focused on one challenge: turning strategy into
+                execution. The examples below illustrate how I have helped organizations navigate
+                complexity, scale new capabilities, and deliver measurable results.
               </p>
             </div>
-            <div className="divide-y divide-rule border-t border-b border-rule">
-              {work.map((w, i) => (
-                <article
-                  key={i}
-                  className="group grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:gap-10 lg:py-14"
-                >
-                  <div className="lg:col-span-3">
-                    <div className="font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                      <AccentYear year={w.year} />
-                    </div>
-                    <div className="mt-2 text-sm font-medium">{w.org}</div>
-                  </div>
-                  <div className="lg:col-span-9">
-                    <h3 className="mb-4 font-display text-2xl leading-[1.05] tracking-tight sm:mb-6 sm:text-3xl lg:text-4xl">
-                      {w.title}
-                    </h3>
-                    <dl className="grid md:grid-cols-3 gap-6 lg:gap-10 text-sm leading-relaxed">
-                      <div>
-                        <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                          Problem
-                        </dt>
-                        <dd className="text-foreground/85">{w.problem}</dd>
+
+            <button
+              type="button"
+              onClick={() => setWorkExpanded((open) => !open)}
+              aria-expanded={workExpanded}
+              aria-controls={workPanelId}
+              className="inline-flex items-center gap-2 border border-border px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              {workExpanded ? "Hide Selected Impact" : "Show Selected Impact"}
+              <ChevronDown
+                className={`size-3.5 transition-transform duration-300 ${workExpanded ? "rotate-180" : ""}`}
+                aria-hidden="true"
+              />
+            </button>
+
+            <div
+              id={workPanelId}
+              className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                workExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+              }`}
+              aria-hidden={!workExpanded}
+            >
+              <div className="overflow-hidden">
+                <div className="divide-y divide-rule border-t border-b border-rule mt-8">
+                  {work.map((w, i) => (
+                    <article
+                      key={i}
+                      className="group grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:gap-10 lg:py-14"
+                    >
+                      <div className="lg:col-span-3">
+                        <div className="font-mono text-xs tracking-[0.18em] uppercase text-muted-foreground">
+                          <AccentYear year={w.year} />
+                        </div>
+                        <div className="mt-2 text-sm font-medium">{w.org}</div>
                       </div>
-                      <div>
-                        <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                          Action
-                        </dt>
-                        <dd className="text-foreground/85">{w.action}</dd>
+                      <div className="lg:col-span-9">
+                        <h3 className="mb-4 font-display text-2xl leading-[1.05] tracking-tight sm:mb-6 sm:text-3xl lg:text-4xl">
+                          {w.title}
+                        </h3>
+                        <dl className="grid md:grid-cols-3 gap-6 lg:gap-10 text-sm leading-relaxed">
+                          <div>
+                            <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                              Problem
+                            </dt>
+                            <dd className="text-foreground/85">{w.problem}</dd>
+                          </div>
+                          <div>
+                            <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                              Action
+                            </dt>
+                            <dd className="text-foreground/85">{w.action}</dd>
+                          </div>
+                          <div>
+                            <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                              Outcome
+                            </dt>
+                            <dd className="text-foreground font-medium">{w.outcome}</dd>
+                          </div>
+                        </dl>
                       </div>
-                      <div>
-                        <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                          Outcome
-                        </dt>
-                        <dd className="text-foreground font-medium">{w.outcome}</dd>
-                      </div>
-                    </dl>
-                  </div>
-                </article>
-              ))}
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -324,7 +356,7 @@ function Home() {
         <AboutSection />
 
         {/* LET'S TALK */}
-        <section id="lets-talk" className="section-anchor" aria-labelledby="lets-talk-heading">
+        <section id="contact" className="section-anchor" aria-labelledby="contact-heading">
           <SectionDivider className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12" />
           <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
             <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
@@ -333,7 +365,7 @@ function Home() {
                   08 · LET&rsquo;S TALK
                 </div>
                 <h2
-                  id="lets-talk-heading"
+                  id="contact-heading"
                   className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
                 >
                   Building AI transformation that lasts?

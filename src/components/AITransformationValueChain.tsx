@@ -49,7 +49,7 @@ export function AITransformationValueChain() {
       <ol className="border-t border-rule">
         {valueChainSteps.map((step, index) => (
           <li key={step.id}>
-            <article className="py-8 lg:py-10 border-b border-rule">
+            <article className="py-8 lg:py-10">
               <div className="flex items-baseline gap-4 mb-4">
                 <span className="font-mono text-xs tracking-[0.2em] text-accent">
                   {String(index + 1).padStart(2, "0")}
@@ -62,14 +62,6 @@ export function AITransformationValueChain() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.question}</p>
               <p className="mt-4 text-muted-foreground leading-relaxed">{step.description}</p>
             </article>
-            {index < valueChainSteps.length - 1 ? (
-              <div
-                className="flex justify-center py-3 font-mono text-xs text-muted-foreground/70"
-                aria-hidden="true"
-              >
-                ↓
-              </div>
-            ) : null}
           </li>
         ))}
       </ol>

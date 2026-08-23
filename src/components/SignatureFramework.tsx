@@ -27,11 +27,12 @@ export function SignatureFramework() {
             AI Transformation Value Chain
           </p>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Most AI initiatives struggle because they focus on individual components rather than the
-            system that connects them.
+            The AI Transformation Value Chain is a high-level view of my AI Transformation
+            Playbook.
           </p>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            Sustainable AI transformation requires a clear path from strategic intent to measurable
+            It captures how I approach AI transformation as a connected system, linking strategy,
+            operating models, governance, adoption, measurement, and execution to deliver measurable
             business outcomes.
           </p>
 
@@ -58,25 +59,23 @@ export function SignatureFramework() {
           aria-hidden={!expanded}
         >
           <div className="overflow-hidden">
-            <div className="grid items-start gap-12 border-t border-rule pt-16 lg:grid-cols-12 lg:gap-8 lg:pt-20">
-              <div className="lg:col-span-4 lg:sticky lg:top-24">
+            <div className="border-t border-rule pt-16 lg:pt-20">
+              <div className="mb-12 lg:mb-16 max-w-3xl">
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
                   From intent to outcomes
                 </p>
                 <p className="font-display text-2xl lg:text-3xl tracking-tight leading-tight">
                   Six connected stages that turn AI ambition into measurable business value.
                 </p>
-                <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-sm">
+                <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
                   Each stage answers a distinct question. Weak links in the chain limit what the
                   others can deliver.
                 </p>
               </div>
 
-              <div className="lg:col-span-4">
+              <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-8">
                 <AITransformationValueChain />
-              </div>
 
-              <div className="lg:col-span-4">
                 <ValueChainDiagram />
               </div>
             </div>
