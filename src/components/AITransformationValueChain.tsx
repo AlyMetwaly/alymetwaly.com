@@ -1,4 +1,4 @@
-const valueChainSteps = [
+export const valueChainSteps = [
   {
     id: "strategy",
     label: "Strategy",

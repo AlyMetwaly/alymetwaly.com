@@ -64,7 +64,7 @@ export const Route = createFileRoute("/")({
 });
 
 const metrics = [
-  { value: "45%", label: "Increase in active AI tool usage across R&D" },
+  { value: "65%", label: "Increase in active AI tool usage across R&D" },
   { value: "5×", label: "Scale-up of an AI requirements-assistant use case in 8 weeks" },
   { value: "31", label: "Engineer-years of annual capacity unlocked (~1,160 hrs/week)" },
   { value: "100:1", label: "Return on execution effort vs. non-BAU hours invested" },
@@ -93,7 +93,7 @@ const work = [
     action:
       "Built a structured enablement model with metrics, training, champion networks, and lightweight governance, and rolled out Copilot (M365 + Premium), GitHub Copilot, and Cursor across the SoC unit.",
     outcome:
-      "+45% active usage. 5× scale-up of a requirements-assistant use case in 8 weeks. ~31 engineer-years of annual capacity unlocked at ~100:1 return on execution effort.",
+      "+65% active usage. 5× scale-up of a requirements-assistant use case in 8 weeks. ~31 engineer-years of annual capacity unlocked at ~100:1 return on execution effort.",
   },
   {
     org: "Nokia · Chief People Office (Rotation)",
@@ -237,7 +237,7 @@ function Home() {
                   key={i}
                   className="border-b border-r border-rule px-2 py-10 lg:py-14 last:border-r-0 [&:nth-child(3n)]:lg:border-r-0 [&:nth-child(2n)]:sm:border-r-0 lg:[&:nth-child(2n)]:border-r"
                 >
-                  <div className="font-display text-5xl leading-none tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+                  <div className="text-accent font-display text-5xl leading-none tracking-tight sm:text-6xl lg:text-7xl">
                     {m.value}
                   </div>
                   <div className="mt-4 text-sm text-muted-foreground max-w-[26ch] leading-relaxed">
