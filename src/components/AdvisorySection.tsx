@@ -36,9 +36,6 @@ export function AdvisorySection() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
-            <div className="section-eyebrow mb-4">
-              05 · ADVISORY
-            </div>
             <h2
               id="advisory-heading"
               className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
@@ -58,7 +55,7 @@ export function AdvisorySection() {
             </p>
             <p>
               My advisory work applies the{" "}
-              <Link to="/framework" className="text-foreground link-accent-underline">
+              <Link to="/playbook" className="text-foreground link-accent-underline">
                 AI Transformation Value Chain
               </Link>{" "}
               to help leaders connect strategic ambition with the operating structures, governance,

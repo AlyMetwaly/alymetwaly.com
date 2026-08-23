@@ -43,9 +43,6 @@ export function MyPerspective() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <div className="section-eyebrow mb-4">
-              02 · PERSPECTIVE
-            </div>
             <h2
               id="perspective-heading"
               className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"

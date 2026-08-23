@@ -72,7 +72,6 @@ export function ExperienceSection() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-8 grid gap-8 sm:mb-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
-            <div className="section-eyebrow mb-4">04 · EXPERIENCE</div>
             <h2
               id="experience-heading"
               className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"

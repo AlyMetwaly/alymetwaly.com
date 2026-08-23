@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { SiteLayout } from "@/components/layout/SiteLayout";
+import { ProofSection } from "@/components/ProofSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,18 +50,6 @@ function Home() {
       >
         <div className="mx-auto grid max-w-[1280px] items-end gap-8 px-4 pb-16 pt-12 sm:gap-10 sm:px-6 sm:pb-20 sm:pt-16 lg:grid-cols-12 lg:gap-12 lg:px-12 lg:pb-28 lg:pt-24">
           <div className="lg:col-span-8">
-            <div className="mb-8 space-y-1.5">
-              <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                <span className="accent-dot" aria-hidden="true" />
-                Enterprise AI Transformation Leader
-              </div>
-              <p className="pl-5 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                Builder of AI Operating Models
-              </p>
-              <p className="pl-5 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                · Advisor · Speaker
-              </p>
-            </div>
             <h1
               id="hero-heading"
               className="font-display text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.95] tracking-[-0.02em]"
@@ -95,6 +84,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <ProofSection />
     </SiteLayout>
   );
 }

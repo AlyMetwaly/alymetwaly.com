@@ -10,9 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SpeakingRouteImport } from './routes/speaking'
-import { Route as ProofRouteImport } from './routes/proof'
-import { Route as PerspectiveRouteImport } from './routes/perspective'
-import { Route as FrameworkRouteImport } from './routes/framework'
+import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AdvisoryRouteImport } from './routes/advisory'
@@ -24,19 +22,9 @@ const SpeakingRoute = SpeakingRouteImport.update({
   path: '/speaking',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProofRoute = ProofRouteImport.update({
-  id: '/proof',
-  path: '/proof',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PerspectiveRoute = PerspectiveRouteImport.update({
-  id: '/perspective',
-  path: '/perspective',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FrameworkRoute = FrameworkRouteImport.update({
-  id: '/framework',
-  path: '/framework',
+const PlaybookRoute = PlaybookRouteImport.update({
+  id: '/playbook',
+  path: '/playbook',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperienceRoute = ExperienceRouteImport.update({
@@ -71,9 +59,7 @@ export interface FileRoutesByFullPath {
   '/advisory': typeof AdvisoryRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
-  '/framework': typeof FrameworkRoute
-  '/perspective': typeof PerspectiveRoute
-  '/proof': typeof ProofRoute
+  '/playbook': typeof PlaybookRoute
   '/speaking': typeof SpeakingRoute
 }
 export interface FileRoutesByTo {
@@ -82,9 +68,7 @@ export interface FileRoutesByTo {
   '/advisory': typeof AdvisoryRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
-  '/framework': typeof FrameworkRoute
-  '/perspective': typeof PerspectiveRoute
-  '/proof': typeof ProofRoute
+  '/playbook': typeof PlaybookRoute
   '/speaking': typeof SpeakingRoute
 }
 export interface FileRoutesById {
@@ -94,9 +78,7 @@ export interface FileRoutesById {
   '/advisory': typeof AdvisoryRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
-  '/framework': typeof FrameworkRoute
-  '/perspective': typeof PerspectiveRoute
-  '/proof': typeof ProofRoute
+  '/playbook': typeof PlaybookRoute
   '/speaking': typeof SpeakingRoute
 }
 export interface FileRouteTypes {
@@ -107,9 +89,7 @@ export interface FileRouteTypes {
     | '/advisory'
     | '/contact'
     | '/experience'
-    | '/framework'
-    | '/perspective'
-    | '/proof'
+    | '/playbook'
     | '/speaking'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -118,9 +98,7 @@ export interface FileRouteTypes {
     | '/advisory'
     | '/contact'
     | '/experience'
-    | '/framework'
-    | '/perspective'
-    | '/proof'
+    | '/playbook'
     | '/speaking'
   id:
     | '__root__'
@@ -129,9 +107,7 @@ export interface FileRouteTypes {
     | '/advisory'
     | '/contact'
     | '/experience'
-    | '/framework'
-    | '/perspective'
-    | '/proof'
+    | '/playbook'
     | '/speaking'
   fileRoutesById: FileRoutesById
 }
@@ -141,9 +117,7 @@ export interface RootRouteChildren {
   AdvisoryRoute: typeof AdvisoryRoute
   ContactRoute: typeof ContactRoute
   ExperienceRoute: typeof ExperienceRoute
-  FrameworkRoute: typeof FrameworkRoute
-  PerspectiveRoute: typeof PerspectiveRoute
-  ProofRoute: typeof ProofRoute
+  PlaybookRoute: typeof PlaybookRoute
   SpeakingRoute: typeof SpeakingRoute
 }
 
@@ -156,25 +130,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SpeakingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/proof': {
-      id: '/proof'
-      path: '/proof'
-      fullPath: '/proof'
-      preLoaderRoute: typeof ProofRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/perspective': {
-      id: '/perspective'
-      path: '/perspective'
-      fullPath: '/perspective'
-      preLoaderRoute: typeof PerspectiveRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/framework': {
-      id: '/framework'
-      path: '/framework'
-      fullPath: '/framework'
-      preLoaderRoute: typeof FrameworkRouteImport
+    '/playbook': {
+      id: '/playbook'
+      path: '/playbook'
+      fullPath: '/playbook'
+      preLoaderRoute: typeof PlaybookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experience': {
@@ -221,9 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdvisoryRoute: AdvisoryRoute,
   ContactRoute: ContactRoute,
   ExperienceRoute: ExperienceRoute,
-  FrameworkRoute: FrameworkRoute,
-  PerspectiveRoute: PerspectiveRoute,
-  ProofRoute: ProofRoute,
+  PlaybookRoute: PlaybookRoute,
   SpeakingRoute: SpeakingRoute,
 }
 export const routeTree = rootRouteImport

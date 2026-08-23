@@ -11,7 +11,6 @@ export function SignatureFramework() {
     >
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-12 sm:mb-16 lg:mb-20 max-w-3xl">
-          <div className="section-eyebrow mb-4">03 · FRAMEWORK</div>
           <h2
             id="framework-heading"
             className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
