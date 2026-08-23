@@ -9,8 +9,56 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SpeakingRouteImport } from './routes/speaking'
+import { Route as ProofRouteImport } from './routes/proof'
+import { Route as PerspectiveRouteImport } from './routes/perspective'
+import { Route as FrameworkRouteImport } from './routes/framework'
+import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AdvisoryRouteImport } from './routes/advisory'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SpeakingRoute = SpeakingRouteImport.update({
+  id: '/speaking',
+  path: '/speaking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProofRoute = ProofRouteImport.update({
+  id: '/proof',
+  path: '/proof',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerspectiveRoute = PerspectiveRouteImport.update({
+  id: '/perspective',
+  path: '/perspective',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FrameworkRoute = FrameworkRouteImport.update({
+  id: '/framework',
+  path: '/framework',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienceRoute = ExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvisoryRoute = AdvisoryRouteImport.update({
+  id: '/advisory',
+  path: '/advisory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +67,144 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/advisory': typeof AdvisoryRoute
+  '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
+  '/framework': typeof FrameworkRoute
+  '/perspective': typeof PerspectiveRoute
+  '/proof': typeof ProofRoute
+  '/speaking': typeof SpeakingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/advisory': typeof AdvisoryRoute
+  '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
+  '/framework': typeof FrameworkRoute
+  '/perspective': typeof PerspectiveRoute
+  '/proof': typeof ProofRoute
+  '/speaking': typeof SpeakingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/advisory': typeof AdvisoryRoute
+  '/contact': typeof ContactRoute
+  '/experience': typeof ExperienceRoute
+  '/framework': typeof FrameworkRoute
+  '/perspective': typeof PerspectiveRoute
+  '/proof': typeof ProofRoute
+  '/speaking': typeof SpeakingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/advisory'
+    | '/contact'
+    | '/experience'
+    | '/framework'
+    | '/perspective'
+    | '/proof'
+    | '/speaking'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/advisory'
+    | '/contact'
+    | '/experience'
+    | '/framework'
+    | '/perspective'
+    | '/proof'
+    | '/speaking'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/advisory'
+    | '/contact'
+    | '/experience'
+    | '/framework'
+    | '/perspective'
+    | '/proof'
+    | '/speaking'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdvisoryRoute: typeof AdvisoryRoute
+  ContactRoute: typeof ContactRoute
+  ExperienceRoute: typeof ExperienceRoute
+  FrameworkRoute: typeof FrameworkRoute
+  PerspectiveRoute: typeof PerspectiveRoute
+  ProofRoute: typeof ProofRoute
+  SpeakingRoute: typeof SpeakingRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/speaking': {
+      id: '/speaking'
+      path: '/speaking'
+      fullPath: '/speaking'
+      preLoaderRoute: typeof SpeakingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proof': {
+      id: '/proof'
+      path: '/proof'
+      fullPath: '/proof'
+      preLoaderRoute: typeof ProofRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perspective': {
+      id: '/perspective'
+      path: '/perspective'
+      fullPath: '/perspective'
+      preLoaderRoute: typeof PerspectiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/framework': {
+      id: '/framework'
+      path: '/framework'
+      fullPath: '/framework'
+      preLoaderRoute: typeof FrameworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advisory': {
+      id: '/advisory'
+      path: '/advisory'
+      fullPath: '/advisory'
+      preLoaderRoute: typeof AdvisoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +217,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdvisoryRoute: AdvisoryRoute,
+  ContactRoute: ContactRoute,
+  ExperienceRoute: ExperienceRoute,
+  FrameworkRoute: FrameworkRoute,
+  PerspectiveRoute: PerspectiveRoute,
+  ProofRoute: ProofRoute,
+  SpeakingRoute: SpeakingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

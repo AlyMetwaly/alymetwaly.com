@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 const engagements = [
   {
     audience: "Enterprise leadership",
@@ -56,9 +58,9 @@ export function AdvisorySection() {
             </p>
             <p>
               My advisory work applies the{" "}
-              <a href="#framework" className="text-foreground link-accent-underline">
+              <Link to="/framework" className="text-foreground link-accent-underline">
                 AI Transformation Value Chain
-              </a>{" "}
+              </Link>{" "}
               to help leaders connect strategic ambition with the operating structures, governance,
               adoption mechanisms, and measurement systems required to deliver business value.
             </p>
