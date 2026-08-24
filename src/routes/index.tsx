@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ProofSection } from "@/components/ProofSection";
+import { absoluteUrl } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,7 +28,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "profile" },
       { property: "og:locale", content: "en_US" },
-      { property: "og:image", content: portraitAsset.url },
+      { property: "og:url", content: absoluteUrl("/") },
+      { property: "og:image", content: absoluteUrl(portraitAsset) },
+      { property: "og:image:alt", content: "Aly Metwaly, Enterprise AI Transformation Leader" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Aly Metwaly · Enterprise AI Transformation Leader" },
       {
@@ -35,7 +38,9 @@ export const Route = createFileRoute("/")({
         content:
           "Designing AI operating models that turn enterprise AI strategy into measurable adoption and business performance.",
       },
+      { name: "twitter:image", content: absoluteUrl(portraitAsset) },
     ],
+    links: [{ rel: "canonical", href: absoluteUrl("/") }],
   }),
   component: Home,
 });
