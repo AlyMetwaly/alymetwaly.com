@@ -2,7 +2,29 @@ import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ProofSection } from "@/components/ProofSection";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, SITE_URL } from "@/lib/site";
+
+// Person schema for the homepage only. TanStack renders a "script:ld+json"
+// meta entry as <script type="application/ld+json"> in <head>, JSON-stringified
+// and HTML-escaped.
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Aly Metwaly",
+  url: SITE_URL,
+  jobTitle: "AI Transformation Manager",
+  worksFor: {
+    "@type": "Organization",
+    name: "Nokia",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Espoo",
+    addressCountry: "FI",
+  },
+  image: absoluteUrl(portraitAsset),
+  sameAs: ["https://www.linkedin.com/in/aly-metwaly/", "https://github.com/AlyMetwaly"],
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,6 +61,7 @@ export const Route = createFileRoute("/")({
           "Designing AI operating models that turn enterprise AI strategy into measurable adoption and business performance.",
       },
       { name: "twitter:image", content: absoluteUrl(portraitAsset) },
+      { "script:ld+json": personSchema },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/") }],
   }),
