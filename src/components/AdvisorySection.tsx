@@ -77,7 +77,7 @@ export function AdvisorySection() {
 
         <div className="mt-12 flex flex-col gap-8 sm:mt-16 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-2xl space-y-4 text-muted-foreground leading-relaxed">
-            <p>Start with a paid Advisory Discovery Session (€250, 60 minutes).</p>
+            <p>Start with a paid Advisory Discovery Session.</p>
             <p>
               Submit your challenge and the outcome you are seeking. I review every request personally
               and will contact you regarding potential fit, availability, payment method, and next

@@ -1,9 +1,6 @@
-import { SectionDivider } from "@/components/SectionDivider";
-
 export function ContactSection() {
   return (
     <section id="contact" className="section-anchor" aria-labelledby="contact-heading">
-      <SectionDivider className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-12" />
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">

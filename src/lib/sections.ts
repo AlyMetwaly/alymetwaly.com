@@ -4,8 +4,7 @@ export const SITE_SECTIONS = [
   { id: "advisory", path: "/advisory", number: "05", label: "Advisory" },
   { id: "speaking", path: "/speaking", number: "06", label: "Speaking" },
   { id: "about", path: "/about", number: "07", label: "About" },
-  { id: "contact", path: "/contact", number: "08", label: "Contact" },
 ] as const;
 
-/** Primary header navigation — all section pages except contact (CTA covers it) */
-export const HEADER_NAV_SECTIONS = SITE_SECTIONS.filter((s) => s.id !== "contact");
+/** Primary header navigation — contact is reached via the "Let's Talk" CTA */
+export const HEADER_NAV_SECTIONS = SITE_SECTIONS;

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { HEADER_NAV_SECTIONS, SITE_SECTIONS } from "@/lib/sections";
+import { HEADER_NAV_SECTIONS } from "@/lib/sections";
 
 function NavLink({
   to,
@@ -62,7 +62,7 @@ export function SiteHeader() {
           className="flex gap-4 overflow-x-auto pb-3 text-xs text-muted-foreground lg:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           aria-label="Primary mobile"
         >
-          {SITE_SECTIONS.map((link) => (
+          {HEADER_NAV_SECTIONS.map((link) => (
             <NavLink
               key={link.id}
               to={link.path}

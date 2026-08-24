@@ -1,10 +1,10 @@
 const metrics = [
-  { value: "65%", label: "Increase in active AI tool usage across R&D" },
-  { value: "5×", label: "Scale-up of an AI requirements-assistant use case in 8 weeks" },
-  { value: "31", label: "Engineer-years of annual capacity unlocked (~1,160 hrs/week)" },
-  { value: "100:1", label: "Return on execution effort vs. non-BAU hours invested" },
-  { value: "74k", label: "Employees in the performance program rolled out globally" },
-  { value: "255", label: "Roadmap items governed across 20 cross-functional workstreams" },
+  { value: "65%", label: "Increase in AI adoption across engineering teams" },
+  { value: "5×", label: "Scale-up of an AI-enabled solution in 8 weeks" },
+  { value: "31", label: "Engineer-years of annual capacity unlocked" },
+  { value: "100:1", label: "Return on transformation effort invested" },
+  { value: "74k", label: "Employees impacted by a global transformation program" },
+  { value: "255", label: "Strategic roadmap items governed across 20 workstreams" },
 ];
 
 export function ProofSection() {
