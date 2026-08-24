@@ -1,113 +1,127 @@
-import { createServer } from "node:http";
-import { copyFileSync, cpSync, existsSync, rmSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
-import { pathToFileURL } from "node:url";
+// Assemble dist/ into exactly what should be published to GitHub Pages.
+//
+// Routes are prerendered by TanStack Start (see `prerender` in vite.config.ts),
+// so this script no longer boots an SSR server to render "/" -- the build
+// already emitted index.html and one index.html per route into dist/client.
+//
+// This script's job is to flatten dist/client to the top level of dist and
+// guarantee nothing else is there. Everything published is rebuilt from
+// scratch on every run; no file survives from a previous build.
+import {
+  copyFileSync,
+  cpSync,
+  existsSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
+import { join, posix, relative } from "node:path";
 
-const BASE = "/";
 const CUSTOM_DOMAIN = "alymetwaly.com";
 const DIST = "dist";
 const CLIENT = join(DIST, "client");
-const CLIENT_ASSETS = join(CLIENT, "assets");
-const ASSETS = join(DIST, "assets");
-const SERVER_ENTRY = join(DIST, "server", "server.js");
+const SERVER = join(DIST, "server");
 
-async function startSsrServer() {
-  const handler = (await import(pathToFileURL(SERVER_ENTRY).href)).default;
+// Routes that must each have their own prerendered file. Kept in sync with
+// `pages` in vite.config.ts; verified below so a routing change that silently
+// stops emitting a file fails the build instead of shipping a 404.
+const REQUIRED_ROUTES = [
+  "/",
+  "/playbook",
+  "/experience",
+  "/advisory",
+  "/speaking",
+  "/about",
+  "/contact",
+];
 
-  const server = createServer(async (req, res) => {
-    try {
-      const host = req.headers.host ?? "127.0.0.1";
-      const url = new URL(req.url ?? "/", `http://${host}`);
-      const headers = new Headers();
-      for (const [key, value] of Object.entries(req.headers)) {
-        if (value === undefined) continue;
-        headers.set(key, Array.isArray(value) ? value.join(", ") : value);
-      }
-
-      const response = await handler.fetch(new Request(url, { method: req.method, headers }), {}, {});
-      res.writeHead(response.status, Object.fromEntries(response.headers.entries()));
-      res.end(Buffer.from(await response.arrayBuffer()));
-    } catch (error) {
-      console.error(error);
-      res.writeHead(500, { "content-type": "text/plain; charset=utf-8" });
-      res.end(error instanceof Error ? error.message : String(error));
-    }
-  });
-
-  await new Promise((resolve, reject) => {
-    server.once("error", reject);
-    server.listen(0, "127.0.0.1", resolve);
-  });
-
-  const address = server.address();
-  if (!address || typeof address === "string") {
-    throw new Error("Failed to resolve SSR preview server port.");
-  }
-
-  return { server, port: address.port };
+if (!existsSync(CLIENT)) {
+  throw new Error(`Expected client output at ${CLIENT}. Run "npm run build" first.`);
 }
 
-function stopServer(server) {
-  return new Promise((resolve) => {
-    server.close(() => resolve());
-  });
+// 1. Drop every top-level entry except the raw build environments. This is
+//    what stops stale output (e.g. route directories from a prerender setup
+//    that has since changed) from surviving into the published site.
+for (const entry of readdirSync(DIST)) {
+  if (entry === "client" || entry === "server") continue;
+  rmSync(join(DIST, entry), { recursive: true, force: true });
 }
 
-async function waitForPage(url, maxAttempts = 60) {
-  let lastStatus = null;
-  let lastError = null;
+// 2. Flatten the client build to the top level.
+cpSync(CLIENT, DIST, { recursive: true });
 
-  for (let i = 0; i < maxAttempts; i++) {
-    try {
-      const res = await fetch(url);
-      lastStatus = res.status;
-      if (res.ok) return res;
-    } catch (error) {
-      lastError = error;
-    }
-    await new Promise((resolve) => setTimeout(resolve, 250));
-  }
+// 3. Remove the build environments; they are not published.
+for (const dir of [CLIENT, SERVER]) {
+  rmSync(dir, { recursive: true, force: true });
+}
 
-  const detail = lastError instanceof Error ? lastError.message : lastError ? String(lastError) : null;
+// `pages.json` is sitemap build metadata, not public content.
+rmSync(join(DIST, "pages.json"), { force: true });
+
+// 4. GitHub Pages serves 404.html for any unmatched path. Every real route now
+//    has its own file, so this only applies to genuinely unknown URLs.
+const indexHtml = join(DIST, "index.html");
+if (!existsSync(indexHtml)) {
   throw new Error(
-    `SSR preview did not return a successful response for ${url}` +
-      (lastStatus != null ? ` (last status: ${lastStatus})` : "") +
-      (detail ? `\n${detail}` : ""),
+    `Prerender did not produce ${indexHtml}. Check the "prerender" options in vite.config.ts.`,
+  );
+}
+copyFileSync(indexHtml, join(DIST, "404.html"));
+
+writeFileSync(join(DIST, "CNAME"), `${CUSTOM_DOMAIN}\n`);
+
+// 5. Verify the published tree is internally consistent.
+const missingRoutes = REQUIRED_ROUTES.filter(
+  (route) =>
+    !existsSync(join(DIST, route === "/" ? "index.html" : join(route.slice(1), "index.html"))),
+);
+if (missingRoutes.length) {
+  throw new Error(
+    `Prerender did not emit a file for: ${missingRoutes.join(", ")}.\n` +
+      `Add them to "pages" in vite.config.ts.`,
   );
 }
 
-if (!existsSync(CLIENT_ASSETS)) {
-  throw new Error(`Expected client assets at ${CLIENT_ASSETS}. Run "npm run build" first.`);
-}
-
-if (!existsSync(SERVER_ENTRY)) {
-  throw new Error(`Expected SSR server entry at ${SERVER_ENTRY}. Run "npm run build" first.`);
-}
-
-if (existsSync(ASSETS)) {
-  rmSync(ASSETS, { recursive: true, force: true });
-}
-
-cpSync(CLIENT_ASSETS, ASSETS, { recursive: true });
-
-const { server, port } = await startSsrServer();
-
-try {
-  const previewPath = BASE === "/" ? "/" : `${BASE}/`;
-  const url = `http://127.0.0.1:${port}${previewPath}`;
-  const response = await waitForPage(url);
-  const html = await response.text();
-  writeFileSync(join(DIST, "index.html"), html);
-  copyFileSync(join(DIST, "index.html"), join(DIST, "404.html"));
-} finally {
-  await stopServer(server);
-}
-
-for (const dir of ["client", "server"]) {
-  const path = join(DIST, dir);
-  if (existsSync(path)) {
-    rmSync(path, { recursive: true, force: true });
+for (const file of ["robots.txt", ".nojekyll"]) {
+  if (!existsSync(join(DIST, file))) {
+    throw new Error(`Expected ${file} in ${DIST}. It should be copied from public/.`);
   }
 }
 
-writeFileSync(join(DIST, "CNAME"), `${CUSTOM_DOMAIN}\n`);
+// Every local asset referenced by published HTML must actually exist. A stale
+// prerendered page referencing a previous build's hashed filenames is exactly
+// how the site ended up serving blank pages; fail the build instead.
+function htmlFiles(dir) {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) return htmlFiles(full);
+    return entry.name.endsWith(".html") ? [full] : [];
+  });
+}
+
+const brokenRefs = [];
+for (const file of htmlFiles(DIST)) {
+  const html = readFileSync(file, "utf8");
+  const refs = new Set(
+    html.match(/(?:href|src)="(\/[^"]+)"/g)?.map((m) => m.slice(m.indexOf('"/') + 2, -1)) ?? [],
+  );
+  for (const ref of refs) {
+    // Only verify file-like references; route links have no extension and are
+    // covered by the REQUIRED_ROUTES check above.
+    if (!posix.basename(ref).includes(".")) continue;
+    if (!existsSync(join(DIST, ref))) {
+      brokenRefs.push(`${relative(DIST, file).replace(/\\/g, "/")} -> /${ref}`);
+    }
+  }
+}
+
+if (brokenRefs.length) {
+  throw new Error(
+    `Published HTML references files that do not exist:\n  ${brokenRefs.join("\n  ")}`,
+  );
+}
+
+console.log(
+  `prepare-gh-pages: published ${REQUIRED_ROUTES.length} routes, verified all asset references resolve.`,
+);

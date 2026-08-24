@@ -6,6 +6,21 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const SITE_HOST = "https://alymetwaly.com";
+
+// Every route that must exist as its own static file on GitHub Pages.
+// Keep in sync with src/routes/. A missing entry means that URL falls back
+// to 404.html instead of being served its own prerendered HTML.
+const ROUTES = [
+  "/",
+  "/playbook",
+  "/experience",
+  "/advisory",
+  "/speaking",
+  "/about",
+  "/contact",
+] as const;
+
 export default defineConfig({
   nitro: false,
   vite: {
@@ -18,5 +33,26 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+
+    // Prerender each route to its own file. GitHub Pages is a plain static
+    // host with no SPA history fallback, so without this every route except
+    // "/" resolves to 404.html.
+    //
+    // autoSubfolderIndex emits "/about" as "about/index.html", which is the
+    // layout Pages needs to serve it at /about.
+    prerender: {
+      enabled: true,
+      autoSubfolderIndex: true,
+      crawlLinks: true,
+      // Fail the build rather than silently publishing a site with missing
+      // or stale route files.
+      failOnError: true,
+    },
+    pages: ROUTES.map((path) => ({ path })),
+
+    sitemap: {
+      enabled: true,
+      host: SITE_HOST,
+    },
   },
 });
