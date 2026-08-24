@@ -50,6 +50,14 @@ export default defineConfig({
     },
     pages: ROUTES.map((path) => ({ path })),
 
+    // NOTE: the built-in `spa` shell option is deliberately not used here.
+    // Its maskPath defaults to "/", and prerender de-duplicates pages through
+    // a Map keyed by path, so the shell entry overwrites the real "/" page and
+    // no index.html is emitted. Pointing maskPath at a non-route path instead
+    // fails the build, because the shell request still resolves the URL and
+    // 404s. scripts/prepare-gh-pages.mjs therefore renders the 404 shell
+    // directly from the built server bundle.
+
     sitemap: {
       enabled: true,
       host: SITE_HOST,
