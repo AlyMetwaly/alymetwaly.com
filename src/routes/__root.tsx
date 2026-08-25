@@ -95,6 +95,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      // Served from public/ so the URL stays stable; Vite fingerprints anything
+      // imported from src/assets, and Google needs a URL that does not change.
+      { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
+      // High-DPI source for Google's result chip, which prefers a 48px-multiple
+      // PNG. No 16x16 PNG link: favicon.ico already carries that size, and two
+      // competing declarations make browsers pick inconsistently.
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/icon-192.png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
