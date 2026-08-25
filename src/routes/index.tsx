@@ -3,6 +3,7 @@ import portraitAsset from "@/assets/portrait.JPG";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ProofSection } from "@/components/ProofSection";
 import { absoluteUrl, SITE_URL } from "@/lib/site";
+import { SAME_AS } from "@/lib/social";
 
 // Person schema for the homepage only. TanStack renders a "script:ld+json"
 // meta entry as <script type="application/ld+json"> in <head>, JSON-stringified
@@ -23,7 +24,9 @@ const personSchema = {
     addressCountry: "FI",
   },
   image: absoluteUrl(portraitAsset),
-  sameAs: ["https://www.linkedin.com/in/aly-metwaly/", "https://github.com/AlyMetwaly"],
+  // Shares one source with the footer links so the rendered profiles and the
+  // identity signal cannot drift apart.
+  sameAs: [...SAME_AS],
 };
 
 export const Route = createFileRoute("/")({
