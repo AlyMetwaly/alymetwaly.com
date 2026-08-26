@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { OG_IMAGE, OG_IMAGE_ALT, OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -91,7 +92,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Designing AI operating models that scale across complex enterprises. Transformation Manager at Nokia.",
       },
       { property: "og:type", content: "website" },
+      // Card image declared once here so every route inherits it. Routes
+      // override og:title and og:description; none should override the image.
+      // Width and height let scrapers lay the card out without downloading and
+      // measuring the file first, which is a common cause of a blank first scrape.
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:secure_url", content: OG_IMAGE },
+      { property: "og:image:width", content: OG_IMAGE_WIDTH },
+      { property: "og:image:height", content: OG_IMAGE_HEIGHT },
+      { property: "og:image:alt", content: OG_IMAGE_ALT },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
+      { name: "twitter:image:alt", content: OG_IMAGE_ALT },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

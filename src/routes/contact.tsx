@@ -17,21 +17,18 @@ export const Route = createFileRoute("/contact")({
       {
         property: "og:description",
         content:
-          "Contact Aly Metwaly for advisory sessions, speaking engagements, media appearances, and general inquiries.",
+          "Advisory sessions, speaking engagements, media appearances, and general inquiries.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
       { property: "og:url", content: absoluteUrl("/contact") },
-      { property: "og:image", content: absoluteUrl(portraitAsset) },
-      { property: "og:image:alt", content: "Aly Metwaly, Enterprise AI Transformation Leader" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Contact · Aly Metwaly" },
       {
         name: "twitter:description",
         content:
-          "Contact Aly Metwaly for advisory sessions, speaking engagements, media appearances, and general inquiries.",
+          "Advisory sessions, speaking engagements, media appearances, and general inquiries.",
       },
-      { name: "twitter:image", content: absoluteUrl(portraitAsset) },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/contact") }],
   }),

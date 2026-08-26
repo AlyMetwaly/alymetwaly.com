@@ -17,21 +17,18 @@ export const Route = createFileRoute("/speaking")({
       {
         property: "og:description",
         content:
-          "Keynotes, panels, and executive conversations on enterprise AI transformation, adoption at scale, and the future of work.",
+          "Keynotes and panels on enterprise AI transformation, adoption at scale, and the future of work.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
       { property: "og:url", content: absoluteUrl("/speaking") },
-      { property: "og:image", content: absoluteUrl(portraitAsset) },
-      { property: "og:image:alt", content: "Aly Metwaly, Enterprise AI Transformation Leader" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Speaking · Aly Metwaly" },
       {
         name: "twitter:description",
         content:
-          "Keynotes, panels, and executive conversations on enterprise AI transformation, adoption at scale, and the future of work.",
+          "Keynotes and panels on enterprise AI transformation, adoption at scale, and the future of work.",
       },
-      { name: "twitter:image", content: absoluteUrl(portraitAsset) },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/speaking") }],
   }),

@@ -49,21 +49,18 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Enterprise AI operating models, governance, and adoption at scale. Frameworks and execution from the field. Transformation Manager at Nokia.",
+          "Enterprise AI operating models, governance, and adoption at scale. Transformation Manager at Nokia.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:locale", content: "en_US" },
       { property: "og:url", content: absoluteUrl("/") },
-      { property: "og:image", content: absoluteUrl(portraitAsset) },
-      { property: "og:image:alt", content: "Aly Metwaly, Enterprise AI Transformation Leader" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Aly Metwaly · Enterprise AI Transformation Leader" },
       {
         name: "twitter:description",
         content:
-          "Designing AI operating models that turn enterprise AI strategy into measurable adoption and business performance.",
+          "Enterprise AI operating models, governance, and adoption at scale. Transformation Manager at Nokia.",
       },
-      { name: "twitter:image", content: absoluteUrl(portraitAsset) },
       { "script:ld+json": personSchema },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/") }],
@@ -91,8 +88,8 @@ function Home() {
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg lg:text-xl">
               I design enterprise AI operating models: governance, adoption, measurement, and change
-              management that move large organizations from AI experimentation to repeatable execution
-              and measurable business impact.
+              management that move large organizations from AI experimentation to repeatable
+              execution and measurable business impact.
             </p>
           </div>
           <div className="lg:col-span-4">
