@@ -100,13 +100,15 @@ function Home() {
                 className="w-full aspect-[4/5] object-cover"
                 style={{ background: "var(--muted)" }}
               />
-              <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono uppercase tracking-wider text-muted-foreground">
+              {/* Two rows by design. The grid is bottom-aligned against the
+                  portrait, so the spacing is tuned for two: gap-y and the top
+                  margin were opened up when the third row came out, otherwise
+                  the block reads cramped and sits too close to the image. */}
+              <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3 text-xs font-mono uppercase tracking-wider text-muted-foreground">
                 <div>Based</div>
                 <div className="text-foreground">Espoo, FI</div>
                 <div>Focus</div>
                 <div className="text-foreground">AI Operating Models</div>
-                <div>Scale</div>
-                <div className="text-foreground">74k+ employees</div>
               </div>
             </div>
           </div>
