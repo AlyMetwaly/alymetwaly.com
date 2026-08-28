@@ -52,7 +52,7 @@ export type Talk = {
  * Rendered on the speaker card AND used as `jobTitle` below, from this single
  * constant, so the visible text and the structured data cannot disagree.
  */
-const JOB_TITLE = "AI Transformation Manager";
+const JOB_TITLE = "AI Transformation Leader & Advisor";
 
 /**
  * Person schema.
@@ -63,9 +63,10 @@ const JOB_TITLE = "AI Transformation Manager";
  * editing index.tsx and this work was scoped to add no risk to a route that
  * already works.
  *
- * The homepage remains the source of truth. If jobTitle changes there, change
- * it here in the same commit: two Person objects disagreeing about the title is
- * precisely the entity-resolution problem these pages must not worsen.
+ * WARNING: this no longer matches the homepage. src/routes/index.tsx still
+ * declares jobTitle "AI Transformation Manager", so the two Person objects
+ * currently disagree -- which is the entity-resolution problem this site
+ * already has. Align index.tsx with this value to close it.
  */
 const personSchema = {
   "@context": "https://schema.org",
@@ -227,17 +228,24 @@ export function TalkPage({ talk }: { talk: Talk }) {
             )}
 
             <div className="mt-7 flex items-center gap-4">
+              {/*
+                objectPosition, not a separate cropped asset. The source is a
+                2:3 full-length shot, so object-cover on a circle takes a
+                square slice and the browser default of 50% starts that slice
+                at 501px -- below the top of the head at 390px, which clips it.
+                15% starts at 150px: whole head, a little headroom, same zoom.
+              */}
               <img
                 src={portraitAsset}
                 alt="Aly Metwaly"
                 className="h-14 w-14 shrink-0 rounded-full object-cover sm:h-16 sm:w-16"
-                style={{ background: "var(--muted)" }}
+                style={{ background: "var(--muted)", objectPosition: "50% 15%" }}
               />
               <div className="min-w-0">
                 <p className="font-display text-lg leading-tight tracking-tight sm:text-xl">
                   Aly Metwaly
                 </p>
-                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:text-xs">
+                <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:text-xs">
                   {JOB_TITLE}
                 </p>
                 <Link
