@@ -81,7 +81,7 @@ const SOCIAL_CTAS: ReadonlyArray<{
     {
       key: "instagram",
       label: "Follow on Instagram",
-      sublabel: "Building in public — the work behind the frameworks",
+      sublabel: "Building in public: the work behind the frameworks",
       event: "slides.instagram",
     },
     {
