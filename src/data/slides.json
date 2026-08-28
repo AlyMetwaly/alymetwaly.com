@@ -1,0 +1,28 @@
+{
+  "title": "TBD — set this before the keynote",
+  "thesis": "",
+  "event": "TBD",
+  "date": "2026-08-29",
+  "slug": "tbd-2026-08-29",
+  "deckUrl": "/decks/placeholder.pdf",
+  "pastTalks": [
+    {
+      "title": "From Co-Pilots to Colleagues: Leading the Agentic Workforce",
+      "event": "Verge at Epicenter",
+      "date": "2026",
+      "deckUrl": ""
+    },
+    {
+      "title": "From Failure to Success: Design Thinking + AI in Innovation and Transformation",
+      "event": "DASH",
+      "date": "2025",
+      "deckUrl": ""
+    },
+    {
+      "title": "AI in Sustainability and the Future of Work",
+      "event": "Sustainability MENA Hackathon",
+      "date": "2025",
+      "deckUrl": ""
+    }
+  ]
+}
