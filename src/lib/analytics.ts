@@ -14,7 +14,6 @@
 export type TalkEvent =
   | "talk.view"
   | "talk.download"
-  | "talk.playbook"
   | "talk.linkedin"
   | "talk.instagram"
   | "talk.youtube"

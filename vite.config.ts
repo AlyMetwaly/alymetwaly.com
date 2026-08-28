@@ -8,8 +8,10 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 const SITE_HOST = "https://alymetwaly.com";
 
-// Kept in sync with `deckUrl` in the talk data under src/data/talks/.
-const DECK_PATH = "/decks/placeholder.pdf";
+// One entry per downloadable file linked from a talk page. Kept in sync with
+// `deckUrl` in the talk data under src/data/talks/. These are registered as
+// pages only so they can be excluded from the sitemap -- see below.
+const DECK_PATHS = ["/decks/the-human-premium-workbook.pdf"];
 
 // Every route that must exist as its own static file on GitHub Pages.
 // Keep in sync with src/routes/. A missing entry means that URL falls back
@@ -62,11 +64,11 @@ export default defineConfig({
     },
     pages: [
       ...ROUTES.map((path) => ({ path })),
-      // The keynote deck is a static file, not a page. It is registered here
-      // only so it can be excluded from the sitemap: crawlLinks discovers it
-      // from a talk page download button, and the sitemap builder reads the
-      // discovered page list rather than the prerender filter below.
-      { path: DECK_PATH, sitemap: { exclude: true } },
+      // Downloads are static files, not pages. They are registered here only so
+      // they can be excluded from the sitemap: crawlLinks discovers them from a
+      // talk page download button, and the sitemap builder reads the discovered
+      // page list rather than the prerender filter below.
+      ...DECK_PATHS.map((path) => ({ path, sitemap: { exclude: true } })),
     ],
 
     // NOTE: the built-in `spa` shell option is deliberately not used here.

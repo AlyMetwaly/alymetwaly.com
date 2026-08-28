@@ -32,6 +32,12 @@ export type Talk = {
   date: string;
   slug: string;
   deckUrl: string;
+  /**
+   * Label for the download button. Optional: some events hand out the slide
+   * deck, others a workbook or a handout, and the button should say which.
+   * Falls back to slides.
+   */
+  deckLabel?: string;
   pastTalks: ReadonlyArray<{
     title: string;
     event: string;
@@ -186,7 +192,7 @@ export function talkHead(talk: Talk, path: string) {
 }
 
 export function TalkPage({ talk }: { talk: Talk }) {
-  const { slug, thesis, title, event, date, deckUrl, pastTalks } = talk;
+  const { slug, thesis, title, event, date, deckUrl, deckLabel, pastTalks } = talk;
 
   useEffect(() => {
     track("talk.view", slug);
@@ -260,23 +266,8 @@ export function TalkPage({ talk }: { talk: Talk }) {
                 className="flex min-h-14 w-full items-center justify-center rounded-full px-6 text-base font-medium transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 style={{ background: "var(--ink)", color: "var(--paper)" }}
               >
-                Download the slides (PDF)
+                {deckLabel ?? "Download the slides (PDF)"}
               </a>
-
-              {/*
-                A destination, not a follow, so it is deliberately not a pill:
-                an underlined text link with an arrow reads as "go deeper here"
-                and cannot be mistaken for one of the three profile buttons
-                below it.
-              */}
-              <Link
-                to="/playbook"
-                onClick={() => track("talk.playbook", slug)}
-                className="link-accent-underline flex min-h-11 w-full items-center justify-center gap-1.5 text-base font-medium"
-              >
-                Read the playbook
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
             </div>
 
             <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:text-xs">
