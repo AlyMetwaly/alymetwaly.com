@@ -2,32 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ProofSection } from "@/components/ProofSection";
-import { absoluteUrl, SITE_URL } from "@/lib/site";
-import { SAME_AS } from "@/lib/social";
-
-// Person schema for the homepage only. TanStack renders a "script:ld+json"
-// meta entry as <script type="application/ld+json"> in <head>, JSON-stringified
-// and HTML-escaped.
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Aly Metwaly",
-  url: SITE_URL,
-  jobTitle: "AI Transformation Manager",
-  worksFor: {
-    "@type": "Organization",
-    name: "Nokia",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Espoo",
-    addressCountry: "FI",
-  },
-  image: absoluteUrl(portraitAsset),
-  // Shares one source with the footer links so the rendered profiles and the
-  // identity signal cannot drift apart.
-  sameAs: [...SAME_AS],
-};
+import { absoluteUrl } from "@/lib/site";
+import { personSchema } from "@/lib/person";
 
 export const Route = createFileRoute("/")({
   head: () => ({

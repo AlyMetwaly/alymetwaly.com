@@ -5,8 +5,9 @@ import portraitAsset from "@/assets/portrait.JPG";
 import { Mark } from "@/components/SocialLinks";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { track, type TalkEvent } from "@/lib/analytics";
-import { absoluteUrl, SITE_URL } from "@/lib/site";
-import { SAME_AS, SOCIAL_LINKS, X_URL, type SocialPlatform } from "@/lib/social";
+import { absoluteUrl } from "@/lib/site";
+import { SOCIAL_LINKS, X_URL, type SocialPlatform } from "@/lib/social";
+import { JOB_TITLE, personSchema } from "@/lib/person";
 
 /**
  * One page per talk, each at its own permanent URL.
@@ -44,47 +45,6 @@ export type Talk = {
     date: string;
     deckUrl: string;
   }>;
-};
-
-/**
- * The one canonical job title.
- *
- * Rendered on the speaker card AND used as `jobTitle` below, from this single
- * constant, so the visible text and the structured data cannot disagree.
- */
-const JOB_TITLE = "AI Transformation Leader & Advisor";
-
-/**
- * Person schema.
- *
- * A verbatim copy of the homepage object in src/routes/index.tsx -- including
- * the absence of an `@id`, which that object genuinely does not have. Not
- * extracted into a shared module with the homepage, because that would mean
- * editing index.tsx and this work was scoped to add no risk to a route that
- * already works.
- *
- * WARNING: this no longer matches the homepage. src/routes/index.tsx still
- * declares jobTitle "AI Transformation Manager", so the two Person objects
- * currently disagree -- which is the entity-resolution problem this site
- * already has. Align index.tsx with this value to close it.
- */
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Aly Metwaly",
-  url: SITE_URL,
-  jobTitle: JOB_TITLE,
-  worksFor: {
-    "@type": "Organization",
-    name: "Nokia",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Espoo",
-    addressCountry: "FI",
-  },
-  image: absoluteUrl(portraitAsset),
-  sameAs: [...SAME_AS],
 };
 
 const hrefFor = (key: SocialPlatform) => SOCIAL_LINKS.find((link) => link.key === key)?.href ?? "";
