@@ -14,6 +14,7 @@
 export type SlidesEvent =
   | "slides.view"
   | "slides.download"
+  | "slides.playbook"
   | "slides.linkedin"
   | "slides.instagram"
   | "slides.youtube"

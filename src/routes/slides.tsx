@@ -67,14 +67,35 @@ const hrefFor = (key: SocialPlatform) => SOCIAL_LINKS.find((link) => link.key ==
 const SOCIAL_CTAS: ReadonlyArray<{
   key: SocialPlatform;
   label: string;
+  sublabel: string;
   href: string;
   event: SlidesEvent;
 }> = (
   [
-    { key: "linkedin", label: "Follow on LinkedIn", event: "slides.linkedin" },
-    { key: "instagram", label: "Follow on Instagram", event: "slides.instagram" },
-    { key: "youtube", label: "Subscribe on YouTube", event: "slides.youtube" },
-    { key: "x", label: "Follow on X", event: "slides.x" },
+    {
+      key: "linkedin",
+      label: "Follow on LinkedIn",
+      sublabel: "Frameworks and rollout notes from live programs",
+      event: "slides.linkedin",
+    },
+    {
+      key: "instagram",
+      label: "Follow on Instagram",
+      sublabel: "Building in public — the work behind the frameworks",
+      event: "slides.instagram",
+    },
+    {
+      key: "youtube",
+      label: "Subscribe on YouTube",
+      sublabel: "This keynote, and the ones after it",
+      event: "slides.youtube",
+    },
+    {
+      key: "x",
+      label: "Follow on X",
+      sublabel: "Shorter takes, in the moment",
+      event: "slides.x",
+    },
   ] as const
 )
   .map((cta) => ({ ...cta, href: cta.key === "x" ? X_URL : hrefFor(cta.key) }))
@@ -147,14 +168,19 @@ function SlidesPage() {
           <div className="max-w-2xl">
             {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
 
-            {/* The thesis is the headline when it exists; the talk title stands
-                in until it does, so the page always has exactly one h1. */}
             <h1
               id="slides-heading"
               className="mt-3 font-display text-[clamp(1.875rem,7vw,3.5rem)] leading-[1.05] tracking-[-0.02em]"
             >
-              {thesis || title}
+              {title}
             </h1>
+
+            {/* One line under the title, pitched between the title and body
+                copy. Same subline idiom the homepage hero uses. Renders
+                nothing at all if the thesis is ever emptied. */}
+            {thesis && (
+              <p className="mt-3 text-lg leading-snug text-muted-foreground sm:text-xl">{thesis}</p>
+            )}
 
             <div className="mt-7 flex items-center gap-4">
               <img
@@ -199,6 +225,27 @@ function SlidesPage() {
                 Download the slides (PDF)
               </a>
 
+              {/*
+                A destination, not a follow, so it is deliberately not a pill:
+                an underlined text link with an arrow reads as "go deeper here"
+                and cannot be mistaken for one of the three profile buttons
+                below it.
+              */}
+              <Link
+                to="/playbook"
+                onClick={() => track("slides.playbook", slug)}
+                className="link-accent-underline flex min-h-11 w-full items-center justify-center gap-1.5 text-base font-medium"
+              >
+                Read the playbook
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+
+            <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:text-xs">
+              Where I publish
+            </p>
+
+            <div className="mt-3 space-y-3">
               {SOCIAL_CTAS.map((cta) => (
                 <a
                   key={cta.key}
@@ -208,10 +255,21 @@ function SlidesPage() {
                   // each profile to the domain as an identity signal.
                   rel="me noopener noreferrer"
                   onClick={() => track(cta.event, slug)}
-                  className="btn-accent-outline flex min-h-14 w-full items-center justify-center gap-2 rounded-full border border-border px-6 text-base font-medium hover:bg-muted"
+                  className="btn-accent-outline flex min-h-16 w-full items-center justify-center gap-3 rounded-full border border-border px-4 hover:bg-muted"
                 >
                   <Mark platform={cta.key} />
-                  {cta.label}
+                  {/*
+                    The sublabel must stay on one line at 375px, so it is sized
+                    to the longest of the four strings rather than to taste.
+                    whitespace-nowrap makes a regression visible as overflow
+                    instead of silently wrapping to two lines.
+                  */}
+                  <span className="flex min-w-0 flex-col items-center leading-tight">
+                    <span className="text-base font-medium">{cta.label}</span>
+                    <span className="mt-0.5 whitespace-nowrap text-[11px] font-normal text-muted-foreground">
+                      {cta.sublabel}
+                    </span>
+                  </span>
                 </a>
               ))}
             </div>
