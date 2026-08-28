@@ -34,7 +34,7 @@ export const GITHUB_URL = "https://github.com/AlyMetwaly";
  * empty. Fold it into SOCIAL_LINKS when you want it in the footer and in
  * `sameAs` too; that is the right fix, just not a same-day one.
  */
-export const X_URL = "";
+export const X_URL: string = "";
 
 /** Profile URLs for schema.org `sameAs`. */
 export const SAME_AS: ReadonlyArray<string> = [...SOCIAL_LINKS.map((l) => l.href), GITHUB_URL];

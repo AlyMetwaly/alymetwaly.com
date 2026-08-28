@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SpeakingRouteImport } from './routes/speaking'
+import { Route as SlidesRouteImport } from './routes/slides'
 import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -20,6 +21,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SpeakingRoute = SpeakingRouteImport.update({
   id: '/speaking',
   path: '/speaking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlidesRoute = SlidesRouteImport.update({
+  id: '/slides',
+  path: '/slides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlaybookRoute = PlaybookRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
+  '/slides': typeof SlidesRoute
   '/speaking': typeof SpeakingRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
+  '/slides': typeof SlidesRoute
   '/speaking': typeof SpeakingRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
+  '/slides': typeof SlidesRoute
   '/speaking': typeof SpeakingRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/experience'
     | '/playbook'
+    | '/slides'
     | '/speaking'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/experience'
     | '/playbook'
+    | '/slides'
     | '/speaking'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/experience'
     | '/playbook'
+    | '/slides'
     | '/speaking'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ExperienceRoute: typeof ExperienceRoute
   PlaybookRoute: typeof PlaybookRoute
+  SlidesRoute: typeof SlidesRoute
   SpeakingRoute: typeof SpeakingRoute
 }
 
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/speaking'
       fullPath: '/speaking'
       preLoaderRoute: typeof SpeakingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/slides': {
+      id: '/slides'
+      path: '/slides'
+      fullPath: '/slides'
+      preLoaderRoute: typeof SlidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/playbook': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ExperienceRoute: ExperienceRoute,
   PlaybookRoute: PlaybookRoute,
+  SlidesRoute: SlidesRoute,
   SpeakingRoute: SpeakingRoute,
 }
 export const routeTree = rootRouteImport
