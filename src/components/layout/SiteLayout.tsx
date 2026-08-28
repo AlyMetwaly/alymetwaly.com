@@ -83,6 +83,17 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-8 text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground sm:px-6 sm:text-xs lg:px-12">
         <div>© {new Date().getFullYear()} Aly Metwaly · Enterprise AI Transformation Leader</div>
         <SocialLinks />
+        {/* Deliberately footer-only. /slides is a QR-code destination for live
+            keynotes, not a section of the site, so it stays out of the header
+            nav -- but it needs one internal link so it is not orphaned. */}
+        <Link
+          to="/slides"
+          className="nav-link whitespace-nowrap"
+          activeProps={{ className: "nav-link whitespace-nowrap !text-foreground" }}
+          activeOptions={{ exact: true }}
+        >
+          Talk slides
+        </Link>
         <div>Espoo · Finland</div>
       </div>
     </footer>
