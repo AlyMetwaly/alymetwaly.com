@@ -36,9 +36,18 @@ const MARKS: Record<SocialPlatform, React.ReactNode> = {
       <path d="M10.3 8.9 15.6 12l-5.3 3.1z" fill="currentColor" stroke="none" />
     </>
   ),
+  // Rounded square containing the crossed strokes. Inset to the same optical
+  // margin as the "in" and the play triangle so the row reads evenly.
+  x: (
+    <>
+      <rect x="2.25" y="2.25" width="19.5" height="19.5" rx="4" />
+      <path d="M7.6 7.6 16.4 16.4" />
+      <path d="M16.4 7.6 7.6 16.4" />
+    </>
+  ),
 };
 
-function Mark({ platform }: { platform: SocialPlatform }) {
+export function Mark({ platform }: { platform: SocialPlatform }) {
   return (
     <svg
       aria-hidden="true"
