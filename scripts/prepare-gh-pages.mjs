@@ -57,7 +57,7 @@ const REQUIRED_ROUTES = [
   "/speaking",
   "/about",
   "/contact",
-  "/slides",
+  "/splash",
 ];
 
 if (!existsSync(CLIENT)) {

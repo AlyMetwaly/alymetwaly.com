@@ -1,8 +1,8 @@
 /**
- * Event tracking for the /slides route.
+ * Event tracking for the per-event talk pages.
  *
  * Plausible is loaded by that route alone (see the `scripts` entry in
- * src/routes/slides.tsx), not from __root.tsx. Scoping it this way means no
+ * the talk route files), not from __root.tsx. Scoping it this way means no
  * other page gains a third-party script, so instrumenting the talk page cannot
  * regress anything that already works. Move the script tag to the root shell if
  * you later want site-wide pageviews.
@@ -10,15 +10,15 @@
  * Plausible is cookieless, so this adds no consent-banner obligation.
  */
 
-/** The actions worth measuring on the talk page. */
-export type SlidesEvent =
-  | "slides.view"
-  | "slides.download"
-  | "slides.playbook"
-  | "slides.linkedin"
-  | "slides.instagram"
-  | "slides.youtube"
-  | "slides.x";
+/** The actions worth measuring on a talk page. */
+export type TalkEvent =
+  | "talk.view"
+  | "talk.download"
+  | "talk.playbook"
+  | "talk.linkedin"
+  | "talk.instagram"
+  | "talk.youtube"
+  | "talk.x";
 
 declare global {
   interface Window {
@@ -35,14 +35,14 @@ declare global {
  *
  * The slug is baked into the event *name*, not just the props: Plausible treats
  * the name as the primary dimension and gates prop breakdowns behind a paid
- * plan, so `slides.download:kpmg-2026` is what actually lets you compare
+ * plan, so `talk.download:splash-2026-08-29` is what actually lets you compare
  * conversion across events. The props are sent too, for whoever has the plan.
  *
  * Deliberately total. If the script is blocked, still loading, or absent
  * (local dev, no account yet), this is a no-op. A download link must never
  * depend on analytics succeeding -- least of all in front of an audience.
  */
-export function track(event: SlidesEvent, slug: string): void {
+export function track(event: TalkEvent, slug: string): void {
   if (typeof window === "undefined") return;
   try {
     window.plausible?.(`${event}:${slug}`, { props: { slug, action: event } });

@@ -8,7 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 const SITE_HOST = "https://alymetwaly.com";
 
-// Kept in sync with `deckUrl` in src/data/slides.json.
+// Kept in sync with `deckUrl` in the talk data under src/data/talks/.
 const DECK_PATH = "/decks/placeholder.pdf";
 
 // Every route that must exist as its own static file on GitHub Pages.
@@ -22,9 +22,10 @@ const ROUTES = [
   "/speaking",
   "/about",
   "/contact",
-  // Destination for the printed QR code shown at the end of live keynotes.
-  // Not in the header nav; reachable from the footer and by direct scan.
-  "/slides",
+  // One entry per talk page. Each is a permanent URL: it goes on a printed QR
+  // code and gets shared in a LinkedIn post, so pages are added here, never
+  // recycled. Not in the header nav.
+  "/splash",
 ] as const;
 
 export default defineConfig({
@@ -54,7 +55,7 @@ export default defineConfig({
       // or stale route files.
       failOnError: true,
       // crawlLinks follows every href it finds, including links to static
-      // files -- the keynote deck on /slides is the first one. Those are not
+      // files -- the keynote decks linked from talk pages are the first. Not
       // pages: prerendering them is meaningless and, worse, it lands them in
       // sitemap.xml. Anything with a file extension is not a route.
       filter: ({ path }: { path: string }) => !/\.[^/]+$/.test(path),
@@ -63,7 +64,7 @@ export default defineConfig({
       ...ROUTES.map((path) => ({ path })),
       // The keynote deck is a static file, not a page. It is registered here
       // only so it can be excluded from the sitemap: crawlLinks discovers it
-      // from the /slides download button, and the sitemap builder reads the
+      // from a talk page download button, and the sitemap builder reads the
       // discovered page list rather than the prerender filter below.
       { path: DECK_PATH, sitemap: { exclude: true } },
     ],

@@ -1,10 +1,11 @@
 // Generate the printed QR code that points at the talk page.
 //
-//   node scripts/qr.mjs                        -> https://alymetwaly.com/slides
+//   node scripts/qr.mjs                        -> https://alymetwaly.com/splash
 //   node scripts/qr.mjs https://example.com/x  -> any other URL
 //
 // Outputs to scratch/qr/ (gitignored, same convention as the og-image scripts).
-// The URL is permanent, so this only needs re-running if the route changes.
+// Each talk page has its own permanent URL, so run this once per event and
+// pass the new URL as the argument.
 //
 // Two deliberate choices, both about scanning reliably from an audience rather
 // than about looking on-brand:
@@ -22,8 +23,10 @@ import QRCode from "qrcode";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const URL_TO_ENCODE = process.argv[2] ?? "https://alymetwaly.com/slides";
+const URL_TO_ENCODE = process.argv[2] ?? "https://alymetwaly.com/splash";
 const OUT = "scratch/qr";
+// Derived from the URL so two events cannot overwrite each other's code.
+const FILENAME = "qr-" + (new URL(URL_TO_ENCODE).pathname.replace(/\//g, "") || "root");
 
 // 4 modules is the spec-mandated quiet zone. Scanners need it; cropping it off
 // is the single most common reason a printed QR fails.
@@ -40,11 +43,11 @@ mkdirSync(OUT, { recursive: true });
 // Vector first: this is the one to hand to a printer or drop into a deck, since
 // it stays sharp at any physical size.
 const svg = await QRCode.toString(URL_TO_ENCODE, { ...options, type: "svg" });
-writeFileSync(join(OUT, "qr-slides.svg"), svg);
+writeFileSync(join(OUT, FILENAME + ".svg"), svg);
 
 // Raster for slides and anything that will not take an SVG. 2048px is enough
 // that even a full-slide QR has no visible pixel stepping.
-await QRCode.toFile(join(OUT, "qr-slides.png"), URL_TO_ENCODE, {
+await QRCode.toFile(join(OUT, FILENAME + ".png"), URL_TO_ENCODE, {
   ...options,
   type: "png",
   width: 2048,
@@ -58,7 +61,7 @@ const version = (size - 17) / 4;
 
 console.log(`qr: encoded ${JSON.stringify(URL_TO_ENCODE)}`);
 console.log(`qr: version ${version}, ${size}x${size} modules, EC level Q, quiet zone ${MARGIN}`);
-console.log(`qr: wrote ${OUT}/qr-slides.svg and ${OUT}/qr-slides.png`);
+console.log(`qr: wrote ${OUT}/${FILENAME}.svg and ${OUT}/${FILENAME}.png`);
 console.log(
-  `qr: at 300dpi keep the printed code at least ${Math.ceil(((size + MARGIN * 2) * 4) / 300 * 25.4)}mm wide`,
+  `qr: at 300dpi keep the printed code at least ${Math.ceil((((size + MARGIN * 2) * 4) / 300) * 25.4)}mm wide`,
 );

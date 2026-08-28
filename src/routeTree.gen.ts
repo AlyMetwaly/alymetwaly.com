@@ -9,8 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SplashRouteImport } from './routes/splash'
 import { Route as SpeakingRouteImport } from './routes/speaking'
-import { Route as SlidesRouteImport } from './routes/slides'
 import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -18,14 +18,14 @@ import { Route as AdvisoryRouteImport } from './routes/advisory'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SplashRoute = SplashRouteImport.update({
+  id: '/splash',
+  path: '/splash',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SpeakingRoute = SpeakingRouteImport.update({
   id: '/speaking',
   path: '/speaking',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SlidesRoute = SlidesRouteImport.update({
-  id: '/slides',
-  path: '/slides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlaybookRoute = PlaybookRouteImport.update({
@@ -66,8 +66,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
-  '/slides': typeof SlidesRoute
   '/speaking': typeof SpeakingRoute
+  '/splash': typeof SplashRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -76,8 +76,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
-  '/slides': typeof SlidesRoute
   '/speaking': typeof SpeakingRoute
+  '/splash': typeof SplashRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -87,8 +87,8 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
-  '/slides': typeof SlidesRoute
   '/speaking': typeof SpeakingRoute
+  '/splash': typeof SplashRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -99,8 +99,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/experience'
     | '/playbook'
-    | '/slides'
     | '/speaking'
+    | '/splash'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -109,8 +109,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/experience'
     | '/playbook'
-    | '/slides'
     | '/speaking'
+    | '/splash'
   id:
     | '__root__'
     | '/'
@@ -119,8 +119,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/experience'
     | '/playbook'
-    | '/slides'
     | '/speaking'
+    | '/splash'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -130,24 +130,24 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ExperienceRoute: typeof ExperienceRoute
   PlaybookRoute: typeof PlaybookRoute
-  SlidesRoute: typeof SlidesRoute
   SpeakingRoute: typeof SpeakingRoute
+  SplashRoute: typeof SplashRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/splash': {
+      id: '/splash'
+      path: '/splash'
+      fullPath: '/splash'
+      preLoaderRoute: typeof SplashRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/speaking': {
       id: '/speaking'
       path: '/speaking'
       fullPath: '/speaking'
       preLoaderRoute: typeof SpeakingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/slides': {
-      id: '/slides'
-      path: '/slides'
-      fullPath: '/slides'
-      preLoaderRoute: typeof SlidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/playbook': {
@@ -202,8 +202,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ExperienceRoute: ExperienceRoute,
   PlaybookRoute: PlaybookRoute,
-  SlidesRoute: SlidesRoute,
   SpeakingRoute: SpeakingRoute,
+  SplashRoute: SplashRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

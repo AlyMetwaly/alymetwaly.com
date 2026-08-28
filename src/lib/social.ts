@@ -27,10 +27,10 @@ export const GITHUB_URL = "https://github.com/AlyMetwaly";
  *
  * Deliberately NOT in SOCIAL_LINKS, and therefore not in SAME_AS. Those feed
  * the homepage Person schema, and changing that object was out of scope for
- * the /slides work -- the site has an entity-resolution problem already and
+ * the talk-page work -- the site has an entity-resolution problem already and
  * this is not the change that should touch it.
  *
- * Consumed only by the /slides icon row, which renders nothing when this is
+ * Consumed only by the talk pages, which render no X button when this is
  * empty. Fold it into SOCIAL_LINKS when you want it in the footer and in
  * `sameAs` too; that is the right fix, just not a same-day one.
  */

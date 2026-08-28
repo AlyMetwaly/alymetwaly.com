@@ -1,13 +1,44 @@
 import { useEffect } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 
 import portraitAsset from "@/assets/portrait.JPG";
-import slides from "@/data/slides.json";
 import { Mark } from "@/components/SocialLinks";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { track, type SlidesEvent } from "@/lib/analytics";
+import { track, type TalkEvent } from "@/lib/analytics";
 import { absoluteUrl, SITE_URL } from "@/lib/site";
 import { SAME_AS, SOCIAL_LINKS, X_URL, type SocialPlatform } from "@/lib/social";
+
+/**
+ * One page per talk, each at its own permanent URL.
+ *
+ * A page stays live after its event: the URL goes on a printed QR code, gets
+ * shared in a LinkedIn post, and keeps working indefinitely. So a new event is
+ * a new route file plus a new data file, not an edit that overwrites the last
+ * event's page.
+ *
+ * Adding an event is four steps:
+ *   1. src/data/talks/<slug>.json          (see the Talk type below)
+ *   2. src/routes/<slug>.tsx               (three lines; copy splash.tsx)
+ *   3. ROUTES in vite.config.ts            (prerender + sitemap)
+ *   4. REQUIRED_ROUTES in scripts/prepare-gh-pages.mjs   (build guard)
+ *
+ * Steps 3 and 4 are both mandatory. Missing either is how a route falls through
+ * to 404.html instead of getting its own prerendered file.
+ */
+export type Talk = {
+  title: string;
+  thesis: string;
+  event: string;
+  date: string;
+  slug: string;
+  deckUrl: string;
+  pastTalks: ReadonlyArray<{
+    title: string;
+    event: string;
+    date: string;
+    deckUrl: string;
+  }>;
+};
 
 /**
  * The one canonical job title.
@@ -22,12 +53,13 @@ const JOB_TITLE = "AI Transformation Manager";
  *
  * A verbatim copy of the homepage object in src/routes/index.tsx -- including
  * the absence of an `@id`, which that object genuinely does not have. Not
- * extracted into a shared module, because that would mean editing index.tsx
- * and this change was scoped to add no risk to a route that already works.
+ * extracted into a shared module with the homepage, because that would mean
+ * editing index.tsx and this work was scoped to add no risk to a route that
+ * already works.
  *
  * The homepage remains the source of truth. If jobTitle changes there, change
  * it here in the same commit: two Person objects disagreeing about the title is
- * precisely the entity-resolution problem this page must not worsen.
+ * precisely the entity-resolution problem these pages must not worsen.
  */
 const personSchema = {
   "@context": "https://schema.org",
@@ -53,7 +85,7 @@ const hrefFor = (key: SocialPlatform) => SOCIAL_LINKS.find((link) => link.key ==
 /**
  * Secondary calls to action, one full-width button each.
  *
- * These carry equal visual weight on purpose. The audience this page has to
+ * These carry equal visual weight on purpose. The audience these pages have to
  * serve second -- the people who do not want the deck at all -- are choosing
  * between platforms, not between "LinkedIn" and "some icons", so the choices
  * are presented as peers.
@@ -69,67 +101,74 @@ const SOCIAL_CTAS: ReadonlyArray<{
   label: string;
   sublabel: string;
   href: string;
-  event: SlidesEvent;
+  event: TalkEvent;
 }> = (
   [
     {
       key: "linkedin",
       label: "Follow on LinkedIn",
       sublabel: "Frameworks and rollout notes from live programs",
-      event: "slides.linkedin",
+      event: "talk.linkedin",
     },
     {
       key: "instagram",
       label: "Follow on Instagram",
       sublabel: "Building in public: the work behind the frameworks",
-      event: "slides.instagram",
+      event: "talk.instagram",
     },
     {
       key: "youtube",
       label: "Subscribe on YouTube",
       sublabel: "This keynote, and the ones after it",
-      event: "slides.youtube",
+      event: "talk.youtube",
     },
     {
       key: "x",
       label: "Follow on X",
       sublabel: "Shorter takes, in the moment",
-      event: "slides.x",
+      event: "talk.x",
     },
   ] as const
 )
   .map((cta) => ({ ...cta, href: cta.key === "x" ? X_URL : hrefFor(cta.key) }))
   .filter((cta) => cta.href !== "");
 
-export const Route = createFileRoute("/slides")({
-  head: () => ({
+/**
+ * Head metadata for a talk page.
+ *
+ * The title and description are built from the talk rather than being generic,
+ * because these URLs get shared in LinkedIn posts: the card is the first thing
+ * most people see, and "Talk slides" tells them nothing. The thesis is the
+ * description for the same reason -- it is already the sharpest sentence about
+ * the talk.
+ *
+ * Note the og:image is inherited from __root.tsx and is the personal brand
+ * card, not a per-talk card. Worth generating per event eventually; the
+ * machinery in scripts/og-image/ already exists.
+ */
+export function talkHead(talk: Talk, path: string) {
+  const pageTitle = `${talk.title} · Aly Metwaly`;
+  const description =
+    talk.thesis || `Slides from ${talk.event}, plus where to follow the work. No email required.`;
+
+  return {
     meta: [
-      { title: "Talk slides · Aly Metwaly" },
-      {
-        name: "description",
-        content:
-          "Download the slides from Aly Metwaly's talk, and find where to follow his work on enterprise AI transformation, operating models, and adoption at scale.",
-      },
+      { title: pageTitle },
+      { name: "description", content: description },
       { name: "author", content: "Aly Metwaly" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "Talk slides · Aly Metwaly" },
-      {
-        property: "og:description",
-        content: "Slides from the talk, plus where to follow the work. No email required.",
-      },
+      { property: "og:title", content: pageTitle },
+      { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
-      { property: "og:url", content: absoluteUrl("/slides") },
+      { property: "og:url", content: absoluteUrl(path) },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Talk slides · Aly Metwaly" },
-      {
-        name: "twitter:description",
-        content: "Slides from the talk, plus where to follow the work. No email required.",
-      },
+      { name: "twitter:title", content: pageTitle },
+      { name: "twitter:description", content: description },
       { "script:ld+json": personSchema },
     ],
-    links: [{ rel: "canonical", href: absoluteUrl("/slides") }],
-    // Plausible loads on this route only -- no other page gains a third-party
+    links: [{ rel: "canonical", href: absoluteUrl(path) }],
+    // Plausible loads on talk routes only -- no other page gains a third-party
     // script. The inline stub comes first so events fired on mount are queued
     // rather than dropped while the deferred script is still in flight.
     scripts: [
@@ -143,15 +182,14 @@ export const Route = createFileRoute("/slides")({
         "data-domain": "alymetwaly.com",
       },
     ],
-  }),
-  component: SlidesPage,
-});
+  };
+}
 
-function SlidesPage() {
-  const { slug, thesis, title, event, date, deckUrl, pastTalks } = slides;
+export function TalkPage({ talk }: { talk: Talk }) {
+  const { slug, thesis, title, event, date, deckUrl, pastTalks } = talk;
 
   useEffect(() => {
-    track("slides.view", slug);
+    track("talk.view", slug);
   }, [slug]);
 
   const eyebrow = [event, date].filter(Boolean).join(" · ");
@@ -159,17 +197,17 @@ function SlidesPage() {
   return (
     <SiteLayout>
       {/*
-        Everything down to the icon row is sized to clear the fold on a 390x844
-        phone with the sticky header in place. Someone who scans the QR code
-        purely to find out who was on stage must never have to scroll.
+        Everything down to the last follow button is sized to clear the fold on
+        a 390x844 phone with the sticky header in place. Someone who scans the
+        QR code purely to find out who was on stage must never have to scroll.
       */}
-      <section className="border-b border-border" aria-labelledby="slides-heading">
+      <section className="border-b border-border" aria-labelledby="talk-heading">
         <div className="mx-auto max-w-[1280px] px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:px-12">
           <div className="max-w-2xl">
             {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
 
             <h1
-              id="slides-heading"
+              id="talk-heading"
               className="mt-3 font-display text-[clamp(1.875rem,7vw,3.5rem)] leading-[1.05] tracking-[-0.02em]"
             >
               {title}
@@ -218,7 +256,7 @@ function SlidesPage() {
                 href={deckUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => track("slides.download", slug)}
+                onClick={() => track("talk.download", slug)}
                 className="flex min-h-14 w-full items-center justify-center rounded-full px-6 text-base font-medium transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 style={{ background: "var(--ink)", color: "var(--paper)" }}
               >
@@ -233,7 +271,7 @@ function SlidesPage() {
               */}
               <Link
                 to="/playbook"
-                onClick={() => track("slides.playbook", slug)}
+                onClick={() => track("talk.playbook", slug)}
                 className="link-accent-underline flex min-h-11 w-full items-center justify-center gap-1.5 text-base font-medium"
               >
                 Read the playbook
@@ -285,25 +323,25 @@ function SlidesPage() {
               Past talks
             </h2>
             <ul className="mt-6 max-w-3xl divide-y divide-rule border-t border-rule">
-              {pastTalks.map((talk) => (
-                <li key={`${talk.event}-${talk.title}`} className="py-5">
+              {pastTalks.map((talkItem) => (
+                <li key={`${talkItem.event}-${talkItem.title}`} className="py-5">
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:text-xs">
-                    <span>{talk.date}</span>
+                    <span>{talkItem.date}</span>
                     <span aria-hidden="true">·</span>
-                    <span>{talk.event}</span>
+                    <span>{talkItem.event}</span>
                   </div>
                   <p className="mt-1.5 text-base leading-snug">
-                    {talk.deckUrl ? (
+                    {talkItem.deckUrl ? (
                       <a
-                        href={talk.deckUrl}
+                        href={talkItem.deckUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="link-accent-underline"
                       >
-                        {talk.title}
+                        {talkItem.title}
                       </a>
                     ) : (
-                      talk.title
+                      talkItem.title
                     )}
                   </p>
                 </li>
