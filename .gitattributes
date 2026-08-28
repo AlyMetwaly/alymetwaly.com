@@ -1,0 +1,7 @@
+# core.autocrlf=true is set on at least one dev machine, and Git's text
+# heuristic misreads a small PDF as text because it is mostly ASCII with no NUL
+# bytes. Smudging LF to CRLF on checkout shifts every byte offset in the PDF
+# xref table, which silently corrupts the file. Pin the binary formats.
+*.pdf   binary
+*.woff2 binary
+*.ico   binary
