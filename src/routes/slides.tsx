@@ -48,38 +48,37 @@ const personSchema = {
   sameAs: [...SAME_AS],
 };
 
-const LINKEDIN_HREF =
-  SOCIAL_LINKS.find((link) => link.key === "linkedin")?.href ??
-  "https://www.linkedin.com/in/aly-metwaly/";
+const hrefFor = (key: SocialPlatform) => SOCIAL_LINKS.find((link) => link.key === key)?.href ?? "";
 
 /**
- * The secondary icon row: Instagram, YouTube, X.
+ * Secondary calls to action, one full-width button each.
  *
- * LinkedIn is deliberately absent -- it is the full-width button above, and
- * repeating it here would split the signal on the one action that matters most
- * to someone who does not want the deck.
+ * These carry equal visual weight on purpose. The audience this page has to
+ * serve second -- the people who do not want the deck at all -- are choosing
+ * between platforms, not between "LinkedIn" and "some icons", so the choices
+ * are presented as peers.
  *
- * X appears only once X_URL is filled in. An icon that links nowhere is worse
- * than no icon.
+ * The verbs are platform-specific because that is what each platform's own
+ * affordance is called: you follow on LinkedIn and Instagram, you subscribe on
+ * YouTube. Any entry with an empty href drops out rather than rendering a
+ * button that goes nowhere -- which is what keeps X off the page until X_URL
+ * is filled in.
  */
-const ICON_ROW: ReadonlyArray<{
+const SOCIAL_CTAS: ReadonlyArray<{
   key: SocialPlatform;
   label: string;
   href: string;
   event: SlidesEvent;
-}> = [
-  ...SOCIAL_LINKS.filter((link) => link.key === "instagram" || link.key === "youtube").map(
-    (link) => ({
-      key: link.key,
-      label: link.label,
-      href: link.href,
-      event: (link.key === "instagram" ? "slides.instagram" : "slides.youtube") as SlidesEvent,
-    }),
-  ),
-  ...(X_URL
-    ? [{ key: "x" as SocialPlatform, label: "X", href: X_URL, event: "slides.x" as SlidesEvent }]
-    : []),
-];
+}> = (
+  [
+    { key: "linkedin", label: "Follow on LinkedIn", event: "slides.linkedin" },
+    { key: "instagram", label: "Follow on Instagram", event: "slides.instagram" },
+    { key: "youtube", label: "Subscribe on YouTube", event: "slides.youtube" },
+    { key: "x", label: "Follow on X", event: "slides.x" },
+  ] as const
+)
+  .map((cta) => ({ ...cta, href: cta.key === "x" ? X_URL : hrefFor(cta.key) }))
+  .filter((cta) => cta.href !== "");
 
 export const Route = createFileRoute("/slides")({
   head: () => ({
@@ -200,34 +199,22 @@ function SlidesPage() {
                 Download the slides (PDF)
               </a>
 
-              <a
-                href={LINKEDIN_HREF}
-                target="_blank"
-                rel="me noopener noreferrer"
-                onClick={() => track("slides.linkedin", slug)}
-                className="btn-accent-outline flex min-h-14 w-full items-center justify-center gap-2 rounded-full border border-border px-6 text-base font-medium hover:bg-muted"
-              >
-                <Mark platform="linkedin" />
-                Follow on LinkedIn
-              </a>
-            </div>
-
-            <ul className="mt-5 flex flex-wrap items-center gap-2">
-              {ICON_ROW.map((item) => (
-                <li key={item.key}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="me noopener noreferrer"
-                    aria-label={`Aly Metwaly on ${item.label}`}
-                    onClick={() => track(item.event, slug)}
-                    className="inline-flex min-h-12 min-w-12 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                  >
-                    <Mark platform={item.key} />
-                  </a>
-                </li>
+              {SOCIAL_CTAS.map((cta) => (
+                <a
+                  key={cta.key}
+                  href={cta.href}
+                  target="_blank"
+                  // rel="me" is deliberate here as it is in the footer: it ties
+                  // each profile to the domain as an identity signal.
+                  rel="me noopener noreferrer"
+                  onClick={() => track(cta.event, slug)}
+                  className="btn-accent-outline flex min-h-14 w-full items-center justify-center gap-2 rounded-full border border-border px-6 text-base font-medium hover:bg-muted"
+                >
+                  <Mark platform={cta.key} />
+                  {cta.label}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
