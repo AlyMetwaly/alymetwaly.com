@@ -30,6 +30,7 @@ const MIME = {
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".ico": "image/x-icon",
+  ".pdf": "application/pdf",
   ".webp": "image/webp",
   ".woff": "font/woff",
   ".woff2": "font/woff2",
