@@ -1,0 +1,1 @@
+import{i as e,o as t,t as n}from"./index-C6NRK70n.js";var r=t(),i=()=>(0,r.jsx)(n,{talk:e});export{i as component};
