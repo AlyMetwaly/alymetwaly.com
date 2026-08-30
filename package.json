@@ -1,6 +1,27 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "alymetwaly.com",
+  "version": "1.0.0",
+  "description": "Personal site of Aly Metwaly, AI Transformation Leader & Advisor. Statically prerendered TanStack Start app with per-event talk pages, generated Open Graph cards and QR codes.",
   "homepage": "https://alymetwaly.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlyMetwaly/alymetwaly.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlyMetwaly/alymetwaly.com/issues"
+  },
+  "author": "Aly Metwaly (https://alymetwaly.com)",
+  "license": "MIT",
+  "keywords": [
+    "personal-site",
+    "tanstack-start",
+    "react",
+    "prerender",
+    "static-site",
+    "github-pages",
+    "seo",
+    "json-ld"
+  ],
   "private": true,
   "sideEffects": false,
   "type": "module",
