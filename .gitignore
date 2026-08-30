@@ -49,3 +49,6 @@ Thumbs.db
 *.sw?
 # Local review artefacts
 scratch
+
+# Stray dependency backup that was committed once by mistake.
+node_modules.bak
