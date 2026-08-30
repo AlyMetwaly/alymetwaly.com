@@ -67,7 +67,6 @@ to prove it scans before it goes to print.
 | UI        | React 19, Tailwind CSS v4 (`@theme` tokens, oklch)     |
 | Build     | Vite 8                                                 |
 | Hosting   | GitHub Pages, custom domain, published from `gh-pages` |
-| Analytics | Plausible, scoped to talk pages only                   |
 
 Ten runtime dependencies. No component library — all 15 components are hand-written,
 and the design tokens live in [`src/styles.css`](src/styles.css).

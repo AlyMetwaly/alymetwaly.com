@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 
 import portraitAsset from "@/assets/portrait.JPG";
 import { Mark } from "@/components/SocialLinks";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { track, type TalkEvent } from "@/lib/analytics";
 import { absoluteUrl } from "@/lib/site";
 import { SOCIAL_LINKS, X_URL, type SocialPlatform } from "@/lib/social";
 import { JOB_TITLE, personSchema } from "@/lib/person";
@@ -68,32 +66,27 @@ const SOCIAL_CTAS: ReadonlyArray<{
   label: string;
   sublabel: string;
   href: string;
-  event: TalkEvent;
 }> = (
   [
     {
       key: "linkedin",
       label: "Follow on LinkedIn",
       sublabel: "Frameworks and rollout notes from live programs",
-      event: "talk.linkedin",
     },
     {
       key: "instagram",
       label: "Follow on Instagram",
       sublabel: "Building in public: the work behind the frameworks",
-      event: "talk.instagram",
     },
     {
       key: "youtube",
       label: "Subscribe on YouTube",
       sublabel: "This keynote, and the ones after it",
-      event: "talk.youtube",
     },
     {
       key: "x",
       label: "Follow on X",
       sublabel: "Shorter takes, in the moment",
-      event: "talk.x",
     },
   ] as const
 )
@@ -135,29 +128,11 @@ export function talkHead(talk: Talk, path: string) {
       { "script:ld+json": personSchema },
     ],
     links: [{ rel: "canonical", href: absoluteUrl(path) }],
-    // Plausible loads on talk routes only -- no other page gains a third-party
-    // script. The inline stub comes first so events fired on mount are queued
-    // rather than dropped while the deferred script is still in flight.
-    scripts: [
-      {
-        children:
-          "window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}",
-      },
-      {
-        src: "https://plausible.io/js/script.js",
-        defer: true,
-        "data-domain": "alymetwaly.com",
-      },
-    ],
   };
 }
 
 export function TalkPage({ talk }: { talk: Talk }) {
   const { slug, thesis, title, event, date, deckUrl, deckLabel, pastTalks } = talk;
-
-  useEffect(() => {
-    track("talk.view", slug);
-  }, [slug]);
 
   const eyebrow = [event, date].filter(Boolean).join(" · ");
 
@@ -230,7 +205,6 @@ export function TalkPage({ talk }: { talk: Talk }) {
                 href={deckUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => track("talk.download", slug)}
                 className="flex min-h-14 w-full items-center justify-center rounded-full px-6 text-base font-medium transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 style={{ background: "var(--ink)", color: "var(--paper)" }}
               >
@@ -251,7 +225,6 @@ export function TalkPage({ talk }: { talk: Talk }) {
                   // rel="me" is deliberate here as it is in the footer: it ties
                   // each profile to the domain as an identity signal.
                   rel="me noopener noreferrer"
-                  onClick={() => track(cta.event, slug)}
                   className="btn-accent-outline flex min-h-16 w-full items-center justify-center gap-3 rounded-full border border-border px-4 hover:bg-muted"
                 >
                   <Mark platform={cta.key} />
