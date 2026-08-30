@@ -73,7 +73,9 @@ async function buildMaster(fill) {
   return sharp({
     create: { width: MASTER, height: MASTER, channels: 3, background: BG },
   })
-    .composite([{ input: glyph, left: Math.round((MASTER - w) / 2), top: Math.round((MASTER - h) / 2) }])
+    .composite([
+      { input: glyph, left: Math.round((MASTER - w) / 2), top: Math.round((MASTER - h) / 2) },
+    ])
     .png()
     .toBuffer();
 }
@@ -124,7 +126,10 @@ async function assertCentredAndUnclipped(buf, { masked }) {
   const { data, info } = await sharp(buf).raw().toBuffer({ resolveWithObject: true });
   const { width: W, height: H, channels: C } = info;
 
-  let minX = Infinity, maxX = 0, minY = Infinity, maxY = 0;
+  let minX = Infinity,
+    maxX = 0,
+    minY = Infinity,
+    maxY = 0;
   for (let y = 0; y < H; y++) {
     for (let x = 0; x < W; x++) {
       const i = (y * W + x) * C;
@@ -142,15 +147,24 @@ async function assertCentredAndUnclipped(buf, { masked }) {
   const dx = Math.round((minX + maxX) / 2 - W / 2);
   const dy = Math.round((minY + maxY) / 2 - H / 2);
   if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
-    throw new Error(`Mark is off-centre by dx=${dx} dy=${dy} (expected 0). Check composite ordering.`);
+    throw new Error(
+      `Mark is off-centre by dx=${dx} dy=${dy} (expected 0). Check composite ordering.`,
+    );
   }
 
   if (masked) {
     const R = W / 2;
-    for (const [x, y] of [[minX, minY], [maxX, minY], [minX, maxY], [maxX, maxY]]) {
+    for (const [x, y] of [
+      [minX, minY],
+      [maxX, minY],
+      [minX, maxY],
+      [maxX, maxY],
+    ]) {
       const d = Math.hypot(x - W / 2, y - H / 2);
       if (d > R - 1) {
-        throw new Error(`Mark is clipped by the circle (corner at ${Math.round(d)}px, radius ${R}). Lower FILL_CIRCLE.`);
+        throw new Error(
+          `Mark is clipped by the circle (corner at ${Math.round(d)}px, radius ${R}). Lower FILL_CIRCLE.`,
+        );
       }
     }
   }
@@ -211,5 +225,7 @@ for (const size of [16, 32, 48]) {
   await preview(size, "#13120C", "dark");
 }
 
-console.log(`make-favicon: wrote ${PNG_SIZES.length} circular PNGs, square apple-touch-icon.png and favicon.ico to ${OUT}/`);
+console.log(
+  `make-favicon: wrote ${PNG_SIZES.length} circular PNGs, square apple-touch-icon.png and favicon.ico to ${OUT}/`,
+);
 console.log(`make-favicon: wrote review composites to ${SCRATCH}/`);

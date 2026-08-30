@@ -49,9 +49,9 @@ export function AdvisorySection() {
               adoption, operating models, governance, organizational change, and execution at scale.
             </p>
             <p>
-              Drawing on hands-on experience leading enterprise AI transformation initiatives, I help
-              leaders navigate complex decisions, accelerate adoption, and turn AI ambition into
-              measurable business outcomes.
+              Drawing on hands-on experience leading enterprise AI transformation initiatives, I
+              help leaders navigate complex decisions, accelerate adoption, and turn AI ambition
+              into measurable business outcomes.
             </p>
             <p>
               My advisory work applies the{" "}
@@ -79,9 +79,9 @@ export function AdvisorySection() {
           <div className="max-w-2xl space-y-4 text-muted-foreground leading-relaxed">
             <p>Start with a paid Advisory Discovery Session.</p>
             <p>
-              Submit your challenge and the outcome you are seeking. I review every request personally
-              and will contact you regarding potential fit, availability, payment method, and next
-              steps.
+              Submit your challenge and the outcome you are seeking. I review every request
+              personally and will contact you regarding potential fit, availability, payment method,
+              and next steps.
             </p>
             <p>
               The session provides strategic guidance, practical recommendations, and relevant

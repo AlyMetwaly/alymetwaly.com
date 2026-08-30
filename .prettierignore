@@ -4,5 +4,7 @@ dist
 .vinxi
 pnpm-lock.yaml
 package-lock.json
-bun.lock
 routeTree.gen.ts
+scratch
+.tanstack
+node_modules.bak

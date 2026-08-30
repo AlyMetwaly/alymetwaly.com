@@ -32,7 +32,9 @@ export function SiteHeader() {
           <Link
             to="/"
             className="shrink-0 font-display text-xl leading-none tracking-tight sm:text-2xl"
-            activeProps={{ className: "shrink-0 font-display text-xl leading-none tracking-tight sm:text-2xl" }}
+            activeProps={{
+              className: "shrink-0 font-display text-xl leading-none tracking-tight sm:text-2xl",
+            }}
             activeOptions={{ exact: true }}
           >
             Aly Metwaly

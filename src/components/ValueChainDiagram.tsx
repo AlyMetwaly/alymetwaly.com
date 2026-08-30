@@ -29,26 +29,14 @@ export function ValueChainDiagram() {
       className="mx-auto w-full max-w-[22rem] lg:max-w-none lg:sticky lg:top-28"
       aria-label="AI Transformation Value Chain diagram"
     >
-      <svg
-        viewBox={`0 0 ${SIZE} ${SIZE}`}
-        className="h-auto w-full"
-        role="img"
-        aria-hidden="true"
-      >
+      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="h-auto w-full" role="img" aria-hidden="true">
         <defs>
           <linearGradient id="chain-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#d95f82" />
             <stop offset="65%" stopColor="#a83a5c" />
             <stop offset="100%" stopColor="#6f5599" />
           </linearGradient>
-          <marker
-            id="chain-arrow"
-            markerWidth="6"
-            markerHeight="6"
-            refX="5"
-            refY="3"
-            orient="auto"
-          >
+          <marker id="chain-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
             <path d="M0,0 L6,3 L0,6 Z" fill="var(--muted-foreground)" opacity="0.45" />
           </marker>
         </defs>

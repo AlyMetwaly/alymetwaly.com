@@ -21,8 +21,7 @@ export function SignatureFramework() {
             AI Transformation Value Chain
           </p>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            The AI Transformation Value Chain is a high-level view of my AI Transformation
-            Playbook.
+            The AI Transformation Value Chain is a high-level view of my AI Transformation Playbook.
           </p>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
             It captures how I approach AI transformation as a connected system, linking strategy,
@@ -40,8 +39,8 @@ export function SignatureFramework() {
               Six connected stages that turn AI ambition into measurable business value.
             </p>
             <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-              Each stage answers a distinct question. Weak links in the chain limit what the
-              others can deliver.
+              Each stage answers a distinct question. Weak links in the chain limit what the others
+              can deliver.
             </p>
           </div>
 

@@ -4,11 +4,7 @@ type SectionDividerProps = {
 
 export function SectionDivider({ className = "" }: SectionDividerProps) {
   return (
-    <div
-      className={`editorial-divider ${className}`}
-      role="presentation"
-      aria-hidden="true"
-    >
+    <div className={`editorial-divider ${className}`} role="presentation" aria-hidden="true">
       <span className="accent-dot" />
     </div>
   );

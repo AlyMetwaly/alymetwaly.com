@@ -1,3 +1,9 @@
+# Normalise line endings. core.autocrlf=true on at least one dev machine was
+# checking files out as CRLF, which prettier then flagged on every single line:
+# 2664 of 2718 lint errors were nothing but a stray carriage return. Pinning
+# eol=lf makes the working tree match what prettier and eslint expect.
+* text=auto eol=lf
+
 # core.autocrlf=true is set on at least one dev machine, and Git's text
 # heuristic misreads a small PDF as text because it is mostly ASCII with no NUL
 # bytes. Smudging LF to CRLF on checkout shifts every byte offset in the PDF
