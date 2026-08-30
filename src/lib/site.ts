@@ -1,6 +1,30 @@
 export const SITE_URL = "https://alymetwaly.com";
 
 /**
+ * Who this site is about.
+ *
+ * Structured identity lives in exactly one place because it is the first thing
+ * anyone forking this repo has to change, and because it feeds three different
+ * consumers that must never disagree: the visible speaker card, the footer, and
+ * the schema.org Person object a crawler reads.
+ *
+ * Prose is deliberately NOT here. Bios, section copy and page descriptions live
+ * in the components and route files -- that is writing, not configuration, and
+ * anyone reusing this is replacing it wholesale anyway.
+ */
+export const IDENTITY = {
+  name: "Aly Metwaly",
+  /** Also the schema.org jobTitle. Keep the two identical; see lib/person.ts. */
+  jobTitle: "AI Transformation Leader & Advisor",
+  /** Shown in the footer, next to the name. */
+  headline: "Enterprise AI Transformation Leader",
+  employer: "Nokia",
+  city: "Espoo",
+  region: "Finland",
+  countryCode: "FI",
+} as const;
+
+/**
  * Absolute URL for a build-time asset or route path.
  *
  * Social crawlers (LinkedIn, Twitter, Slack) do not resolve root-relative

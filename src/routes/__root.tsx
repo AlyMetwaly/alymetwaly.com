@@ -10,7 +10,7 @@ import {
 import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { OG_IMAGE, OG_IMAGE_ALT, OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "@/lib/site";
+import { IDENTITY, OG_IMAGE, OG_IMAGE_ALT, OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Aly Metwaly designs and operationalizes enterprise AI operating models. Transformation Manager at Nokia. 45% adoption growth, 31 engineer-years unlocked, 74,000-employee programs.",
       },
-      { name: "author", content: "Aly Metwaly" },
+      { name: "author", content: IDENTITY.name },
       { property: "og:title", content: "Aly Metwaly · Enterprise AI Transformation Leader" },
       {
         property: "og:description",

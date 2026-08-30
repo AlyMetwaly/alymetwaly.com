@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { Mark } from "@/components/SocialLinks";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, IDENTITY } from "@/lib/site";
 import { SOCIAL_LINKS, X_URL, type SocialPlatform } from "@/lib/social";
 import { JOB_TITLE, personSchema } from "@/lib/person";
 
@@ -107,7 +107,7 @@ const SOCIAL_CTAS: ReadonlyArray<{
  * machinery in scripts/og-image/ already exists.
  */
 export function talkHead(talk: Talk, path: string) {
-  const pageTitle = `${talk.title} · Aly Metwaly`;
+  const pageTitle = `${talk.title} · ${IDENTITY.name}`;
   const description =
     talk.thesis || `Slides from ${talk.event}, plus where to follow the work. No email required.`;
 
@@ -115,7 +115,7 @@ export function talkHead(talk: Talk, path: string) {
     meta: [
       { title: pageTitle },
       { name: "description", content: description },
-      { name: "author", content: "Aly Metwaly" },
+      { name: "author", content: IDENTITY.name },
       { name: "robots", content: "index, follow" },
       { property: "og:title", content: pageTitle },
       { property: "og:description", content: description },
@@ -172,13 +172,13 @@ export function TalkPage({ talk }: { talk: Talk }) {
               */}
               <img
                 src={portraitAsset}
-                alt="Aly Metwaly"
+                alt={IDENTITY.name}
                 className="h-14 w-14 shrink-0 rounded-full object-cover sm:h-16 sm:w-16"
                 style={{ background: "var(--muted)", objectPosition: "50% 15%" }}
               />
               <div className="min-w-0">
                 <p className="font-display text-lg leading-tight tracking-tight sm:text-xl">
-                  Aly Metwaly
+                  {IDENTITY.name}
                 </p>
                 <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:text-xs">
                   {JOB_TITLE}

@@ -1,5 +1,5 @@
 import portraitAsset from "@/assets/portrait.JPG";
-import { absoluteUrl, SITE_URL } from "@/lib/site";
+import { absoluteUrl, IDENTITY, SITE_URL } from "@/lib/site";
 import { SAME_AS } from "@/lib/social";
 
 /**
@@ -9,7 +9,7 @@ import { SAME_AS } from "@/lib/social";
  * `jobTitle` below, from this single constant, so what a reader sees and what a
  * crawler reads cannot disagree.
  */
-export const JOB_TITLE = "AI Transformation Leader & Advisor";
+export const JOB_TITLE = IDENTITY.jobTitle;
 
 /**
  * Person schema, defined once and shared by every page that emits it.
@@ -33,17 +33,17 @@ export const JOB_TITLE = "AI Transformation Leader & Advisor";
 export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Aly Metwaly",
+  name: IDENTITY.name,
   url: SITE_URL,
   jobTitle: JOB_TITLE,
   worksFor: {
     "@type": "Organization",
-    name: "Nokia",
+    name: IDENTITY.employer,
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Espoo",
-    addressCountry: "FI",
+    addressLocality: IDENTITY.city,
+    addressCountry: IDENTITY.countryCode,
   },
   image: absoluteUrl(portraitAsset),
   // Shares one source with the footer links so the rendered profiles and the

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { HEADER_NAV_SECTIONS } from "@/lib/sections";
 import { SocialLinks } from "@/components/SocialLinks";
+import { IDENTITY } from "@/lib/site";
 
 function NavLink({
   to,
@@ -83,7 +84,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-8 text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground sm:px-6 sm:text-xs lg:px-12">
-        <div>© {new Date().getFullYear()} Aly Metwaly · Enterprise AI Transformation Leader</div>
+        <div>{`© ${new Date().getFullYear()} ${IDENTITY.name} · ${IDENTITY.headline}`}</div>
         <SocialLinks />
         {/* Deliberately footer-only. Talk pages are QR-code destinations for
             live keynotes, not sections of the site, so they stay out of the
@@ -97,7 +98,7 @@ export function SiteFooter() {
         >
           Talk slides
         </Link>
-        <div>Espoo · Finland</div>
+        <div>{`${IDENTITY.city} · ${IDENTITY.region}`}</div>
       </div>
     </footer>
   );
