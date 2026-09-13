@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { absoluteUrl } from "@/lib/site";
+import { PageHero } from "@/components/PageHero";
 import { SpeakingSection } from "@/components/SpeakingSection";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 
@@ -38,6 +39,12 @@ export const Route = createFileRoute("/speaking")({
 function SpeakingPage() {
   return (
     <SiteLayout>
+      <PageHero
+        label="Speaking"
+        headline="Keynotes & executive conversations."
+        description="Available for keynotes, panels, roundtables, executive retreats, and leadership offsites. I speak to leaders who need clarity on what actually works, not what vendors promise."
+        headingId="speaking-heading"
+      />
       <SpeakingSection />
     </SiteLayout>
   );

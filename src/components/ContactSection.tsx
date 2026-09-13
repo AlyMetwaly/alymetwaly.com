@@ -1,23 +1,14 @@
+import { PageHero } from "@/components/PageHero";
+
 export function ContactSection() {
   return (
     <>
-      <section className="border-b border-border" aria-labelledby="contact-heading">
-        <div className="mx-auto max-w-[1280px] px-4 pb-10 pt-10 sm:px-6 sm:pb-12 sm:pt-12 lg:px-12 lg:pb-14 lg:pt-16">
-          <div className="max-w-3xl">
-            <p className="section-eyebrow">Let's Talk</p>
-            <h1
-              id="contact-heading"
-              className="mt-3 font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.98] tracking-[-0.02em]"
-            >
-              AI Transformation Advisory &amp; Speaking
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg lg:text-xl">
-              I help organizations scale AI adoption, operating models, governance, and
-              organizational change.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        label="Let's Talk"
+        headline="AI Transformation Advisory & Speaking"
+        description="Helping organizations scale AI adoption, operating models, governance, and change."
+        headingId="contact-heading"
+      />
 
       <section id="contact" className="section-anchor" aria-label="Ways to get in touch">
         <div className="mx-auto max-w-[1280px] px-4 pb-16 sm:px-6 sm:pb-20 lg:px-12 lg:pb-28">

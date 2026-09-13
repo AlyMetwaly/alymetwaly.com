@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { absoluteUrl } from "@/lib/site";
 import { AboutSection } from "@/components/AboutSection";
+import { PageHero } from "@/components/PageHero";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 
 export const Route = createFileRoute("/about")({
@@ -38,6 +39,12 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <SiteLayout>
+      <PageHero
+        label="About"
+        headline="From silicon to operating models."
+        description="My career has taken me through engineering, semiconductors, enterprise transformation, startup advisory, and investing. What has remained constant throughout that journey is curiosity."
+        headingId="about-heading"
+      />
       <AboutSection />
     </SiteLayout>
   );

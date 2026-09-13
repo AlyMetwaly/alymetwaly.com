@@ -67,26 +67,16 @@ export function ExperienceSection() {
     <section
       id="experience"
       className="section-anchor border-b border-border"
-      aria-labelledby="experience-heading"
+      aria-label="Selected transformation programs"
     >
-      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-        <div className="mb-8 grid gap-8 sm:mb-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-4">
-            <h2
-              id="experience-heading"
-              className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-            >
-              Programs that moved the needle
-            </h2>
-          </div>
-          <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-7 lg:col-start-6 lg:self-end">
-            Throughout my career, I have focused on one challenge: turning strategy into execution.
-            The examples below illustrate how I have helped organizations navigate complexity, scale
-            new capabilities, and deliver measurable results.
-          </p>
-        </div>
+      <div className="mx-auto max-w-[1280px] px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-12 lg:pb-28 lg:pt-16">
+        <p className="mb-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:mb-10 sm:text-lg">
+          Throughout my career, I have focused on one challenge: turning strategy into execution.
+          The examples below illustrate how I have helped organizations navigate complexity, scale
+          new capabilities, and deliver measurable results.
+        </p>
 
-        <div className="divide-y divide-rule border-t border-b border-rule mt-8">
+        <div className="divide-y divide-rule border-t border-b border-rule">
           {work.map((w, i) => (
             <article
               key={i}
@@ -99,9 +89,9 @@ export function ExperienceSection() {
                 <div className="mt-2 text-sm font-medium">{w.org}</div>
               </div>
               <div className="lg:col-span-9">
-                <h3 className="mb-4 font-display text-2xl leading-[1.05] tracking-tight sm:mb-6 sm:text-3xl lg:text-4xl">
+                <h2 className="mb-4 font-display text-2xl leading-[1.05] tracking-tight sm:mb-6 sm:text-3xl lg:text-4xl">
                   {w.title}
-                </h3>
+                </h2>
                 <dl className="grid md:grid-cols-3 gap-6 lg:gap-10 text-sm leading-relaxed">
                   <div>
                     <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">

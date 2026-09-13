@@ -17,21 +17,8 @@ const values = [
 
 export function AboutSection() {
   return (
-    <section
-      id="about"
-      className="section-anchor border-b border-border"
-      aria-labelledby="about-heading"
-    >
-      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-        <div className="mb-8 lg:mb-12">
-          <h2
-            id="about-heading"
-            className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-          >
-            From silicon to operating models.
-          </h2>
-        </div>
-
+    <section id="about" className="section-anchor border-b border-border" aria-label="About Aly">
+      <div className="mx-auto max-w-[1280px] px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-12 lg:pb-28 lg:pt-16">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-5">
             <img
@@ -43,11 +30,6 @@ export function AboutSection() {
           </div>
 
           <div className="space-y-6 text-lg leading-relaxed text-foreground/85 lg:col-span-7">
-            <p>
-              My career has taken me through engineering, semiconductors, enterprise transformation,
-              startup advisory, and investing.
-            </p>
-            <p>What has remained constant throughout that journey is curiosity.</p>
             <p className="text-muted-foreground">
               Curiosity about how complex systems work. How technology creates value. How
               organizations evolve. And how people turn ambitious ideas into meaningful outcomes.

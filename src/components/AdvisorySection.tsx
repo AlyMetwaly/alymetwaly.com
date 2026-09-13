@@ -31,45 +31,31 @@ export function AdvisorySection() {
     <section
       id="advisory"
       className="section-anchor border-b border-border"
-      aria-labelledby="advisory-heading"
+      aria-label="Advisory engagements"
     >
-      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-        <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-5">
-            <h2
-              id="advisory-heading"
-              className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-            >
-              From ambition to action.
-            </h2>
-          </div>
-          <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
-            <p>
-              Strategic guidance for executives, founders, and transformation leaders navigating AI
-              adoption, operating models, governance, organizational change, and execution at scale.
-            </p>
-            <p>
-              Drawing on hands-on experience leading enterprise AI transformation initiatives, I
-              help leaders navigate complex decisions, accelerate adoption, and turn AI ambition
-              into measurable business outcomes.
-            </p>
-            <p>
-              My advisory work applies the{" "}
-              <Link to="/playbook" className="text-foreground link-accent-underline">
-                AI Transformation Value Chain
-              </Link>{" "}
-              to help leaders connect strategic ambition with the operating structures, governance,
-              adoption mechanisms, and measurement systems required to deliver business value.
-            </p>
-          </div>
+      <div className="mx-auto max-w-[1280px] px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-12 lg:pb-28 lg:pt-16">
+        <div className="mb-12 max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground sm:mb-16">
+          <p>
+            Drawing on hands-on experience leading enterprise AI transformation initiatives, I help
+            leaders navigate complex decisions, accelerate adoption, and turn AI ambition into
+            measurable business outcomes.
+          </p>
+          <p>
+            My advisory work applies the{" "}
+            <Link to="/playbook" className="text-foreground link-accent-underline">
+              AI Transformation Value Chain
+            </Link>{" "}
+            to help leaders connect strategic ambition with the operating structures, governance,
+            adoption mechanisms, and measurement systems required to deliver business value.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-px bg-rule border-t border-rule">
           {engagements.map((item) => (
             <article key={item.audience} className="bg-background p-8 lg:p-10 card-accent-hover">
-              <h3 className="font-display text-2xl lg:text-3xl tracking-tight mb-4">
+              <h2 className="font-display text-2xl lg:text-3xl tracking-tight mb-4">
                 {item.audience}
-              </h3>
+              </h2>
               <p className="text-muted-foreground leading-relaxed">{item.scope}</p>
             </article>
           ))}

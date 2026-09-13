@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { absoluteUrl } from "@/lib/site";
 import { MyPerspective } from "@/components/MyPerspective";
+import { PageHero } from "@/components/PageHero";
 import { SignatureFramework } from "@/components/SignatureFramework";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 
@@ -39,6 +40,12 @@ export const Route = createFileRoute("/playbook")({
 function PlaybookPage() {
   return (
     <SiteLayout>
+      <PageHero
+        label="Playbook"
+        headline="How I Think About AI Transformation"
+        description="Principles, frameworks, and operating models for sustainable AI adoption and measurable business outcomes."
+        headingId="playbook-heading"
+      />
       <MyPerspective />
       <SignatureFramework />
     </SiteLayout>

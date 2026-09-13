@@ -38,18 +38,12 @@ export function MyPerspective() {
     <section
       id="perspective"
       className="section-anchor border-b border-border"
-      aria-labelledby="perspective-heading"
+      aria-label="How I think about AI transformation"
     >
-      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
+      <div className="mx-auto max-w-[1280px] px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-12 lg:pb-28 lg:pt-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <h2
-              id="perspective-heading"
-              className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-            >
-              How I Think
-            </h2>
-            <div className="mt-8 space-y-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <div className="space-y-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
               <p>Most AI transformations don&rsquo;t fail because of technology.</p>
               <p>
                 They fail because strategy, operating models, governance, adoption, and measurement
@@ -69,9 +63,9 @@ export function MyPerspective() {
                   <div className="font-mono text-xs tracking-[0.2em] text-accent">
                     {principle.number}
                   </div>
-                  <h3 className="mt-3 font-display text-xl leading-tight tracking-tight sm:text-2xl lg:text-3xl">
+                  <h2 className="mt-3 font-display text-xl leading-tight tracking-tight sm:text-2xl lg:text-3xl">
                     {principle.title}
-                  </h3>
+                  </h2>
                   <div className="mt-4 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                     {principle.body.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>

@@ -60,31 +60,14 @@ export function SpeakingSection() {
     <section
       id="speaking"
       className="section-anchor border-b border-border bg-muted/30"
-      aria-labelledby="speaking-heading"
+      aria-label="Speaking engagements"
     >
-      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-        <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-5">
-            <h2
-              id="speaking-heading"
-              className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-            >
-              Keynotes &amp; executive conversations.
-            </h2>
-          </div>
-          <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
-            <p>
-              Available for keynotes, panels, roundtables, executive retreats, and leadership
-              offsites. I speak to leaders who need clarity on what actually works, not what vendors
-              promise.
-            </p>
-            <p>
-              Talks are grounded in field experience: measurable adoption programs, governance
-              design, and operating models built inside one of the world&rsquo;s most complex
-              R&amp;D organizations.
-            </p>
-          </div>
-        </div>
+      <div className="mx-auto max-w-[1280px] px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-12 lg:pb-28 lg:pt-16">
+        <p className="mb-12 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:mb-16">
+          Talks are grounded in field experience: measurable adoption programs, governance design,
+          and operating models built inside one of the world&rsquo;s most complex R&amp;D
+          organizations.
+        </p>
 
         <div className="border-t border-rule pt-12 sm:pt-16">
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-8">
@@ -123,9 +106,9 @@ export function SpeakingSection() {
                   <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground mb-2">
                     {engagement.event}
                   </p>
-                  <h3 className="font-display text-xl sm:text-2xl leading-tight tracking-tight mb-3">
+                  <h2 className="font-display text-xl sm:text-2xl leading-tight tracking-tight mb-3">
                     <span className="italic">{engagement.title}</span>
-                  </h3>
+                  </h2>
                   <p className="text-muted-foreground leading-relaxed text-sm sm:text-base max-w-2xl">
                     {engagement.description}
                   </p>

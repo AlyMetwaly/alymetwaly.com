@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { absoluteUrl } from "@/lib/site";
 import { ExperienceSection } from "@/components/ExperienceSection";
+import { PageHero } from "@/components/PageHero";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 
 export const Route = createFileRoute("/experience")({
@@ -38,6 +39,12 @@ export const Route = createFileRoute("/experience")({
 function ExperiencePage() {
   return (
     <SiteLayout>
+      <PageHero
+        label="Experience"
+        headline="Programs That Moved the Needle"
+        description="Selected transformation initiatives across enterprise AI, operating models, governance, organizational change, and execution."
+        headingId="experience-heading"
+      />
       <ExperienceSection />
     </SiteLayout>
   );

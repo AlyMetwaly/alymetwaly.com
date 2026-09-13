@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { absoluteUrl } from "@/lib/site";
 import { AdvisorySection } from "@/components/AdvisorySection";
+import { PageHero } from "@/components/PageHero";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 
 export const Route = createFileRoute("/advisory")({
@@ -38,6 +39,12 @@ export const Route = createFileRoute("/advisory")({
 function AdvisoryPage() {
   return (
     <SiteLayout>
+      <PageHero
+        label="Advisory"
+        headline="From Ambition to Action"
+        description="Strategic guidance for executives, founders, and transformation leaders navigating AI transformation and execution at scale."
+        headingId="advisory-heading"
+      />
       <AdvisorySection />
     </SiteLayout>
   );
