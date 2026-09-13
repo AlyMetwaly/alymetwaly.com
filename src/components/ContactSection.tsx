@@ -2,7 +2,7 @@ export function ContactSection() {
   return (
     <>
       <section className="border-b border-border" aria-labelledby="contact-heading">
-        <div className="mx-auto max-w-[1280px] px-4 pb-12 pt-10 sm:px-6 sm:pb-14 sm:pt-12 lg:px-12 lg:pb-16 lg:pt-16">
+        <div className="mx-auto max-w-[1280px] px-4 pb-10 pt-10 sm:px-6 sm:pb-12 sm:pt-12 lg:px-12 lg:pb-14 lg:pt-16">
           <div className="max-w-3xl">
             <p className="section-eyebrow">Let's Talk</p>
             <h1
@@ -15,15 +15,6 @@ export function ContactSection() {
               I help organizations scale AI adoption, operating models, governance, and
               organizational change.
             </p>
-            <div className="mt-8">
-              <a
-                href="#contact"
-                className="inline-flex min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                style={{ background: "var(--ink)", color: "var(--paper)" }}
-              >
-                Get in Touch
-              </a>
-            </div>
           </div>
         </div>
       </section>
