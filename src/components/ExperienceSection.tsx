@@ -36,7 +36,7 @@ const work = [
     action:
       "Built a structured enablement model with metrics, training, champion networks, and lightweight governance, and rolled out Copilot (M365 + Premium), GitHub Copilot, and Cursor across the SoC unit.",
     outcome:
-      "+65% active usage. 5× scale-up of a requirements-assistant use case in 8 weeks. ~31 engineer-years of annual capacity unlocked at ~100:1 return on execution effort.",
+      "+65% active usage. 5× scale-up of a requirements-assistant use case in 8 weeks. ~31 engineer-years of annual capacity from about 560 hours of effort, roughly 100:1.",
   },
   {
     org: "Nokia · Chief People Office",

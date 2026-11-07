@@ -1,11 +1,4 @@
-const metrics = [
-  { value: "65%", label: "Increase in AI adoption across engineering teams" },
-  { value: "5×", label: "Scale-up of an AI-enabled solution in 8 weeks" },
-  { value: "31", label: "Engineer-years of annual capacity unlocked" },
-  { value: "100:1", label: "Return on transformation effort invested" },
-  { value: "74k", label: "Employees impacted by a global transformation program" },
-  { value: "255", label: "Strategic roadmap items governed across 20 workstreams" },
-];
+import { PROOF_METRICS } from "@/lib/metrics";
 
 export function ProofSection() {
   return (
@@ -25,14 +18,13 @@ export function ProofSection() {
             </h2>
           </div>
           <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-7 lg:col-start-6 lg:self-end">
-            Every number below is measured against a baseline and reported to senior leadership. No
-            vanity metrics, no projections.
+            Selected results from enterprise AI programs.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 border-t border-rule">
-          {metrics.map((m, i) => (
+          {PROOF_METRICS.map((m) => (
             <div
-              key={i}
+              key={m.id}
               className="border-b border-r border-rule px-2 py-10 lg:py-14 last:border-r-0 [&:nth-child(3n)]:lg:border-r-0 [&:nth-child(2n)]:sm:border-r-0 lg:[&:nth-child(2n)]:border-r"
             >
               <div className="text-accent font-display text-5xl leading-none tracking-tight sm:text-6xl lg:text-7xl">

@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Aly Metwaly designs and operationalizes enterprise AI operating models. Transformation Manager at Nokia. 45% adoption growth, 31 engineer-years unlocked, 74,000-employee programs.",
+          "Aly Metwaly designs and operationalizes enterprise AI operating models. Transformation Manager at Nokia. 65% adoption growth across engineering teams, 31 engineer-years of annual capacity, 74,000-employee programs.",
       },
       { name: "author", content: IDENTITY.name },
       { property: "og:title", content: "Aly Metwaly · Enterprise AI Transformation Leader" },

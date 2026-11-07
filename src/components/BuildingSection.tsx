@@ -1,21 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { GITHUB_URL } from "@/lib/social";
 import { ADOPTION_PLAYBOOK_REPO_URL, SITE_SOURCE_REPO_URL } from "@/lib/building-links";
+import { BUILDING_METRIC_IDS, PROOF_METRICS } from "@/lib/metrics";
 
-const proofMetrics = [
-  {
-    value: "65%",
-    label: "Increase in AI adoption across engineering teams",
-  },
-  {
-    value: "5×",
-    label: "Scale-up of an AI-enabled solution in 8 weeks",
-  },
-  {
-    value: "31",
-    label: "About 31 engineer-years of annual capacity from 560 hours of effort",
-  },
-] as const;
+const proofMetrics = BUILDING_METRIC_IDS.map((id) => {
+  const metric = PROOF_METRICS.find((m) => m.id === id);
+  if (!metric) {
+    throw new Error(`Building metric "${id}" is not defined in PROOF_METRICS`);
+  }
+  return metric;
+});
 
 const topics = [
   {
@@ -183,7 +177,7 @@ export function BuildingSection() {
           <div className="grid border-t border-rule sm:grid-cols-3">
             {proofMetrics.map((m) => (
               <div
-                key={m.label}
+                key={m.id}
                 className="border-b border-r border-rule px-2 py-10 last:border-r-0 sm:border-b-0 sm:[&:nth-child(3n)]:border-r-0 lg:py-14"
               >
                 <div className="font-display text-5xl leading-none tracking-tight text-accent sm:text-6xl">

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import portraitAsset from "@/assets/portrait.JPG";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { ProofSection } from "@/components/ProofSection";
@@ -64,9 +64,15 @@ function Home() {
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg lg:text-xl">
               I design enterprise AI operating models: governance, adoption, measurement, and change
-              management that move large organizations from AI experimentation to repeatable
-              execution and measurable business impact.
+              management. I also build the agentic workflows and playbooks that move engineering
+              teams from experimentation to repeatable execution and measurable impact.
             </p>
+            <Link
+              to="/building"
+              className="link-accent-underline mt-4 inline-flex min-h-11 items-center text-foreground"
+            >
+              See what I am building
+            </Link>
           </div>
           <div className="lg:col-span-4">
             <div className="relative">
@@ -84,7 +90,7 @@ function Home() {
                 <div>Based</div>
                 <div className="text-foreground">Espoo, FI</div>
                 <div>Focus</div>
-                <div className="text-foreground">AI Operating Models</div>
+                <div className="text-foreground">AI Deployment and Adoption</div>
               </div>
             </div>
           </div>
