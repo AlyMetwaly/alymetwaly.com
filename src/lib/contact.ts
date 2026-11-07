@@ -8,6 +8,8 @@
  */
 export const CONTACT_EMAIL = "talk.alymetwaly@outlook.com";
 
+export type ContactTopic = "advisory" | "speaking";
+
 export const CONTACT_SUBJECT = "Hello from alymetwaly.com";
 
 export const CONTACT_BODY = [
@@ -21,9 +23,44 @@ export const CONTACT_BODY = [
   "",
 ].join("\n");
 
+const TOPIC_TEMPLATES: Record<ContactTopic, { subject: string; body: string }> = {
+  advisory: {
+    subject: "Advisory session request",
+    body: [
+      "Hi Aly,",
+      "",
+      "Who I am and where I work:",
+      "",
+      "The challenge:",
+      "",
+      "The outcome I am seeking:",
+      "",
+      "Timing, if there is a deadline:",
+      "",
+    ].join("\n"),
+  },
+  speaking: {
+    subject: "Speaking invitation",
+    body: [
+      "Hi Aly,",
+      "",
+      "Who I am and my organization:",
+      "",
+      "Event name, date, and location:",
+      "",
+      "Audience size:",
+      "",
+      "Format and length:",
+      "",
+      "Topic or outcome wanted:",
+      "",
+    ].join("\n"),
+  },
+};
+
 /** Built at click time. Never render this into markup. */
-export function buildMailto(): string {
-  const subject = encodeURIComponent(CONTACT_SUBJECT);
-  const body = encodeURIComponent(CONTACT_BODY);
-  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+export function buildMailto(topic?: ContactTopic): string {
+  const subject = topic ? TOPIC_TEMPLATES[topic].subject : CONTACT_SUBJECT;
+  const body = topic ? TOPIC_TEMPLATES[topic].body : CONTACT_BODY;
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }

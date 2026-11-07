@@ -73,16 +73,16 @@ You are welcome to. The engineering is the reusable part. The writing and the ph
 
 **Configuration. Change these and the structure follows:**
 
-| File                                                           | What                                                                       |
-| -------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [`src/lib/site.ts`](src/lib/site.ts)                           | `IDENTITY` (name, job title, employer, location) and `SITE_URL`            |
-| [`src/lib/social.ts`](src/lib/social.ts)                       | Profile URLs. Feeds the footer _and_ schema `sameAs`, so they cannot drift |
-| [`src/lib/contact.ts`](src/lib/contact.ts)                     | Contact alias and the email template. Read at click time, not in the HTML  |
-| [`src/lib/sections.ts`](src/lib/sections.ts)                   | Navigation                                                                 |
-| [`src/styles.css`](src/styles.css)                             | Design tokens: colour, type scale, spacing                                 |
-| [`vite.config.ts`](vite.config.ts)                             | `SITE_HOST`, the route manifest, downloadable files                        |
-| [`scripts/prepare-gh-pages.mjs`](scripts/prepare-gh-pages.mjs) | `CUSTOM_DOMAIN` and the route and asset guards                             |
-| [`public/robots.txt`](public/robots.txt)                       | Sitemap URL                                                                |
+| File                                                           | What                                                                                                 |
+| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [`src/lib/site.ts`](src/lib/site.ts)                           | `IDENTITY` (name, job title, employer, location) and `SITE_URL`                                      |
+| [`src/lib/social.ts`](src/lib/social.ts)                       | Profile URLs. Feeds the footer _and_ schema `sameAs`, so they cannot drift                           |
+| [`src/lib/contact.ts`](src/lib/contact.ts)                     | Contact alias and email templates (general, advisory, speaking). Read at click time, not in the HTML |
+| [`src/lib/sections.ts`](src/lib/sections.ts)                   | Navigation                                                                                           |
+| [`src/styles.css`](src/styles.css)                             | Design tokens: colour, type scale, spacing                                                           |
+| [`vite.config.ts`](vite.config.ts)                             | `SITE_HOST`, the route manifest, downloadable files                                                  |
+| [`scripts/prepare-gh-pages.mjs`](scripts/prepare-gh-pages.mjs) | `CUSTOM_DOMAIN` and the route and asset guards                                                       |
+| [`public/robots.txt`](public/robots.txt)                       | Sitemap URL                                                                                          |
 
 **Content. Replace wholesale:** the seven `*Section.tsx` components and the ten route files in
 [`src/routes/`](src/routes) (nine page routes plus [`__root.tsx`](src/routes/__root.tsx)) hold

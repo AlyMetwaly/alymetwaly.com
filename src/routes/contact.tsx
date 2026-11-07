@@ -1,12 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { absoluteUrl } from "@/lib/site";
+import type { ContactTopic } from "@/lib/contact";
 import { ContactSection } from "@/components/ContactSection";
 import { PageHero } from "@/components/PageHero";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 
 const DESCRIPTION = "Message Aly Metwaly on LinkedIn, or write an email.";
 
+type ContactSearch = {
+  topic?: ContactTopic;
+};
+
 export const Route = createFileRoute("/contact")({
+  validateSearch: (search: Record<string, unknown>): ContactSearch => {
+    const topic = search.topic;
+    if (topic === "advisory" || topic === "speaking") {
+      return { topic };
+    }
+    return {};
+  },
   head: () => ({
     meta: [
       { title: "Contact · Aly Metwaly" },
@@ -26,6 +38,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const { topic } = Route.useSearch();
+
   return (
     <SiteLayout>
       <PageHero
@@ -34,7 +48,7 @@ function ContactPage() {
         description="Two ways to reach me. Pick the one that suits your message."
         headingId="contact-page-heading"
       />
-      <ContactSection />
+      <ContactSection topic={topic} />
     </SiteLayout>
   );
 }

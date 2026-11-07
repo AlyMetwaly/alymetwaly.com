@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Mark } from "@/components/SocialLinks";
-import { CONTACT_EMAIL, buildMailto } from "@/lib/contact";
+import { CONTACT_EMAIL, buildMailto, type ContactTopic } from "@/lib/contact";
 import { SOCIAL_LINKS } from "@/lib/social";
 
 const linkedin = SOCIAL_LINKS.find((l) => l.key === "linkedin");
@@ -8,14 +8,14 @@ const linkedin = SOCIAL_LINKS.find((l) => l.key === "linkedin");
 const buttonClass =
   "inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline";
 
-export function ContactSection() {
+export function ContactSection({ topic }: { topic?: ContactTopic }) {
   const [address, setAddress] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
   function writeEmail() {
     // The address is read here, at click time, so it is never in the HTML.
     setAddress(CONTACT_EMAIL);
-    window.location.href = buildMailto();
+    window.location.href = buildMailto(topic);
   }
 
   async function copyAddress() {

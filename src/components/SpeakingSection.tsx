@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import vergeEpicenterPhoto from "@/assets/speaking-verge-epicenter.png";
 import dashPhoto from "@/assets/speaking-dash.png";
 import menaPanelPhoto from "@/assets/speaking-mena-panel.png";
@@ -179,14 +180,13 @@ export function SpeakingSection() {
                 outcomes.
               </p>
             </aside>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/contact"
+              search={{ topic: "speaking" }}
               className="inline-flex mt-10 px-5 py-3 rounded-full text-sm font-medium border border-border hover:bg-background btn-accent-outline"
             >
               Request a Speaking Engagement
-            </a>
+            </Link>
           </div>
         </div>
       </div>

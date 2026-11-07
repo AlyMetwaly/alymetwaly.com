@@ -23,9 +23,6 @@ const engagements = [
   },
 ];
 
-const ADVISORY_FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLScoWwy5ZyLSM6ntFTSrWJe3hVbbKofS3B1aLo969tW88F2OKQ/viewform?usp=publish-editor";
-
 export function AdvisorySection() {
   return (
     <section
@@ -79,7 +76,7 @@ export function AdvisorySection() {
           <div className="max-w-2xl space-y-4 text-muted-foreground leading-relaxed">
             <p>Start with a paid Advisory Discovery Session.</p>
             <p>
-              Submit your challenge and the outcome you are seeking. I review every request
+              Send me your challenge and the outcome you are seeking. I review every request
               personally and will contact you regarding potential fit, availability, payment method,
               and next steps.
             </p>
@@ -88,15 +85,14 @@ export function AdvisorySection() {
               frameworks, playbooks, or resources where applicable.
             </p>
           </div>
-          <a
-            href={ADVISORY_FORM_URL}
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            to="/contact"
+            search={{ topic: "advisory" }}
             className="inline-flex shrink-0 min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium"
             style={{ background: "var(--ink)", color: "var(--paper)" }}
           >
             Request an Advisory Session
-          </a>
+          </Link>
         </div>
       </div>
     </section>
