@@ -39,7 +39,6 @@ function BuildingPage() {
   return (
     <SiteLayout>
       <PageHero
-        label="Building"
         headline="What I am building."
         description="I advise on enterprise AI transformation. I also ship the playbooks, agent workflows, and open source that make the advice repeatable."
         headingId="building-heading"

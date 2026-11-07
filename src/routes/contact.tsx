@@ -43,7 +43,6 @@ function ContactPage() {
   return (
     <SiteLayout>
       <PageHero
-        label="Contact"
         headline="Let's talk."
         description="Two ways to reach me. Choose the one that best fits your message."
         headingId="contact-page-heading"

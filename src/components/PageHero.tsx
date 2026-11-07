@@ -1,5 +1,5 @@
 type PageHeroProps = {
-  label: string;
+  label?: string;
   headline: string;
   description: string;
   headingId?: string;
@@ -15,7 +15,7 @@ export function PageHero({
     <section className="border-b border-border" aria-labelledby={headingId}>
       <div className="mx-auto max-w-[1280px] px-4 pb-10 pt-10 sm:px-6 sm:pb-12 sm:pt-12 lg:px-12 lg:pb-14 lg:pt-16">
         <div className="max-w-3xl">
-          <p className="section-eyebrow">{label}</p>
+          {label ? <p className="section-eyebrow">{label}</p> : null}
           <h1
             id={headingId}
             className="mt-3 font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.98] tracking-[-0.02em]"
