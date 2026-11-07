@@ -1,6 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { GITHUB_URL } from "@/lib/social";
-import { ADOPTION_PLAYBOOK_REPO_URL, SITE_SOURCE_REPO_URL } from "@/lib/building-links";
+import {
+  ADOPTION_PLAYBOOK_REPO_URL,
+  AGENT_PLUGINS_REPO_URL,
+  SITE_SOURCE_REPO_URL,
+} from "@/lib/building-links";
 import { BUILDING_METRIC_IDS, PROOF_METRICS } from "@/lib/metrics";
 
 const proofMetrics = BUILDING_METRIC_IDS.map((id) => {
@@ -15,9 +19,9 @@ const topics = [
   {
     id: "adoption-playbook",
     title: "AI coding adoption playbook",
-    status: "In progress",
+    status: "Public",
     paragraph:
-      "A practical path for moving AI coding tools from access to regular use across engineering teams: align leaders, enable teams, embed habits, measure adoption, and expand what works.",
+      "A practical rollout kit for moving AI coding tools from access to regular use across engineering teams. It has guides, templates and a small adoption scorecard.",
   },
   {
     id: "content-pipeline",
@@ -43,9 +47,9 @@ const topics = [
   {
     id: "agent-rules",
     title: "Agent rules and skills",
-    status: "Private",
+    status: "Partly public",
     paragraph:
-      "The rules, reusable skills and review points that tell Cursor and Claude Code how to work in my repos. They live in the repo, not in chat history.",
+      "The rules, reusable skills and review points that tell Cursor and Claude Code how to work in my repos. They live in the repo, not in chat history. Most are private. A first set is public as Cursor plugins. They are early and not yet submitted to a marketplace.",
   },
   {
     id: "investment-tools",
@@ -157,6 +161,21 @@ export function BuildingSection() {
                     Coming soon
                   </span>
                 )}
+              </p>
+            </li>
+            <li className="grid gap-4 border-t border-rule pt-10 first:border-t-0 first:pt-0 sm:gap-6 lg:grid-cols-12 lg:gap-12">
+              <h3 className="font-display text-2xl tracking-tight sm:text-3xl lg:col-span-4">
+                Agent plugins
+              </h3>
+              <p className="flex flex-wrap gap-x-6 gap-y-2 text-base lg:col-span-8">
+                <a
+                  href={AGENT_PLUGINS_REPO_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={externalLinkClass}
+                >
+                  View the agent plugins repo
+                </a>
               </p>
             </li>
           </ul>

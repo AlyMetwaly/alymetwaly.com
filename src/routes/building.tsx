@@ -11,13 +11,13 @@ export const Route = createFileRoute("/building")({
       {
         name: "description",
         content:
-          "The AI work I am building, including the adoption playbook, agent workflows and this open source site.",
+          "The AI work I am building, including the adoption playbook, Cursor plugins, agent workflows and this open source site.",
       },
       { property: "og:title", content: "What I am building · Aly Metwaly" },
       {
         property: "og:description",
         content:
-          "The AI work Aly Metwaly is building, including the adoption playbook, agent workflows and this open source site.",
+          "The AI work Aly Metwaly is building, including the adoption playbook, Cursor plugins, agent workflows and this open source site.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/building")({
       {
         name: "twitter:description",
         content:
-          "The AI work Aly Metwaly is building, including the adoption playbook, agent workflows and this open source site.",
+          "The AI work Aly Metwaly is building, including the adoption playbook, Cursor plugins, agent workflows and this open source site.",
       },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/building") }],

@@ -6,5 +6,8 @@
 export const ADOPTION_PLAYBOOK_REPO_URL: string | null =
   "https://github.com/AlyMetwaly/ai-coding-adoption-playbook";
 
+/** Public repo for the Cursor plugins (adoption scorecard, rollout decision review). */
+export const AGENT_PLUGINS_REPO_URL = "https://github.com/AlyMetwaly/agent-plugins";
+
 /** Source for this site (MIT, prerendered, build guards). */
 export const SITE_SOURCE_REPO_URL = "https://github.com/AlyMetwaly/alymetwaly.com";
