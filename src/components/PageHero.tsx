@@ -18,7 +18,7 @@ export function PageHero({
           {label ? <p className="section-eyebrow">{label}</p> : null}
           <h1
             id={headingId}
-            className="mt-3 font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.98] tracking-[-0.02em]"
+            className={`font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl${label ? " mt-3" : ""}`}
           >
             {headline}
           </h1>
