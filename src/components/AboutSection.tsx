@@ -47,7 +47,7 @@ export function AboutSection() {
               My career has taken me through engineering, semiconductors, enterprise transformation,
               startup advisory, and investing.
             </p>
-            <p>What has remained constant throughout that journey is curiosity.</p>
+            <p>What has remained constant throughout my career is curiosity.</p>
             <p className="text-muted-foreground">
               Curiosity about how complex systems work. How technology creates value. How
               organizations evolve. And how people turn ambitious ideas into meaningful outcomes.
@@ -69,9 +69,9 @@ export function AboutSection() {
               founders building the next generation of technology-driven companies.
             </p>
             <p className="text-muted-foreground">
-              Continuous learning has also remained central to my journey. I believe growth comes
-              from curiosity, embracing change, and having the courage to keep learning when the
-              path is not yet clear.
+              Continuous learning has also remained central to my work. I believe growth comes from
+              curiosity, embracing change, and having the courage to keep learning when the path is
+              not yet clear.
             </p>
 
             <div className="grid gap-8 border-t border-rule pt-10 sm:grid-cols-3 sm:gap-6 lg:pt-12">

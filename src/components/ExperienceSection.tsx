@@ -23,7 +23,7 @@ const work = [
     problem:
       "AI adoption was accelerating across the organization, but success depended on more than deploying tools. Without a shared approach to leadership, behavior change, enablement, governance, and measurement, adoption risked becoming fragmented and difficult to scale.",
     action:
-      "Led the development of a company-wide AI Enablement Playbook together with a cross-functional transformation team. Owned the design and operationalization of a holistic Change Management model for enterprise AI transformation, integrating leadership enablement, adoption journeys, champions networks, governance, continuous learning, measurement, and operating cadence into a repeatable system for scaling AI adoption.",
+      "Led the development of a company-wide AI Enablement Playbook together with a cross-functional transformation team. Owned the design and operationalization of a Change Management model for enterprise AI transformation, integrating leadership enablement, adoption paths, champions networks, governance, continuous learning, measurement, and operating cadence into a repeatable system for scaling AI adoption.",
     outcome:
       "Established the operating model for enterprise AI transformation, reducing fragmentation across business segments and enabling a consistent, measurable, and repeatable approach to AI adoption at scale.",
   },

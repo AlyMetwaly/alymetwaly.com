@@ -76,8 +76,7 @@ export function SpeakingSection() {
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
             <p>
               Available for keynotes, panels, roundtables, executive retreats, and leadership
-              offsites. I speak to leaders who need clarity on what actually works, not what vendors
-              promise.
+              offsites. I speak to leaders who need clarity on what actually works in practice.
             </p>
             <p>
               Talks are grounded in field experience: measurable adoption programs, governance

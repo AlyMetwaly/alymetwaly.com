@@ -24,6 +24,20 @@ const topics = [
       "A practical rollout kit for moving AI coding tools from access to regular use across engineering teams. It has guides, templates and a small adoption scorecard.",
   },
   {
+    id: "agent-rules",
+    title: "Agent rules and skills",
+    status: "Partly public",
+    paragraph:
+      "The rules, reusable skills and review points that tell Cursor and Claude Code how to work in my repos. They live in the repo, not in chat history. Most are private. A first set is public as Cursor plugins. They are early and not yet submitted to a marketplace.",
+  },
+  {
+    id: "this-website",
+    title: "This website",
+    status: "Public",
+    paragraph:
+      "MIT-licensed and prerendered for static hosting. The build fails if a route or an asset is missing, so broken pages never ship.",
+  },
+  {
     id: "content-pipeline",
     title: "Content pipeline",
     status: "Private",
@@ -45,25 +59,11 @@ const topics = [
       "A 12-month system for learning the AI stack. It has daily notes, tracked metrics, and predictions scored for accuracy.",
   },
   {
-    id: "agent-rules",
-    title: "Agent rules and skills",
-    status: "Partly public",
-    paragraph:
-      "The rules, reusable skills and review points that tell Cursor and Claude Code how to work in my repos. They live in the repo, not in chat history. Most are private. A first set is public as Cursor plugins. They are early and not yet submitted to a marketplace.",
-  },
-  {
     id: "investment-tools",
     title: "Investment decision tools",
     status: "Private",
     paragraph:
       "Personal tools for screening stocks, angel deals and real estate, and for checking my own portfolio decisions against written rules.",
-  },
-  {
-    id: "this-website",
-    title: "This website",
-    status: "Public",
-    paragraph:
-      "MIT-licensed and prerendered for static hosting. The build fails if a route or an asset is missing, so broken pages never ship.",
   },
 ] as const;
 

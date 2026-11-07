@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "From silicon to operating models: Aly Metwaly's journey across engineering, enterprise transformation, and AI leadership.",
+          "From silicon to operating models: Aly Metwaly's career across engineering, enterprise transformation, and AI leadership.",
       },
       { property: "og:title", content: "About · Aly Metwaly" },
       {
