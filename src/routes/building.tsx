@@ -11,13 +11,13 @@ export const Route = createFileRoute("/building")({
       {
         name: "description",
         content:
-          "Adoption playbooks, local-first agentic systems with Cursor and Claude Code, and open source including this prerendered site.",
+          "The AI work I am building, including the adoption playbook, agent workflows and this open source site.",
       },
       { property: "og:title", content: "What I am building · Aly Metwaly" },
       {
         property: "og:description",
         content:
-          "AI coding adoption playbooks, agentic workflows, and open source tools Aly Metwaly ships alongside advisory work.",
+          "The AI work Aly Metwaly is building, including the adoption playbook, agent workflows and this open source site.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
@@ -26,7 +26,8 @@ export const Route = createFileRoute("/building")({
       { name: "twitter:title", content: "What I am building · Aly Metwaly" },
       {
         name: "twitter:description",
-        content: "Adoption playbooks, agentic systems, and open source from Aly Metwaly.",
+        content:
+          "The AI work Aly Metwaly is building, including the adoption playbook, agent workflows and this open source site.",
       },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/building") }],

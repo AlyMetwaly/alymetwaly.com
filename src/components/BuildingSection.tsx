@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { GITHUB_URL } from "@/lib/social";
 import { ADOPTION_PLAYBOOK_REPO_URL, SITE_SOURCE_REPO_URL } from "@/lib/building-links";
 
@@ -16,51 +17,61 @@ const proofMetrics = [
   },
 ] as const;
 
-const blocks = [
+const topics = [
   {
     id: "adoption-playbook",
-    title: "Adoption playbook",
+    title: "AI coding adoption playbook",
+    status: "In progress",
     paragraph:
-      "A practical path for taking AI coding tools from licence to daily use. It follows five moves: align leaders, enable teams, embed habits, measure adoption, and expand what works.",
-    bullets: [
-      "Align on outcomes and guardrails before licences land.",
-      "Enable champions, then embed tools in real delivery.",
-      "Measure usage and quality, then expand rollout.",
-    ],
-    link: {
-      href: ADOPTION_PLAYBOOK_REPO_URL,
-      label: "View the adoption playbook repo",
-    },
+      "A practical path for taking AI coding tools from licence to daily use: align leaders, enable teams, embed habits, measure adoption, and expand what works.",
   },
   {
-    id: "agentic-systems",
-    title: "Agentic systems with Cursor and Claude Code",
+    id: "content-pipeline",
+    title: "Content pipeline",
+    status: "Private",
     paragraph:
-      "Local-first workflows where agents follow explicit rules, reusable skills, and human review gates. Python utilities are tested before they touch real content.",
-    bullets: [
-      "Agent rules and skills kept in the repo, not in chat history.",
-      "Human review before anything ships or goes live.",
-      "Tested Python around a Content System, Keynote OS, and an AI Ecosystem map.",
-    ],
-    link: null,
+      "Turns a brief into a published post through fixed steps. It has a quality check, and nothing goes live without my approval.",
   },
   {
-    id: "open-source",
-    title: "Open source",
+    id: "keynote-os",
+    title: "Keynote OS",
+    status: "Private",
     paragraph:
-      "This site is MIT-licensed, prerendered for static hosting, and guarded so broken routes fail the build instead of shipping silent 404s.",
-    bullets: [
-      "Hand-built routes with a single deploy path.",
-      "Build guards for prerendered files and asset references.",
-      "Fork-friendly configuration in one place per concern.",
-    ],
-    link: {
-      href: SITE_SOURCE_REPO_URL,
-      label: "Site source on GitHub",
-      secondary: { href: GITHUB_URL, label: "GitHub profile" },
-    },
+      "Stores the talks I have delivered and pulls out reusable stories, frameworks and data points for the next one.",
+  },
+  {
+    id: "ai-ecosystem",
+    title: "AI Ecosystem",
+    status: "Private",
+    paragraph:
+      "A 12-month system for learning the AI stack. It has daily notes, tracked metrics, and predictions scored for accuracy.",
+  },
+  {
+    id: "agent-rules",
+    title: "Agent rules and skills",
+    status: "Private",
+    paragraph:
+      "The rules, reusable skills and review points that tell Cursor and Claude Code how to work in my repos. They live in the repo, not in chat history.",
+  },
+  {
+    id: "investment-tools",
+    title: "Investment decision tools",
+    status: "Private",
+    paragraph:
+      "Personal tools for screening stocks, angel deals and real estate, and for checking my own portfolio decisions against written rules.",
+  },
+  {
+    id: "this-website",
+    title: "This website",
+    status: "Public",
+    paragraph:
+      "MIT-licensed and prerendered for static hosting. The build fails if a route or an asset is missing, so broken pages never ship.",
   },
 ] as const;
+
+const sectionHeadingClass =
+  "font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl";
+const externalLinkClass = "link-accent-underline inline-flex min-h-11 items-center text-foreground";
 
 export function BuildingSection() {
   return (
@@ -68,60 +79,93 @@ export function BuildingSection() {
       <section
         id="building"
         className="section-anchor border-b border-border"
-        aria-labelledby="building-blocks-heading"
+        aria-labelledby="building-topics-heading"
       >
         <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-          <h2 id="building-blocks-heading" className="sr-only">
-            Current builds
-          </h2>
+          <div className="mb-12 sm:mb-16">
+            <h2 id="building-topics-heading" className={sectionHeadingClass}>
+              What I am working on.
+            </h2>
+          </div>
           <div className="space-y-16 sm:space-y-20">
-            {blocks.map((block) => (
+            {topics.map((topic) => (
               <article
-                key={block.id}
+                key={topic.id}
                 className="grid gap-6 border-t border-rule pt-10 first:border-t-0 first:pt-0 sm:gap-8 lg:grid-cols-12 lg:gap-12"
-                aria-labelledby={`${block.id}-title`}
+                aria-labelledby={`${topic.id}-title`}
               >
-                <h3
-                  id={`${block.id}-title`}
-                  className="font-display text-2xl tracking-tight sm:text-3xl lg:col-span-4"
-                >
-                  {block.title}
-                </h3>
-                <div className="space-y-5 lg:col-span-8">
+                <div className="space-y-3 lg:col-span-4">
+                  <h3
+                    id={`${topic.id}-title`}
+                    className="font-display text-2xl tracking-tight sm:text-3xl"
+                  >
+                    {topic.title}
+                  </h3>
+                  <p className="section-eyebrow text-xs">{topic.status}</p>
+                </div>
+                <div className="lg:col-span-8">
                   <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-                    {block.paragraph}
+                    {topic.paragraph}
                   </p>
-                  <ul className="list-disc space-y-2 pl-5 text-base leading-relaxed text-foreground/85">
-                    {block.bullets.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                  {block.link && (
-                    <p className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                      <a
-                        href={block.link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="link-accent-underline text-foreground"
-                      >
-                        {block.link.label}
-                      </a>
-                      {"secondary" in block.link && block.link.secondary && (
-                        <a
-                          href={block.link.secondary.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="link-accent-underline text-foreground"
-                        >
-                          {block.link.secondary.label}
-                        </a>
-                      )}
-                    </p>
-                  )}
                 </div>
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section
+        id="building-open"
+        className="section-anchor border-b border-border"
+        aria-labelledby="building-open-heading"
+      >
+        <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
+          <div className="mb-12 sm:mb-16">
+            <h2 id="building-open-heading" className={sectionHeadingClass}>
+              Open to view.
+            </h2>
+          </div>
+          <ul className="space-y-10">
+            <li className="grid gap-4 border-t border-rule pt-10 first:border-t-0 first:pt-0 sm:gap-6 lg:grid-cols-12 lg:gap-12">
+              <h3 className="font-display text-2xl tracking-tight sm:text-3xl lg:col-span-4">
+                This website
+              </h3>
+              <p className="flex flex-wrap gap-x-6 gap-y-2 text-base lg:col-span-8">
+                <a
+                  href={SITE_SOURCE_REPO_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={externalLinkClass}
+                >
+                  Site source on GitHub
+                </a>
+                <a href={GITHUB_URL} target="_blank" rel="noreferrer" className={externalLinkClass}>
+                  GitHub profile
+                </a>
+              </p>
+            </li>
+            <li className="grid gap-4 border-t border-rule pt-10 first:border-t-0 first:pt-0 sm:gap-6 lg:grid-cols-12 lg:gap-12">
+              <h3 className="font-display text-2xl tracking-tight sm:text-3xl lg:col-span-4">
+                Adoption playbook
+              </h3>
+              <p className="flex flex-wrap gap-x-6 gap-y-2 text-base lg:col-span-8">
+                {ADOPTION_PLAYBOOK_REPO_URL ? (
+                  <a
+                    href={ADOPTION_PLAYBOOK_REPO_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={externalLinkClass}
+                  >
+                    View the adoption playbook repo
+                  </a>
+                ) : (
+                  <span className="inline-flex min-h-11 items-center text-muted-foreground">
+                    Coming soon
+                  </span>
+                )}
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -132,11 +176,8 @@ export function BuildingSection() {
       >
         <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
           <div className="mb-12 sm:mb-16">
-            <h2
-              id="building-proof-heading"
-              className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-            >
-              Proof from the work.
+            <h2 id="building-proof-heading" className={sectionHeadingClass}>
+              Results from enterprise rollouts.
             </h2>
           </div>
           <div className="grid border-t border-rule sm:grid-cols-3">
@@ -154,6 +195,15 @@ export function BuildingSection() {
               </div>
             ))}
           </div>
+          <p className="mt-12 text-base leading-relaxed text-foreground sm:mt-16 sm:text-lg">
+            Want to talk about any of this?{" "}
+            <Link
+              to="/contact"
+              className="link-accent-underline inline-flex min-h-11 items-center text-foreground"
+            >
+              Message me on LinkedIn or by email.
+            </Link>
+          </p>
         </div>
       </section>
     </>
