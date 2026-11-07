@@ -32,9 +32,10 @@ export function SiteHeader() {
         <div className="flex h-14 items-center justify-between gap-3 sm:h-16">
           <Link
             to="/"
-            className="shrink-0 font-display text-xl leading-none tracking-tight sm:text-2xl"
+            className="inline-flex min-h-11 shrink-0 items-center font-display text-xl leading-none tracking-tight sm:text-2xl"
             activeProps={{
-              className: "shrink-0 font-display text-xl leading-none tracking-tight sm:text-2xl",
+              className:
+                "inline-flex min-h-11 shrink-0 items-center font-display text-xl leading-none tracking-tight sm:text-2xl",
             }}
             activeOptions={{ exact: true }}
           >
@@ -45,16 +46,21 @@ export function SiteHeader() {
             aria-label="Primary"
           >
             {HEADER_NAV_SECTIONS.map((link) => (
-              <NavLink key={link.id} to={link.path} label={link.label} />
+              <NavLink
+                key={link.id}
+                to={link.path}
+                label={link.label}
+                className="nav-link inline-flex items-center whitespace-nowrap lg:min-h-6"
+              />
             ))}
           </nav>
           <Link
             to="/contact"
-            className="shrink-0 rounded-full px-3 py-2 text-xs font-medium transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-4 sm:text-sm"
+            className="inline-flex min-h-11 shrink-0 items-center rounded-full px-3 py-2 text-xs font-medium transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-4 sm:text-sm"
             style={{ background: "var(--ink)", color: "var(--paper)" }}
             activeProps={{
               className:
-                "shrink-0 rounded-full px-3 py-2 text-xs font-medium transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-4 sm:text-sm opacity-90",
+                "inline-flex min-h-11 shrink-0 items-center rounded-full px-3 py-2 text-xs font-medium transition-colors hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:px-4 sm:text-sm opacity-90",
               style: { background: "var(--ink)", color: "var(--paper)" },
             }}
             activeOptions={{ exact: true }}
@@ -64,7 +70,7 @@ export function SiteHeader() {
         </div>
         <div className="relative lg:static">
           <nav
-            className="flex gap-4 overflow-x-auto pb-3 text-xs text-muted-foreground lg:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,black_calc(100%-2.5rem),transparent)]"
+            className="flex gap-4 overflow-x-auto pb-0 pr-10 text-xs text-muted-foreground lg:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,black_calc(100%-2.5rem),transparent)]"
             aria-label="Primary mobile"
           >
             {HEADER_NAV_SECTIONS.map((link) => (
@@ -72,7 +78,7 @@ export function SiteHeader() {
                 key={link.id}
                 to={link.path}
                 label={link.label}
-                className="nav-link shrink-0 whitespace-nowrap"
+                className="nav-link inline-flex min-h-11 shrink-0 items-center whitespace-nowrap"
               />
             ))}
           </nav>
