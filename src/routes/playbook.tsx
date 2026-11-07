@@ -8,11 +8,11 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 export const Route = createFileRoute("/playbook")({
   head: () => ({
     meta: [
-      { title: "AI Transformation Playbook" },
+      { title: "AI Transformation Playbook · Aly Metwaly" },
       {
         name: "description",
         content:
-          "How Aly Metwaly thinks about enterprise AI transformation and the AI Transformation Value Chain—a connected system linking strategy, operating models, governance, adoption, and measurement.",
+          "How Aly Metwaly thinks about enterprise AI transformation and the AI Transformation Value Chain: a connected system linking strategy, operating models, governance, adoption, and measurement.",
       },
       { property: "og:title", content: "AI Transformation Playbook · Aly Metwaly" },
       {

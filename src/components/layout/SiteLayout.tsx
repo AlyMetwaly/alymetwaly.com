@@ -62,19 +62,21 @@ export function SiteHeader() {
             Let's Talk
           </Link>
         </div>
-        <nav
-          className="flex gap-4 overflow-x-auto pb-3 text-xs text-muted-foreground lg:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          aria-label="Primary mobile"
-        >
-          {HEADER_NAV_SECTIONS.map((link) => (
-            <NavLink
-              key={link.id}
-              to={link.path}
-              label={link.label}
-              className="nav-link shrink-0 whitespace-nowrap"
-            />
-          ))}
-        </nav>
+        <div className="relative lg:static">
+          <nav
+            className="flex gap-4 overflow-x-auto pb-3 text-xs text-muted-foreground lg:hidden [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [mask-image:linear-gradient(to_right,black_calc(100%-2.5rem),transparent)]"
+            aria-label="Primary mobile"
+          >
+            {HEADER_NAV_SECTIONS.map((link) => (
+              <NavLink
+                key={link.id}
+                to={link.path}
+                label={link.label}
+                className="nav-link shrink-0 whitespace-nowrap"
+              />
+            ))}
+          </nav>
+        </div>
       </div>
     </header>
   );
@@ -92,8 +94,11 @@ export function SiteFooter() {
             not orphaned. Point this at the newest talk each event. */}
         <Link
           to="/splash"
-          className="nav-link whitespace-nowrap"
-          activeProps={{ className: "nav-link whitespace-nowrap !text-foreground" }}
+          className="nav-link inline-flex min-h-11 items-center whitespace-nowrap"
+          activeProps={{
+            className:
+              "nav-link inline-flex min-h-11 items-center whitespace-nowrap !text-foreground",
+          }}
           activeOptions={{ exact: true }}
         >
           Talk slides

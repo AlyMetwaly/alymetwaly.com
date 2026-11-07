@@ -13,6 +13,10 @@ const SITE_HOST = "https://alymetwaly.com";
 // pages only so they can be excluded from the sitemap -- see below.
 const DECK_PATHS = ["/decks/the-human-premium-workbook.pdf"];
 
+// Topic-specific contact links are real routes but not canonical sitemap URLs.
+// Keep in sync with `search={{ topic: ... }}` on /contact links in section CTAs.
+const CONTACT_TOPIC_PATHS = ["/contact?topic=speaking", "/contact?topic=advisory"];
+
 // Every route that must exist as its own static file on GitHub Pages.
 // Keep in sync with src/routes/. A missing entry means that URL falls back
 // to 404.html instead of being served its own prerendered HTML.
@@ -70,6 +74,7 @@ export default defineConfig({
       // talk page download button, and the sitemap builder reads the discovered
       // page list rather than the prerender filter below.
       ...DECK_PATHS.map((path) => ({ path, sitemap: { exclude: true } })),
+      ...CONTACT_TOPIC_PATHS.map((path) => ({ path, sitemap: { exclude: true } })),
     ],
 
     // NOTE: the built-in `spa` shell option is deliberately not used here.

@@ -24,12 +24,12 @@ export function AboutSection() {
     >
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
         <div className="mb-8 lg:mb-12">
-          <h2
+          <h1
             id="about-heading"
             className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
           >
             From silicon to operating models.
-          </h2>
+          </h1>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">

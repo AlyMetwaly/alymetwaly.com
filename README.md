@@ -57,8 +57,9 @@ accumulate rather than being recycled, because the URL outlives the event and en
 posts and on printed handouts.
 
 **Assets are generated, not hand-exported.** The Open Graph card, the favicon set, and the
-printed QR codes are produced by scripts in [`scripts/`](scripts). Fonts are inlined so nothing
-silently falls back, and QR output is decoded back to its own URL to prove it scans before print.
+printed QR codes are produced by scripts in [`scripts/`](scripts). Fonts are vendored in
+`public/fonts/` and loaded from the site, not from a third-party CDN. QR output is decoded back to
+its own URL to prove it scans before print.
 
 **No component library.** Ten runtime dependencies, seventeen hand-written components, design
 tokens in [`src/styles.css`](src/styles.css). The original scaffold shipped with dozens of

@@ -190,7 +190,7 @@ export function TalkPage({ talk }: { talk: Talk }) {
                 </p>
                 <Link
                   to="/"
-                  className="link-accent-underline mt-1 inline-block text-sm text-muted-foreground"
+                  className="link-accent-underline mt-1 inline-flex min-h-11 items-center text-sm text-muted-foreground"
                 >
                   alymetwaly.com
                 </Link>
