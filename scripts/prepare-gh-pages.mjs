@@ -56,6 +56,7 @@ const REQUIRED_ROUTES = [
   "/advisory",
   "/speaking",
   "/about",
+  "/building",
   "/contact",
   "/splash",
 ];

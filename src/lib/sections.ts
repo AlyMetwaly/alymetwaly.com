@@ -3,6 +3,7 @@ export const SITE_SECTIONS = [
   { id: "experience", path: "/experience", number: "04", label: "Experience" },
   { id: "advisory", path: "/advisory", number: "05", label: "Advisory" },
   { id: "speaking", path: "/speaking", number: "06", label: "Speaking" },
+  { id: "building", path: "/building", number: "08", label: "Building" },
   { id: "about", path: "/about", number: "07", label: "About" },
 ] as const;
 

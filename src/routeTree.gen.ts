@@ -14,6 +14,7 @@ import { Route as SpeakingRouteImport } from './routes/speaking'
 import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BuildingRouteImport } from './routes/building'
 import { Route as AdvisoryRouteImport } from './routes/advisory'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BuildingRoute = BuildingRouteImport.update({
+  id: '/building',
+  path: '/building',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdvisoryRoute = AdvisoryRouteImport.update({
   id: '/advisory',
   path: '/advisory',
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/advisory': typeof AdvisoryRoute
+  '/building': typeof BuildingRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/advisory': typeof AdvisoryRoute
+  '/building': typeof BuildingRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/advisory': typeof AdvisoryRoute
+  '/building': typeof BuildingRoute
   '/contact': typeof ContactRoute
   '/experience': typeof ExperienceRoute
   '/playbook': typeof PlaybookRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/advisory'
+    | '/building'
     | '/contact'
     | '/experience'
     | '/playbook'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/advisory'
+    | '/building'
     | '/contact'
     | '/experience'
     | '/playbook'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/advisory'
+    | '/building'
     | '/contact'
     | '/experience'
     | '/playbook'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AdvisoryRoute: typeof AdvisoryRoute
+  BuildingRoute: typeof BuildingRoute
   ContactRoute: typeof ContactRoute
   ExperienceRoute: typeof ExperienceRoute
   PlaybookRoute: typeof PlaybookRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/building': {
+      id: '/building'
+      path: '/building'
+      fullPath: '/building'
+      preLoaderRoute: typeof BuildingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/advisory': {
       id: '/advisory'
       path: '/advisory'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AdvisoryRoute: AdvisoryRoute,
+  BuildingRoute: BuildingRoute,
   ContactRoute: ContactRoute,
   ExperienceRoute: ExperienceRoute,
   PlaybookRoute: PlaybookRoute,

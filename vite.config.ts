@@ -23,6 +23,7 @@ const ROUTES = [
   "/advisory",
   "/speaking",
   "/about",
+  "/building",
   "/contact",
   // One entry per talk page. Each is a permanent URL: it goes on a printed QR
   // code and gets shared in a LinkedIn post, so pages are added here, never
