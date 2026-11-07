@@ -29,7 +29,7 @@ export function ContactSection({ topic }: { topic?: ContactTopic }) {
 
   return (
     <section id="contact" className="section-anchor" aria-labelledby="contact-heading">
-      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
+      <div className="mx-auto max-w-[1280px] px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-12 lg:pb-28 lg:pt-8">
         <h2 id="contact-heading" className="sr-only">
           Ways to reach me
         </h2>
@@ -39,8 +39,8 @@ export function ContactSection({ topic }: { topic?: ContactTopic }) {
               <h3 className="font-display text-2xl tracking-tight sm:text-3xl">LinkedIn</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed lg:col-span-4">
-              The fastest way to reach me. Good for introductions, speaking invitations, and
-              questions about advisory work.
+              The fastest way to reach me. Best for introductions, speaking invitations,
+              collaborations, and professional conversations.
             </p>
             <div className="lg:col-span-4 lg:text-right">
               {linkedin && (
@@ -62,10 +62,7 @@ export function ContactSection({ topic }: { topic?: ContactTopic }) {
               <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Email</h3>
             </div>
             <div className="text-muted-foreground leading-relaxed lg:col-span-4">
-              <p>
-                Better for longer notes or documents. The button opens your email app with a short
-                template. Nothing is sent until you press send.
-              </p>
+              <p>Better for longer notes, detailed opportunities, or documents.</p>
               {address && (
                 <p className="mt-4 text-sm" aria-live="polite">
                   No email app opened? Use this address:{" "}

@@ -44,7 +44,7 @@ const TOPIC_TEMPLATES: Record<ContactTopic, { subject: string; body: string }> =
     body: [
       "Hi Aly,",
       "",
-      "Who I am and my organization:",
+      "Who I am and my organisation:",
       "",
       "Event name, date, and location:",
       "",

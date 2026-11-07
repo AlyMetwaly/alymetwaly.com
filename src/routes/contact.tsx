@@ -45,7 +45,7 @@ function ContactPage() {
       <PageHero
         label="Contact"
         headline="Let's talk."
-        description="Two ways to reach me. Pick the one that suits your message."
+        description="Two ways to reach me. Choose the one that best fits your message."
         headingId="contact-page-heading"
       />
       <ContactSection topic={topic} />
