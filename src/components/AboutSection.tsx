@@ -44,8 +44,9 @@ export function AboutSection() {
 
           <div className="space-y-6 text-lg leading-relaxed text-foreground/85 lg:col-span-7">
             <p>
-              My career has taken me through engineering, semiconductors, enterprise transformation,
-              startup advisory, and investing.
+              My career spans engineering, semiconductors, enterprise AI transformation, startup
+              advisory, and investing. Across those areas, I have stayed close to building, from
+              analytics and dashboards at work to AI tools and open source projects on my own time.
             </p>
             <p>What has remained constant throughout my career is curiosity.</p>
             <p className="text-muted-foreground">
@@ -64,9 +65,9 @@ export function AboutSection() {
             </p>
             <p>
               That realization continues to shape how I think about AI adoption, operating models,
-              governance, and organizational change. Today, my work focuses on helping organizations
-              translate technological potential into measurable business outcomes while supporting
-              founders building the next generation of technology-driven companies.
+              governance, and organizational change. Today, I focus on deploying AI in engineering
+              organizations and turning adoption into measurable outcomes. I also build tools and
+              workflows myself, which keeps that work grounded in how AI is actually used.
             </p>
             <p className="text-muted-foreground">
               Continuous learning has also remained central to my work. I believe growth comes from

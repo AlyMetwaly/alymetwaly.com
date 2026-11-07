@@ -109,6 +109,9 @@ export function BuildingSection() {
               </article>
             ))}
           </div>
+          <p className="mt-12 text-sm leading-relaxed text-muted-foreground sm:mt-16 sm:text-base">
+            Built with Cursor and Claude Code, with human review, tests and guardrails.
+          </p>
         </div>
       </section>
 

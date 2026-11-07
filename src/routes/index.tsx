@@ -63,9 +63,9 @@ function Home() {
               <em className="italic text-muted-foreground/90">operationalized</em> at scale.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg lg:text-xl">
-              I design enterprise AI operating models: governance, adoption, measurement, and change
-              management. I also build the agentic workflows and playbooks that move engineering
-              teams from experimentation to repeatable execution and measurable impact.
+              I lead enterprise AI deployment in engineering organizations: adoption, governance,
+              measurement, and change. I also build the tools, workflows, and dashboards that make
+              it work in practice.
             </p>
             <Link
               to="/building"

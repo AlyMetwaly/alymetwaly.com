@@ -40,7 +40,7 @@ function BuildingPage() {
     <SiteLayout>
       <PageHero
         headline="What I am building."
-        description="I advise on enterprise AI transformation. I also ship the playbooks, agent workflows, and open source that make the advice repeatable."
+        description="I lead enterprise AI transformation, and I build too. I create working tools, workflows, analytics, and open source to test ideas and make deployment repeatable."
         headingId="building-heading"
       />
       <BuildingSection />
