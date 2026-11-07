@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Aly Metwaly designs enterprise AI operating models, governance, and adoption programs that scale. Transformation Manager at Nokia. AI transformation advisor, speaker, and author of the AI Transformation Value Chain.",
+          "Aly Metwaly, Enterprise AI Transformation Leader at Nokia. Designs enterprise AI operating models, governance, and adoption programs that scale. Advisor, speaker, and author of the AI Transformation Value Chain.",
       },
       {
         name: "keywords",
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Enterprise AI operating models, governance, and adoption at scale. Transformation Manager at Nokia.",
+          "Enterprise AI operating models, governance, and adoption at scale. Enterprise AI Transformation Leader at Nokia.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:locale", content: "en_US" },
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Enterprise AI operating models, governance, and adoption at scale. Transformation Manager at Nokia.",
+          "Enterprise AI operating models, governance, and adoption at scale. Enterprise AI Transformation Leader at Nokia.",
       },
       { "script:ld+json": personSchema },
     ],

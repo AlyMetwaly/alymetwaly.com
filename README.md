@@ -1,6 +1,6 @@
 # alymetwaly.com
 
-The personal site of **Aly Metwaly**, AI Transformation Leader & Advisor.
+The personal site of **Aly Metwaly**, Enterprise AI Transformation Leader.
 
 Live at **[alymetwaly.com](https://alymetwaly.com)**. Source on **[GitHub](https://github.com/AlyMetwaly)**.
 
