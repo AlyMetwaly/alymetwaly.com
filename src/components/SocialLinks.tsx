@@ -8,7 +8,7 @@ import { SOCIAL_LINKS, type SocialPlatform } from "@/lib/social";
  * hand-drawn outlines with a shared stroke weight and cap height. GitHub is
  * the official filled Octicons mark, copied in as a single path.
  *
- * currentColor throughout -- colour comes from the parent's token, never from
+ * currentColor throughout -- color comes from the parent's token, never from
  * a value baked in here.
  */
 const MARKS: Record<SocialPlatform, React.ReactNode> = {
@@ -39,7 +39,7 @@ const MARKS: Record<SocialPlatform, React.ReactNode> = {
       <circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none" />
     </>
   ),
-  // Wide rounded rectangle with a centred play triangle.
+  // Wide rounded rectangle with a centered play triangle.
   youtube: (
     <>
       <rect x="2.25" y="5.25" width="19.5" height="13.5" rx="4" />

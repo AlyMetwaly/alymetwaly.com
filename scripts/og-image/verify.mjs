@@ -16,14 +16,14 @@ const OUT = "scratch/og-image";
 const { canvas, boxes } = JSON.parse(readFileSync(join(OUT, "layout.json"), "utf8"));
 
 const SHAPES = [
-  { name: "centre square 1:1", ratio: 1 },
-  { name: "centre 4:3", ratio: 4 / 3 },
-  { name: "centre 1.5:1", ratio: 1.5 },
+  { name: "center square 1:1", ratio: 1 },
+  { name: "center 4:3", ratio: 4 / 3 },
+  { name: "center 1.5:1", ratio: 1.5 },
   { name: "full card 1.91:1", ratio: canvas.w / canvas.h },
 ];
 
-/** Largest centred rect of a given aspect that fits the canvas. */
-function centreCrop(ratio) {
+/** Largest centered rect of a given aspect that fits the canvas. */
+function centerCrop(ratio) {
   let w = canvas.w;
   let h = Math.round(w / ratio);
   if (h > canvas.h) {
@@ -89,7 +89,7 @@ console.log("-".repeat(74));
 
 const results = [];
 for (const shape of SHAPES) {
-  const crop = centreCrop(shape.ratio);
+  const crop = centerCrop(shape.ratio);
   const faceCov = coverage(crop, boxes.face);
   const nameCov = coverage(crop, boxes.name);
   const verdict = (c) =>

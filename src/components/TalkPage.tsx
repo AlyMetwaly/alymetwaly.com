@@ -148,7 +148,7 @@ export function TalkPage({ talk }: { talk: Talk }) {
         a 390x844 phone with the sticky header in place. Someone who scans the
         QR code purely to find out who was on stage must never have to scroll.
       */}
-      <section className="border-b border-border" aria-labelledby="talk-heading">
+      <section className="border-b border-border" aria-labeledby="talk-heading">
         <div className="mx-auto max-w-[1280px] px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:px-12">
           <div className="max-w-2xl">
             {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
@@ -201,7 +201,7 @@ export function TalkPage({ talk }: { talk: Talk }) {
               {/*
                 No `download` attribute and no same-tab navigation, both
                 deliberate. iOS Safari handles a plain target=_blank PDF with its
-                own viewer and share sheet, which is the behaviour people expect
+                own viewer and share sheet, which is the behavior people expect
                 on a phone; `download` there is inconsistent across versions.
                 Opening a new tab also leaves this page intact behind the PDF, so
                 the click event has time to flush.
@@ -254,7 +254,7 @@ export function TalkPage({ talk }: { talk: Talk }) {
 
       {/* Renders nothing at all when the list is empty -- no stray heading. */}
       {pastTalks.length > 0 && (
-        <section className="border-b border-border" aria-labelledby="past-talks-heading">
+        <section className="border-b border-border" aria-labeledby="past-talks-heading">
           <div className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 sm:py-16 lg:px-12">
             <h2 id="past-talks-heading" className="section-eyebrow">
               Past talks

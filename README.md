@@ -9,7 +9,7 @@ source that make the advice repeatable. One example is this site itself, documen
 **[Building](https://alymetwaly.com/building)** page: hand-built, statically prerendered, and
 published from a single deploy path I own end to end.
 
-I design enterprise AI operating models for organisations moving from experimentation to
+I design enterprise AI operating models for organizations moving from experimentation to
 repeatable execution: governance, adoption, measurement, and change management. **The source is
 open on purpose.** If you are a consultant, speaker, or operator who needs a site that does real
 work (talk pages behind a QR code, an Open Graph card that does not embarrass you, structured
@@ -19,7 +19,7 @@ data a search engine can resolve), take it. The code is MIT. [Skip to how](#usin
 
 ## Why this repo is worth reading
 
-Most personal sites are a template with the colours changed. What is interesting here is the
+Most personal sites are a template with the colors changed. What is interesting here is the
 constraints, and what they forced:
 
 **It is a static site that behaves like an app.** Every route is prerendered to its own HTML
@@ -70,7 +70,7 @@ unused UI packages; they were deleted once it was clear nothing imported them.
 ## Using this for your own site
 
 You are welcome to. The engineering is the reusable part. The writing and the photographs are not
-(see [Licence](#licence)).
+(see [License](#license)).
 
 **Configuration. Change these and the structure follows:**
 
@@ -80,7 +80,7 @@ You are welcome to. The engineering is the reusable part. The writing and the ph
 | [`src/lib/social.ts`](src/lib/social.ts)                       | Profile URLs. Feeds the footer _and_ schema `sameAs`, so they cannot drift                           |
 | [`src/lib/contact.ts`](src/lib/contact.ts)                     | Contact alias and email templates (general, advisory, speaking). Read at click time, not in the HTML |
 | [`src/lib/sections.ts`](src/lib/sections.ts)                   | Navigation                                                                                           |
-| [`src/styles.css`](src/styles.css)                             | Design tokens: colour, type scale, spacing                                                           |
+| [`src/styles.css`](src/styles.css)                             | Design tokens: color, type scale, spacing                                                            |
 | [`vite.config.ts`](vite.config.ts)                             | `SITE_HOST`, the route manifest, downloadable files                                                  |
 | [`scripts/prepare-gh-pages.mjs`](scripts/prepare-gh-pages.mjs) | `CUSTOM_DOMAIN` and the route and asset guards                                                       |
 | [`public/robots.txt`](public/robots.txt)                       | Sitemap URL                                                                                          |
@@ -119,7 +119,7 @@ npm install
 npm run dev
 ```
 
-The dev server does **not** reproduce production behaviour: it has an SPA fallback, so a broken
+The dev server does **not** reproduce production behavior: it has an SPA fallback, so a broken
 route still looks fine. To test what GitHub Pages will actually serve:
 
 ```bash
@@ -211,11 +211,11 @@ Current prerender manifest (keep both lists in sync):
 | `npm run deploy`                  | Build (via `predeploy`) and publish to `gh-pages`    |
 | `npm run lint`                    | ESLint over the repo                                 |
 | `npm run format`                  | Prettier write over the repo                         |
-| `node scripts/qr.mjs [url]`       | QR code: SVG, PNG, and a labelled card               |
+| `node scripts/qr.mjs [url]`       | QR code: SVG, PNG, and a labeled card                |
 | `node scripts/og-image/build.mjs` | Open Graph card                                      |
 | `node scripts/make-favicon.mjs`   | Favicon set                                          |
 
-## Licence
+## License
 
 The **code** is [MIT](LICENSE). Fork it, ship it, no attribution required.
 

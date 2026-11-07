@@ -5,7 +5,7 @@
 // generation time.
 //
 // All three families are SIL Open Font License 1.1, which permits bundling and
-// redistribution. public/fonts/OFL.txt carries the licence text as OFL requires.
+// redistribution. public/fonts/OFL.txt carries the license text as OFL requires.
 //
 // Inter and JetBrains Mono are requested as weight ranges, so Google returns a
 // single variable file per family instead of one file per weight -- markedly

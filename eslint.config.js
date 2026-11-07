@@ -6,7 +6,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  // scratch/ holds local, gitignored artefacts -- one-off probes and preview
+  // scratch/ holds local, gitignored artifacts -- one-off probes and preview
   // builds. Linting them fails the whole run over throwaway files.
   { ignores: ["dist", ".output", ".vinxi", ".tanstack", "scratch", "node_modules.bak"] },
   {

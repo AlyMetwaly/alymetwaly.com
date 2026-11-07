@@ -29,7 +29,7 @@ const PANEL = { x: 712, y: 72, w: 368, h: 486 };
 // ---------------------------------------------------------------------------
 // Measured on src/assets/portrait.JPG (2001x3002):
 //   hair top    y = 393      chin        y = 1020   -> head height 627px
-//   face centre x = 995      shoulders   x = 360..1665
+//   face center x = 995      shoulders   x = 360..1665
 //
 // Crop keeps the shoulders nearly whole and leaves headroom above the hair.
 // Aspect matches PANEL (384/486 = 0.790) so nothing is distorted.
@@ -189,16 +189,16 @@ let out = await sharp(shot)
   .png({ compressionLevel: 9 })
   .toBuffer();
 
-// Photographic content makes a truecolour PNG large. Quantise only if the
-// full-colour version misses the budget.
+// Photographic content makes a truecolor PNG large. Quantize only if the
+// full-color version misses the budget.
 const LIMIT = 500 * 1024;
-let mode = "truecolour";
+let mode = "truecolor";
 if (out.length > LIMIT) {
   out = await sharp(shot)
     .resize(W, H, { kernel: sharp.kernel.lanczos3, fit: "fill" })
     .png({ compressionLevel: 9, palette: true, quality: 90, effort: 10 })
     .toBuffer();
-  mode = "palette-quantised";
+  mode = "palette-quantized";
 }
 
 writeFileSync("public/og-image-v2.png", out);

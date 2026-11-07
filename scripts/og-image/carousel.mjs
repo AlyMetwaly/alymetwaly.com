@@ -41,9 +41,9 @@ const CAPTURES = {
   //
   // This DELIBERATELY exceeds the 1:1.7 aspect ceiling the brief originally
   // set. That ceiling existed to stop a narrow strip on a tall canvas, but it
-  // optimises for canvas fill, and slide 02's job is to read as a phone rather
+  // optimizes for canvas fill, and slide 02's job is to read as a phone rather
   // than to be read. At 1:2.25 the capture renders ~46% of canvas width,
-  // standing on the surface colour: the intended outcome, not a compromise.
+  // standing on the surface color: the intended outcome, not a compromise.
   //
   // It ends at the portrait's edge rather than on the BASED/FOCUS rows, which
   // become texture at feed size. #proof, which carries the metrics, starts at

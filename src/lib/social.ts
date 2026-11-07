@@ -4,7 +4,7 @@
  * Consumed by both the footer links and the homepage Person schema's `sameAs`,
  * so the rendered links and the identity signal cannot drift apart.
  *
- * These strings are exact. Do not normalise trailing slashes or add/remove
+ * These strings are exact. Do not normalize trailing slashes or add/remove
  * `www` -- `sameAs` and `rel="me"` are identity claims, and they only resolve
  * if they match the canonical profile URL the platform itself serves.
  */

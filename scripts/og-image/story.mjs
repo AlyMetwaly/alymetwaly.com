@@ -67,7 +67,7 @@ async function capture(browser) {
 
 const html = (shot) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 * { margin:0; padding:0; box-sizing:border-box; }
-/* Padded to the safe zones and centred within them. The band is asymmetric
+/* Padded to the safe zones and centered within them. The band is asymmetric
    (380 top, 420 bottom), so centring on the canvas would sit 20px low. */
 body { width:${W}px; height:${H}px; background:${SURFACE}; overflow:hidden;
        padding:${SAFE_TOP}px 0 ${SAFE_BOTTOM}px;

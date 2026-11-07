@@ -2,7 +2,7 @@
 //
 //   node scripts/qr.mjs
 //   node scripts/qr.mjs https://alymetwaly.com/next-event
-//   node scripts/qr.mjs --bg "#FAF9F5"        slide background colour
+//   node scripts/qr.mjs --bg "#FAF9F5"        slide background color
 //   node scripts/qr.mjs --bg transparent      blends onto any background
 //   node scripts/qr.mjs --label-color "#0F6156"
 //
@@ -14,7 +14,7 @@
 // Four files per run:
 //   <name>.svg              bare QR, vector, for print
 //   <name>.png              bare QR, 2048px
-//   <name>-card.png         QR + the URL underneath, on the background colour
+//   <name>-card.png         QR + the URL underneath, on the background color
 //   <name>-card-alpha.png   same card, transparent background
 //
 // Two choices that are about scanning rather than about looking on-brand:
@@ -88,7 +88,7 @@ await QRCode.toFile(join(OUT, NAME + ".png"), URL_TO_ENCODE, {
 // --- card: QR plus the URL underneath ---------------------------------------
 
 // Light modules transparent so one QR serves both the solid and the alpha card;
-// the card's own background supplies the colour.
+// the card's own background supplies the color.
 const qrSvg = await QRCode.toString(URL_TO_ENCODE, {
   ...baseOptions,
   color: { dark: DARK + "ff", light: "#00000000" },

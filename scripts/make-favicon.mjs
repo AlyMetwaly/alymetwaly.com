@@ -3,8 +3,8 @@
 // Source is a logo *presentation mockup*: a 2816x1536 render containing the
 // icon card, a caption ("512x512 px"), a second 48px preview and its caption.
 // Only the monogram itself may ship, so this crops to the measured glyph
-// bounding box rather than to the image centre -- the artwork sits right of
-// and above the image centre.
+// bounding box rather than to the image center -- the artwork sits right of
+// and above the image center.
 //
 // The glyph is then composited onto a generated square rather than reusing the
 // mockup's card interior. That gives exact centring, uniform padding, and a
@@ -33,7 +33,7 @@ const GLYPH = { left: 955, top: 415, width: 895, height: 574 };
 
 const MASTER = 1024;
 
-// Card interior colour, sampled from the source.
+// Card interior color, sampled from the source.
 const BG = { r: 0xf5, g: 0xf4, b: 0xf9, alpha: 1 };
 
 // Glyph width as a fraction of the canvas.
@@ -53,12 +53,12 @@ mkdirSync(OUT, { recursive: true });
 mkdirSync(SCRATCH, { recursive: true });
 
 /**
- * Crop the glyph and centre it on a flat square canvas.
+ * Crop the glyph and center it on a flat square canvas.
  *
  * The glyph is resized in its own pipeline before compositing. sharp applies
  * resize BEFORE composite regardless of the order the methods are called, so
  * resizing the canvas in this same chain would paste a full-size glyph onto an
- * already-shrunk canvas -- off-centre and overflowing.
+ * already-shrunk canvas -- off-center and overflowing.
  */
 async function buildMaster(fill) {
   const w = Math.round(MASTER * fill);
@@ -117,12 +117,12 @@ async function render(master, size, { opaque = false } = {}) {
 }
 
 /**
- * Fail loudly if the mark is off-centre or crosses the circle edge.
+ * Fail loudly if the mark is off-center or crosses the circle edge.
  *
  * Guards a real trap: sharp reorders resize ahead of composite, which silently
  * shifts the glyph and clips it against the mask instead of erroring.
  */
-async function assertCentredAndUnclipped(buf, { masked }) {
+async function assertCenteredAndUnclipped(buf, { masked }) {
   const { data, info } = await sharp(buf).raw().toBuffer({ resolveWithObject: true });
   const { width: W, height: H, channels: C } = info;
 
@@ -148,7 +148,7 @@ async function assertCentredAndUnclipped(buf, { masked }) {
   const dy = Math.round((minY + maxY) / 2 - H / 2);
   if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
     throw new Error(
-      `Mark is off-centre by dx=${dx} dy=${dy} (expected 0). Check composite ordering.`,
+      `Mark is off-center by dx=${dx} dy=${dy} (expected 0). Check composite ordering.`,
     );
   }
 
@@ -175,13 +175,13 @@ async function assertCentredAndUnclipped(buf, { masked }) {
 const circularMaster = await circleMask(await buildMaster(FILL_CIRCLE));
 const squareMaster = await buildMaster(FILL_SQUARE);
 
-const circleCheck = await assertCentredAndUnclipped(circularMaster, { masked: true });
-const squareCheck = await assertCentredAndUnclipped(squareMaster, { masked: false });
+const circleCheck = await assertCenteredAndUnclipped(circularMaster, { masked: true });
+const squareCheck = await assertCenteredAndUnclipped(squareMaster, { masked: false });
 console.log(
-  `make-favicon: circular master ok - mark ${circleCheck.width}x${circleCheck.height}, ${(circleCheck.fill * 100).toFixed(1)}% of frame, centred, inside circle`,
+  `make-favicon: circular master ok - mark ${circleCheck.width}x${circleCheck.height}, ${(circleCheck.fill * 100).toFixed(1)}% of frame, centered, inside circle`,
 );
 console.log(
-  `make-favicon: square master ok - mark ${squareCheck.width}x${squareCheck.height}, ${(squareCheck.fill * 100).toFixed(1)}% of frame, centred`,
+  `make-favicon: square master ok - mark ${squareCheck.width}x${squareCheck.height}, ${(squareCheck.fill * 100).toFixed(1)}% of frame, centered`,
 );
 
 const rendered = new Map();
