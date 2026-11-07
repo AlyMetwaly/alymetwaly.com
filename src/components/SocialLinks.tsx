@@ -5,7 +5,7 @@ import { SOCIAL_LINKS, type SocialPlatform } from "@/lib/social";
  *
  * Not from an icon library: lucide has deprecated its brand icons, so those
  * imports break on a future version bump. Drawn on a shared 24x24 grid with a
- * shared stroke weight and cap height so the three read as one family.
+ * shared stroke weight and cap height so they read as one family.
  *
  * currentColor throughout -- colour comes from the parent's token, never from
  * a value baked in here.
@@ -19,6 +19,17 @@ const MARKS: Record<SocialPlatform, React.ReactNode> = {
       <circle cx="7.6" cy="7.15" r="0.95" fill="currentColor" stroke="none" />
       <path d="M12.1 17v-6.6" />
       <path d="M12.1 13.1c0-1.6 1.1-2.7 2.5-2.7s2.3 1 2.3 2.7V17" />
+    </>
+  ),
+  // Rounded square with a monoline git-branch glyph (two nodes on a stem, one branch).
+  github: (
+    <>
+      <rect x="2.25" y="2.25" width="19.5" height="19.5" rx="3.2" />
+      <path d="M8.4 14.8V9.4" />
+      <path d="M8.4 11.2h5.6" />
+      <circle cx="8.4" cy="8.1" r="1.05" fill="currentColor" stroke="none" />
+      <circle cx="8.4" cy="15.5" r="1.05" fill="currentColor" stroke="none" />
+      <circle cx="15.6" cy="11.2" r="1.05" fill="currentColor" stroke="none" />
     </>
   ),
   // Rounded square, concentric circle, offset dot at upper right.

@@ -8,7 +8,9 @@
  * `www` -- `sameAs` and `rel="me"` are identity claims, and they only resolve
  * if they match the canonical profile URL the platform itself serves.
  */
-export type SocialPlatform = "linkedin" | "instagram" | "youtube" | "x";
+export type SocialPlatform = "linkedin" | "github" | "instagram" | "youtube" | "x";
+
+export const GITHUB_URL = "https://github.com/AlyMetwaly";
 
 export const SOCIAL_LINKS: ReadonlyArray<{
   key: SocialPlatform;
@@ -16,11 +18,10 @@ export const SOCIAL_LINKS: ReadonlyArray<{
   href: string;
 }> = [
   { key: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/aly-metwaly/" },
-  { key: "instagram", label: "Instagram", href: "https://instagram.com/alyymetwaly" },
-  { key: "youtube", label: "YouTube", href: "https://www.youtube.com/@alyymetwaly/" },
+  { key: "github", label: "GitHub", href: GITHUB_URL },
+  { key: "instagram", label: "Instagram", href: "https://instagram.com/alymetwalyai" },
+  { key: "youtube", label: "YouTube", href: "https://www.youtube.com/@alymetwalyai" },
 ];
-
-export const GITHUB_URL = "https://github.com/AlyMetwaly";
 
 /**
  * X / Twitter.
@@ -37,4 +38,4 @@ export const GITHUB_URL = "https://github.com/AlyMetwaly";
 export const X_URL: string = "";
 
 /** Profile URLs for schema.org `sameAs`. */
-export const SAME_AS: ReadonlyArray<string> = [...SOCIAL_LINKS.map((l) => l.href), GITHUB_URL];
+export const SAME_AS: ReadonlyArray<string> = SOCIAL_LINKS.map((l) => l.href);

@@ -74,6 +74,11 @@ const SOCIAL_CTAS: ReadonlyArray<{
       sublabel: "Frameworks and rollout notes from live programs",
     },
     {
+      key: "github",
+      label: "Follow on GitHub",
+      sublabel: "Open source and the code behind the work",
+    },
+    {
       key: "instagram",
       label: "Follow on Instagram",
       sublabel: "Building in public: the work behind the frameworks",
