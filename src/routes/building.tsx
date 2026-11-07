@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import portraitAsset from "@/assets/portrait.JPG";
 import { BuildingSection } from "@/components/BuildingSection";
 import { PageHero } from "@/components/PageHero";
 import { SiteLayout } from "@/components/layout/SiteLayout";

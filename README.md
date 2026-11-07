@@ -129,18 +129,18 @@ That serves `dist/` with Pages semantics: no history fallback, real 404s.
 
 ## Making a change
 
-1. Branch from `master`.
+1. Branch from `main`.
 2. `npm run dev` while you edit.
 3. `npm run lint` before you commit.
 4. `npm run build` and `npm run preview:static` to catch missing routes and broken asset refs.
-5. Commit on your branch, merge to `master` when the change is ready.
+5. Commit on your branch, merge to `main` when the change is ready.
 
 Do not treat a green dev server as proof the static export is correct. Only `preview:static`
 exercises the same file layout GitHub Pages serves.
 
 ## Deploying
 
-Production updates come from an up-to-date `master` after your change is merged.
+Production updates come from an up-to-date `main` after your change is merged.
 
 ```bash
 npm run deploy
@@ -150,7 +150,7 @@ npm run deploy
 to the `gh-pages` branch via `gh-pages`. If you run it from a feature branch, you ship unmerged
 work to the live domain. There is no second publish path (see above).
 
-**Pre-deploy checklist (on `master`):**
+**Pre-deploy checklist (on `main`):**
 
 - Working tree is clean and matches the merge you intend to ship.
 - `npm run lint`
