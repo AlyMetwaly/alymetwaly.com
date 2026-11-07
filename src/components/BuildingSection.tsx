@@ -17,7 +17,7 @@ const topics = [
     title: "AI coding adoption playbook",
     status: "In progress",
     paragraph:
-      "A practical path for taking AI coding tools from licence to daily use: align leaders, enable teams, embed habits, measure adoption, and expand what works.",
+      "A practical path for moving AI coding tools from access to regular use across engineering teams: align leaders, enable teams, embed habits, measure adoption, and expand what works.",
   },
   {
     id: "content-pipeline",
