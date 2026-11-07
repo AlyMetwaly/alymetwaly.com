@@ -1,103 +1,89 @@
+import { useState } from "react";
+import { Mark } from "@/components/SocialLinks";
+import { CONTACT_EMAIL, buildMailto } from "@/lib/contact";
+import { SOCIAL_LINKS } from "@/lib/social";
+
+const linkedin = SOCIAL_LINKS.find((l) => l.key === "linkedin");
+
+const buttonClass =
+  "inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline";
+
 export function ContactSection() {
+  const [address, setAddress] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  function writeEmail() {
+    // The address is read here, at click time, so it is never in the HTML.
+    setAddress(CONTACT_EMAIL);
+    window.location.href = buildMailto();
+  }
+
+  async function copyAddress() {
+    try {
+      await navigator.clipboard.writeText(CONTACT_EMAIL);
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
+  }
+
   return (
     <section id="contact" className="section-anchor" aria-labelledby="contact-heading">
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-28">
-        <div className="mb-12 grid gap-8 sm:mb-16 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-5">
-            <h2
-              id="contact-heading"
-              className="font-display text-3xl leading-[1.02] tracking-tight sm:text-4xl lg:text-5xl"
-            >
-              Building AI transformation that lasts?
-            </h2>
-          </div>
-          <p className="text-base leading-relaxed text-muted-foreground sm:text-lg lg:col-span-6 lg:col-start-7 lg:self-end">
-            I work with leaders, transformation teams, founders, investors, and event organizers
-            navigating AI adoption, operating models, governance, and organizational change.
-          </p>
-        </div>
+        <h2 id="contact-heading" className="sr-only">
+          Ways to reach me
+        </h2>
         <div className="divide-y divide-rule border-t border-b border-rule">
           <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
             <div className="lg:col-span-4">
-              <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Advisory</h3>
+              <h3 className="font-display text-2xl tracking-tight sm:text-3xl">LinkedIn</h3>
             </div>
-            <p className="text-muted-foreground leading-relaxed lg:col-span-5">
-              Strategic guidance on AI transformation, operating models, governance, adoption, and
-              measurement.
+            <p className="text-muted-foreground leading-relaxed lg:col-span-4">
+              The fastest way to reach me. Good for introductions, speaking invitations, and
+              questions about advisory work.
             </p>
-            <div className="lg:col-span-3 lg:text-right">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLScoWwy5ZyLSM6ntFTSrWJe3hVbbKofS3B1aLo969tW88F2OKQ/viewform?usp=publish-editor"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
-              >
-                Request an Advisory Session
-              </a>
+            <div className="lg:col-span-4 lg:text-right">
+              {linkedin && (
+                <a
+                  href={linkedin.href}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  className={buttonClass}
+                >
+                  <Mark platform="linkedin" />
+                  Message on LinkedIn
+                </a>
+              )}
             </div>
           </article>
+
           <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
             <div className="lg:col-span-4">
-              <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Speaking</h3>
+              <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Email</h3>
             </div>
-            <p className="text-muted-foreground leading-relaxed lg:col-span-5">
-              Keynotes, workshops, executive briefings, panels, and leadership events.
-            </p>
-            <div className="lg:col-span-3 lg:text-right">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeLJjioBg1yv7GBnC1vEZkpR0G0u4VYfWCWj7-bo-ul-UaxuQ/viewform?usp=publish-editor"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
-              >
-                Request a Speaking Engagement
-              </a>
-            </div>
-          </article>
-          <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
-            <div className="lg:col-span-4">
-              <h3 className="font-display text-2xl tracking-tight sm:text-3xl">
-                Media, Podcasts &amp; Interviews
-              </h3>
-            </div>
-            <p className="text-muted-foreground leading-relaxed lg:col-span-5">
-              Podcast hosts, journalists, event moderators, and media producers seeking interviews
-              on AI transformation, leadership, innovation, and the future of work.
-            </p>
-            <div className="lg:col-span-3 lg:text-right">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfPLF8nWsxVaS_xOfFL8iOAMXM-lD-BLcYVbgNHyZH8WB3aig/viewform?usp=publish-editor"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
-              >
-                Request a Media Appearance
-              </a>
-            </div>
-          </article>
-          <article className="grid gap-6 py-8 sm:py-10 lg:grid-cols-12 lg:items-center lg:gap-10 lg:py-12">
-            <div className="lg:col-span-4">
-              <h3 className="font-display text-2xl tracking-tight sm:text-3xl">Everything Else</h3>
-            </div>
-            <div className="text-muted-foreground leading-relaxed lg:col-span-5">
+            <div className="text-muted-foreground leading-relaxed lg:col-span-4">
               <p>
-                Partnerships, recruiting opportunities, startup discussions, investor conversations,
-                community initiatives, collaborations, and general inquiries.
+                Better for longer notes or documents. The button opens your email app with a short
+                template. Nothing is sent until you press send.
               </p>
-              <p>
-                Not sure where your request belongs? Submit it here and I will make sure it reaches
-                the appropriate path.
-              </p>
+              {address && (
+                <p className="mt-4 text-sm" aria-live="polite">
+                  No email app opened? Use this address:{" "}
+                  <span className="select-all font-medium text-foreground">{address}</span>{" "}
+                  <button
+                    type="button"
+                    onClick={copyAddress}
+                    className="link-accent-underline text-foreground"
+                  >
+                    {copied ? "Copied" : "Copy"}
+                  </button>
+                </p>
+              )}
             </div>
-            <div className="lg:col-span-3 lg:text-right">
-              <a
-                href="https://forms.gle/j4zVmnUnTxAUxh4UA"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-muted btn-accent-outline"
-              >
-                Get in Touch
-              </a>
+            <div className="lg:col-span-4 lg:text-right">
+              <button type="button" onClick={writeEmail} className={buttonClass}>
+                Write an email
+              </button>
             </div>
           </article>
         </div>

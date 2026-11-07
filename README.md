@@ -77,6 +77,7 @@ You are welcome to. The engineering is the reusable part. The writing and the ph
 | -------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | [`src/lib/site.ts`](src/lib/site.ts)                           | `IDENTITY` (name, job title, employer, location) and `SITE_URL`            |
 | [`src/lib/social.ts`](src/lib/social.ts)                       | Profile URLs. Feeds the footer _and_ schema `sameAs`, so they cannot drift |
+| [`src/lib/contact.ts`](src/lib/contact.ts)                     | Contact alias and the email template. Read at click time, not in the HTML  |
 | [`src/lib/sections.ts`](src/lib/sections.ts)                   | Navigation                                                                 |
 | [`src/styles.css`](src/styles.css)                             | Design tokens: colour, type scale, spacing                                 |
 | [`vite.config.ts`](vite.config.ts)                             | `SITE_HOST`, the route manifest, downloadable files                        |
