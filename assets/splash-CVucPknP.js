@@ -1,0 +1,1 @@
+import{c as e,n as t,u as n}from"./index-Km50eHOC.js";var r=n(),i=()=>(0,r.jsx)(t,{talk:e});export{i as component};
