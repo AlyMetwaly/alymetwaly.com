@@ -49,9 +49,9 @@ function PlaybookPage() {
               id="playbook-kit-note"
               className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
-              The Value Chain is the framework. The AI coding adoption playbook applies it to
-              engineering teams, with guides, templates and a small adoption scorecard. It is open
-              source.
+              The Value Chain is the framework. The AI coding adoption playbook is a companion kit
+              for engineering teams, with guides, templates and a small adoption scorecard. It is
+              open source.
             </p>
             <a
               href={ADOPTION_PLAYBOOK_REPO_URL}

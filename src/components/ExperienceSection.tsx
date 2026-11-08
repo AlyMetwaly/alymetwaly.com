@@ -23,20 +23,20 @@ const work = [
     problem:
       "AI adoption was accelerating across the organization, but success depended on more than deploying tools. Without a shared approach to leadership, behavior change, enablement, governance, and measurement, adoption risked becoming fragmented and difficult to scale.",
     action:
-      "Led the development of a company-wide AI Enablement Playbook together with a cross-functional transformation team. Owned the design and operationalization of a Change Management model for enterprise AI transformation, integrating leadership enablement, adoption paths, champions networks, governance, continuous learning, measurement, and operating cadence into a repeatable system for scaling AI adoption.",
+      "Authored and operationalized a reusable AI change and adoption playbook, applied across business units, together with a cross-functional transformation team. The playbook covers a Change Management model for enterprise AI transformation, integrating leadership enablement, adoption paths, champions networks, governance, continuous learning, measurement, and operating cadence into a repeatable system for scaling AI adoption.",
     outcome:
-      "Established the operating model for enterprise AI transformation, reducing fragmentation across business segments and enabling a consistent, measurable, and repeatable approach to AI adoption at scale.",
+      "A consistent, measurable, and repeatable approach to AI adoption, applied across business units.",
   },
   {
-    org: "Nokia · RAN R&D Unit",
+    org: "Nokia · R&D unit, 1,000+ people",
     year: "2025 – Present",
     title: "Adoption-first AI execution across engineering",
     problem:
       "AI tools existed in pockets, with no mechanism to convert access into engineering throughput.",
     action:
-      "Built a structured enablement model with metrics, training, champion networks, and lightweight governance, and rolled out Copilot (M365 + Premium), GitHub Copilot, and Cursor across the SoC unit.",
+      "Built a structured enablement model with metrics, training, champion networks, and lightweight governance, and supported the rollout and adoption of Microsoft 365 Copilot, GitHub Copilot, and Cursor in the unit.",
     outcome:
-      "+65% active usage. 5× scale-up of a requirements-assistant use case in 8 weeks. ~31 engineer-years of annual capacity from about 560 hours of effort, roughly 100:1.",
+      "+65% AI adoption across engineering teams over about 2 to 3 months. 5× scale-up of an AI-enabled solution in 8 weeks. Estimated annual capacity of about 31 engineer-years, from survey-based time savings, for about 560 hours of focused effort, roughly 100:1.",
   },
   {
     org: "Nokia · Chief People Office",
@@ -45,14 +45,13 @@ const work = [
     problem:
       "Performance management was a periodic process, disconnected from real-time execution at 74,000-person scale.",
     action:
-      "Orchestrated the global rollout, aligning executive intent with execution across 20 cross-functional workstreams and 255 roadmap items.",
-    outcome:
-      "Successfully delivered the global transformation program on schedule, achieving 100% of annual objectives across 20 workstreams and 255 roadmap items.",
+      "Worked on the global rollout, aligning executive intent with execution across 20 cross-functional workstreams and 255 roadmap items.",
+    outcome: "A global program of 20 workstreams and 255 roadmap items, covering 74,000 employees.",
   },
   {
     org: "Nokia · 5G/6G Silicon R&D",
     year: "2022 – 2024",
-    title: "Nokia SoC Projects",
+    title: "High-complexity silicon programs",
     problem:
       "A high-complexity 5G/6G silicon program was under significant schedule pressure, with cross-functional dependencies and increasing delivery risk.",
     action:

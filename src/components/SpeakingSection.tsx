@@ -6,20 +6,20 @@ import menaPanelPhoto from "@/assets/speaking-mena-panel.png";
 const engagements = [
   {
     year: "2026",
-    event: "Verge at Epicenter",
+    event: "Verge Future of Work",
     format: "Opening keynote",
     title: "From Co-Pilots to Colleagues: Leading the Agentic Workforce",
     description:
       "Opening keynote on what it takes to lead an agentic workforce, grounded in operating models and field-tested adoption programs.",
     image: vergeEpicenterPhoto,
-    alt: "Aly Metwaly delivering the opening keynote at Verge at Epicenter, on stage with green lighting and a headset microphone",
+    alt: "Aly Metwaly delivering the opening keynote at Verge Future of Work, on stage with green lighting and a headset microphone",
     objectPosition: "50% 42%",
   },
   {
     year: "2025",
     event: "DASH",
     format: "Keynote & workshop",
-    title: "From Failure to Success: Design Thinking + AI in Innovation and Transformation",
+    title: "Think, Design, Transform: Business Reinvention with AI",
     description:
       "Keynote and executive workshop on design thinking and AI for innovation and transformation, with technology students and entrepreneurs.",
     image: dashPhoto,
@@ -133,6 +133,12 @@ export function SpeakingSection() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-sm text-muted-foreground">
+            Latest talk: <em>The Human Premium</em>, SPLASH, August 2026.{" "}
+            <Link to="/splash" className="text-foreground link-accent-underline">
+              Talk page and workbook
+            </Link>
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 border-t border-rule pt-16 mt-16">

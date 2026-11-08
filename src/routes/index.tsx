@@ -12,12 +12,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Aly Metwaly, Enterprise AI Transformation Leader at Nokia. Designs enterprise AI operating models, governance, and adoption programs that scale. Advisor, speaker, and author of the AI Transformation Value Chain.",
+          "Aly Metwaly leads enterprise AI adoption in engineering organizations. Transformation Manager at Nokia. Speaker and author of the AI Transformation Value Chain.",
       },
       {
         name: "keywords",
         content:
-          "enterprise AI transformation, AI operating model, AI adoption, AI governance, AI transformation leader, AI change management, enterprise AI strategy, AI transformation advisor",
+          "enterprise AI transformation, AI operating model, AI adoption, AI governance, AI transformation leader, AI change management, enterprise AI strategy",
       },
       { name: "author", content: "Aly Metwaly" },
       { name: "robots", content: "index, follow" },
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Enterprise AI operating models, governance, and adoption at scale. Enterprise AI Transformation Leader at Nokia.",
+          "Enterprise AI operating models, governance, and adoption at scale. Transformation Manager at Nokia.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:locale", content: "en_US" },
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Enterprise AI operating models, governance, and adoption at scale. Enterprise AI Transformation Leader at Nokia.",
+          "Enterprise AI operating models, governance, and adoption at scale. Transformation Manager at Nokia.",
       },
       { "script:ld+json": personSchema },
     ],
@@ -78,7 +78,7 @@ function Home() {
             <div className="relative">
               <img
                 src={portraitAsset}
-                alt="Aly Metwaly, Enterprise AI Transformation Leader at Nokia"
+                alt="Aly Metwaly"
                 className="w-full aspect-[4/5] object-cover"
                 style={{ background: "var(--muted)" }}
               />

@@ -14,9 +14,9 @@ export const SITE_URL = "https://alymetwaly.com";
  */
 export const IDENTITY = {
   name: "Aly Metwaly",
-  /** Also the schema.org jobTitle. Keep the two identical; see lib/person.ts. */
-  jobTitle: "Enterprise AI Transformation Leader",
-  /** Shown in the footer, next to the name. */
+  /** Formal title. Also the schema.org jobTitle; see lib/person.ts. */
+  jobTitle: "Transformation Manager",
+  /** Positioning headline, shown in the footer. Never put it next to "at Nokia". */
   headline: "Enterprise AI Transformation Leader",
   employer: "Nokia",
   city: "Espoo",

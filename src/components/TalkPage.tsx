@@ -86,7 +86,7 @@ const SOCIAL_CTAS: ReadonlyArray<{
     {
       key: "youtube",
       label: "Subscribe on YouTube",
-      sublabel: "This keynote, and the ones after it",
+      sublabel: "This talk, and the ones after it",
     },
     {
       key: "x",

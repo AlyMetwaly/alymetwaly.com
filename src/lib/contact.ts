@@ -25,7 +25,7 @@ export const CONTACT_BODY = [
 
 const TOPIC_TEMPLATES: Record<ContactTopic, { subject: string; body: string }> = {
   advisory: {
-    subject: "Advisory session request",
+    subject: "Question about AI adoption",
     body: [
       "Hi Aly,",
       "",

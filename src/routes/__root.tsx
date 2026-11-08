@@ -78,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Aly Metwaly designs and operationalizes enterprise AI operating models. Enterprise AI Transformation Leader at Nokia. 65% adoption growth across engineering teams, 31 engineer-years of annual capacity, 74,000-employee programs.",
+          "Aly Metwaly leads enterprise AI adoption in engineering organizations. Transformation Manager at Nokia, based in Espoo, Finland.",
       },
       { name: "author", content: IDENTITY.name },
       { property: "og:title", content: "Aly Metwaly · Enterprise AI Transformation Leader" },
       {
         property: "og:description",
         content:
-          "Designing AI operating models that scale across complex enterprises. Enterprise AI Transformation Leader at Nokia.",
+          "Designing AI operating models that scale across complex enterprises. Transformation Manager at Nokia.",
       },
       { property: "og:type", content: "website" },
       // Card image declared once here so every route inherits it. Routes

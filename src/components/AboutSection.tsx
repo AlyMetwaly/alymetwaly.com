@@ -44,9 +44,9 @@ export function AboutSection() {
 
           <div className="space-y-6 text-lg leading-relaxed text-foreground/85 lg:col-span-7">
             <p>
-              My career spans engineering, semiconductors, enterprise AI transformation, startup
-              advisory, and investing. Across those areas, I have stayed close to building, from
-              analytics and dashboards at work to AI tools and open source projects on my own time.
+              My career spans engineering, semiconductors, and enterprise AI transformation. Across
+              those areas, I have stayed close to building, from analytics and dashboards at work to
+              AI tools and open source projects on my own time.
             </p>
             <p>What has remained constant throughout my career is curiosity.</p>
             <p className="text-muted-foreground">
@@ -58,10 +58,10 @@ export function AboutSection() {
               me something different.
             </p>
             <p className="text-muted-foreground">
-              Working across global organizations, cross-functional teams, startups, and
-              transformation programs showed me that technology rarely creates lasting change on its
-              own. Real transformation happens when people align around a common purpose, make
-              better decisions together, and create the conditions for ideas to become action.
+              Working across global organizations, cross-functional teams, and transformation
+              programs showed me that technology rarely creates lasting change on its own. Real
+              transformation happens when people align around a common purpose, make better
+              decisions together, and create the conditions for ideas to become action.
             </p>
             <p>
               That realization continues to shape how I think about AI adoption, operating models,

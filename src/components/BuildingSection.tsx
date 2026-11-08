@@ -35,7 +35,7 @@ const topics = [
     title: "This website",
     status: "Public",
     paragraph:
-      "MIT-licensed and prerendered for static hosting. The build fails if a route or an asset is missing, so broken pages never ship.",
+      "The code is MIT-licensed. The site is prerendered for static hosting. The build fails if a route or an asset is missing, so broken pages never ship.",
   },
   {
     id: "content-pipeline",
@@ -56,14 +56,7 @@ const topics = [
     title: "AI Ecosystem",
     status: "Private",
     paragraph:
-      "A 12-month system for learning the AI stack. It has daily notes, tracked metrics, and predictions scored for accuracy.",
-  },
-  {
-    id: "investment-tools",
-    title: "Investment decision tools",
-    status: "Private",
-    paragraph:
-      "Personal tools for screening stocks, angel deals and real estate, and for checking my own portfolio decisions against written rules.",
+      "A 12-month system for learning the AI stack. It holds dossiers on the tools and companies I follow.",
   },
 ] as const;
 

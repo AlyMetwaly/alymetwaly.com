@@ -1,10 +1,10 @@
 export const SITE_SECTIONS = [
   { id: "playbook", path: "/playbook", number: "02", label: "Playbook" },
+  { id: "building", path: "/building", number: "03", label: "Building" },
   { id: "experience", path: "/experience", number: "04", label: "Experience" },
-  { id: "advisory", path: "/advisory", number: "05", label: "Advisory" },
+  { id: "about", path: "/about", number: "05", label: "About" },
   { id: "speaking", path: "/speaking", number: "06", label: "Speaking" },
-  { id: "building", path: "/building", number: "07", label: "Building" },
-  { id: "about", path: "/about", number: "08", label: "About" },
+  { id: "advisory", path: "/advisory", number: "07", label: "Advisory" },
 ] as const;
 
 /** Primary header navigation — contact is reached via the "Let's Talk" CTA */

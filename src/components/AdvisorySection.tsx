@@ -4,7 +4,7 @@ const engagements = [
   {
     audience: "Enterprise leadership",
     scope:
-      "Board-level and C-suite decision support on AI transformation strategy, investment prioritization, and organizational readiness.",
+      "Decision support on AI adoption strategy, prioritization, and organizational readiness.",
   },
   {
     audience: "Transformation offices",
@@ -19,7 +19,7 @@ const engagements = [
   {
     audience: "Scaling organizations",
     scope:
-      "Strategic guidance for high-growth and complex enterprises moving from AI experimentation to repeatable execution.",
+      "Practical guidance for complex enterprises moving from AI experimentation to repeatable execution.",
   },
 ];
 
@@ -42,8 +42,8 @@ export function AdvisorySection() {
           </div>
           <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-lg text-muted-foreground leading-relaxed self-end">
             <p>
-              Strategic guidance for executives, founders, and transformation leaders navigating AI
-              adoption, operating models, governance, organizational change, and execution at scale.
+              Practical guidance for leaders and transformation teams navigating AI adoption,
+              operating models, governance, organizational change, and execution at scale.
             </p>
             <p>
               Drawing on hands-on experience leading enterprise AI transformation initiatives, I
@@ -51,7 +51,7 @@ export function AdvisorySection() {
               into measurable business outcomes.
             </p>
             <p>
-              My advisory work applies the{" "}
+              My thinking on this is organized around the{" "}
               <Link to="/playbook" className="text-foreground link-accent-underline">
                 AI Transformation Value Chain
               </Link>{" "}
@@ -74,15 +74,10 @@ export function AdvisorySection() {
 
         <div className="mt-12 flex flex-col gap-8 sm:mt-16 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-2xl space-y-4 text-muted-foreground leading-relaxed">
-            <p>Start with a paid Advisory Discovery Session.</p>
+            <p>I share what I learn from AI adoption work.</p>
             <p>
-              Send me your challenge and the outcome you are seeking. I review every request
-              personally and will contact you regarding potential fit, availability, payment method,
-              and next steps.
-            </p>
-            <p>
-              The session provides strategic guidance, practical recommendations, and relevant
-              frameworks, playbooks, or resources where applicable.
+              If you have a question about adoption, governance, or measurement, send me a message.
+              I read every note and reply when I can add something useful.
             </p>
           </div>
           <Link
@@ -91,7 +86,7 @@ export function AdvisorySection() {
             className="inline-flex shrink-0 min-h-11 items-center justify-center rounded-full px-6 py-3 text-sm font-medium"
             style={{ background: "var(--ink)", color: "var(--paper)" }}
           >
-            Request an Advisory Session
+            Send a message
           </Link>
         </div>
       </div>
