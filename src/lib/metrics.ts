@@ -1,5 +1,9 @@
 export const PROOF_METRICS = [
-  { id: "adoption", value: "65%", label: "Increase in AI adoption across engineering teams" },
+  {
+    id: "adoption",
+    value: "65%",
+    label: "Increase in GitHub Copilot weekly active users in one R&D unit, over 2 to 3 months",
+  },
   { id: "scaleup", value: "5×", label: "Scale-up of an AI-enabled solution in 8 weeks" },
   {
     id: "capacity",

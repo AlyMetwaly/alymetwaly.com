@@ -36,7 +36,7 @@ const work = [
     action:
       "Built a structured enablement model with metrics, training, champion networks, and lightweight governance, and supported the rollout and adoption of Microsoft 365 Copilot, GitHub Copilot, and Cursor in the unit.",
     outcome:
-      "+65% AI adoption across engineering teams over about 2 to 3 months. 5× scale-up of an AI-enabled solution in 8 weeks. Estimated annual capacity of about 31 engineer-years, from survey-based time savings, for about 560 hours of focused effort, roughly 100:1.",
+      "+65% GitHub Copilot weekly active users in the unit over about 2 to 3 months. 5× scale-up of an AI-enabled solution in 8 weeks. Estimated annual capacity of about 31 engineer-years, from survey-based time savings, for about 560 hours of focused effort, roughly 100:1.",
   },
   {
     org: "Nokia · Chief People Office",
