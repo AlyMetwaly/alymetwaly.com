@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { GITHUB_URL } from "@/lib/social";
+import { ScorecardProof } from "@/components/ScorecardProof";
 import {
   ADOPTION_PLAYBOOK_REPO_URL,
   AGENT_PLUGINS_REPO_URL,
@@ -177,6 +178,8 @@ export function BuildingSection() {
           </ul>
         </div>
       </section>
+
+      <ScorecardProof />
 
       <section
         id="building-proof"
